@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ffffff;font-family:"DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#18181b;text-decoration:none}
+a:hover{color:#c2560a}
+*{box-sizing:border-box}
+::placeholder{color:#a1a1aa}
+input[type=range]{-webkit-appearance:none;appearance:none;height:22px;background:transparent}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:999px;background:#e4e4e7}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;margin-top:-6px;border-radius:999px;background:#ffffff;border:1.5px solid #f97316;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.jtable{overflow:auto;max-height:520px;scrollbar-width:thin}
+.jtable::-webkit-scrollbar{width:10px}
+.jtable::-webkit-scrollbar-thumb{background:#e4e4e7;border-radius:999px;border:3px solid #ffffff}
+</style>
+</helmet>
+
+<div style="width:1440px;margin:0 auto;background:#ffffff;color:#18181b">
+
+  <div style="position:sticky;top:0;z-index:60;height:56px;padding:0 24px;display:flex;align-items:center;gap:24px;border-bottom:1px solid #e4e4e7;background:rgba(255,255,255,0.92);backdrop-filter:blur(14px)">
+    <div style="display:flex;align-items:center;gap:9px;width:248px">
+      <span style="width:18px;height:18px;border-radius:6px;background:#f97316;box-shadow:0 0 0 4px rgba(249,115,22,0.12)"></span>
+      <span style="font:700 15px/1 'DM Sans',sans-serif;letter-spacing:-0.02em">Janus<span style="color:#a1a1aa;font-weight:500">Scheduler</span></span>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px">
+      <span style="font:600 13.5px/1 'DM Sans',sans-serif;color:#c2560a">Docs</span>
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">Features</a>
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">Packages</a>
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">FAQ</a>
+    </div>
+    <div style="flex:1"></div>
+    <div style="display:flex;align-items:center;gap:8px;height:34px;padding:0 11px;width:216px;border:1.5px solid #e4e4e7;border-radius:9px;background:#f4f4f5">
+      <span style="font:400 13px/1 'JetBrains Mono',monospace;color:#a1a1aa">⌕</span>
+      <input type="text" placeholder="Search the docs" style="flex:1;min-width:0;border:0;background:transparent;outline:none;font:400 13px/1 'DM Sans',sans-serif;color:#18181b">
+      <span style="padding:2px 5px;border-radius:5px;border:1px solid #e4e4e7;background:#ffffff;font:500 10.5px/1.3 'JetBrains Mono',monospace;color:#a1a1aa">⌘K</span>
+    </div>
+    <span style="padding:4px 10px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 11.5px/1.35 'JetBrains Mono',monospace">v2.4.0</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:272px 1fr 232px">
+
+    <aside style="border-right:1px solid #e4e4e7;padding:26px 20px 40px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="padding:0 10px 8px;font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Guide</span>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Getting started</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="padding:0 10px 8px;font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Framework guides</span>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">React</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Angular</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Solid</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Vue</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Vanilla</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="padding:0 10px 8px;font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">API reference</span>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Components</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'JetBrains Mono',monospace;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">SchedulerManager</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'JetBrains Mono',monospace;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Store</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Types</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Utilities</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Events</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="padding:0 10px 8px;font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Topics</span>
+        <span style="padding:8px 10px;border-radius:9px;background:rgba(249,115,22,0.12);font:600 13.5px/1.3 'DM Sans',sans-serif;color:#c2560a">Theming</span>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Natural language</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Google Calendar sync</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Performance</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Accessibility</a>
+      </div>
+    </aside>
+
+    <main style="padding:34px 44px 44px;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">
+        <a href="#" style="color:#a1a1aa">Docs</a><span>/</span><a href="#" style="color:#a1a1aa">Topics</a><span>/</span><span style="color:#52525b">Theming and design tokens</span>
+      </div>
+      <h1 style="margin:16px 0 0;font:700 40px/1.1 'DM Sans',sans-serif;letter-spacing:-0.028em">Theming and design tokens</h1>
+      <p style="margin:18px 0 0;max-width:68ch;font:400 16.5px/1.65 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">Janus renders inside a shadow root, so your stylesheet cannot reach its internals — deliberately. What does reach in is custom properties: they inherit through the shadow boundary like any other inherited property, and every visual decision the component makes reads one.</p>
+
+      <div style="margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:9px">
+          <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#a1a1aa">What pierces the boundary</span>
+          <p style="margin:0;font:400 13.5px/1.6 'DM Sans',sans-serif;color:#52525b">Inherited properties, including every <span style="font-family:'JetBrains Mono',monospace;font-size:12.5px">--custom-property</span>. Set one on <span style="font-family:'JetBrains Mono',monospace;font-size:12.5px">:root</span>, on a wrapper div, or on the element itself — the closest declaration wins, exactly as it would outside a shadow root.</p>
+        </div>
+        <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:9px">
+          <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#a1a1aa">What does not</span>
+          <p style="margin:0;font:400 13.5px/1.6 'DM Sans',sans-serif;color:#52525b">Selectors. A rule like <span style="font-family:'JetBrains Mono',monospace;font-size:12.5px">.janus .event { … }</span> never matches anything inside the component, no matter how specific. That is the guarantee that lets us change internal markup without breaking your build.</p>
+        </div>
+      </div>
+
+      <!-- THEME EDITOR -->
+      <h2 style="margin:44px 0 0;font:600 24px/1.25 'DM Sans',sans-serif;letter-spacing:-0.018em">Try it</h2>
+      <p style="margin:12px 0 0;max-width:66ch;font:400 15.5px/1.65 'DM Sans',sans-serif;color:#52525b">Change a token on the left; the miniature on the right is a real scheduler reading the same properties you would set in your own stylesheet.</p>
+
+      <div style="margin-top:18px;border:1.5px solid #e4e4e7;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="display:grid;grid-template-columns:296px 1fr">
+
+          <div style="border-right:1.5px solid #e4e4e7;padding:20px;display:flex;flex-direction:column;gap:22px;background:#ffffff">
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between">
+                <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#a1a1aa">Primary colour</span>
+                <span style="font:400 11px/1 'JetBrains Mono',monospace;color:#52525b">{{ accent }}</span>
+              </div>
+              <div style="display:flex;gap:8px">
+                <span onClick="{{ pickOrange }}" style="{{ swOrange }}"></span>
+                <span onClick="{{ pickBlue }}" style="{{ swBlue }}"></span>
+                <span onClick="{{ pickTeal }}" style="{{ swTeal }}"></span>
+                <span onClick="{{ pickViolet }}" style="{{ swViolet }}"></span>
+                <span onClick="{{ pickInk }}" style="{{ swInk }}"></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px">
+                <input type="color" value="{{ accent }}" onChange="{{ setHex }}" style="{{ swCustom }}" title="Custom colour">
+                <input type="text" value="{{ accent }}" onChange="{{ setHex }}" style="flex:1;min-width:0;height:36px;padding:0 10px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;font:400 12px/1 'JetBrains Mono',monospace;color:#18181b;outline:none" style-focus="border-color:#f97316;box-shadow:0 0 0 4px rgba(249,115,22,0.12)">
+              </div>
+              <span style="font:400 11px/1.5 'DM Sans',sans-serif;color:#a1a1aa">Sets <span style="font-family:'JetBrains Mono',monospace;font-size:11px">--janus-accent</span>; the tint is derived at 12% alpha and <span style="font-family:'JetBrains Mono',monospace;font-size:11px">--janus-accent-strong</span> ({{ strong }}) is used for text on it.</span>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between">
+                <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#a1a1aa">Border radius</span>
+                <span style="font:400 11px/1 'JetBrains Mono',monospace;color:#52525b">{{ radiusLabel }}</span>
+              </div>
+              <input type="range" min="0" max="20" step="1" value="{{ radius }}" onChange="{{ setRadius }}" style="width:100%;accent-color:#f97316">
+              <div style="display:flex;justify-content:space-between;font:400 10px/1 'JetBrains Mono',monospace;color:#a1a1aa"><span>0</span><span>9 · default</span><span>20</span></div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#a1a1aa">Density</span>
+              <div style="display:flex;padding:3px;gap:2px;background:#f4f4f5;border:1.5px solid #e4e4e7;border-radius:9px">
+                <span onClick="{{ pickCompact }}" style="{{ segCompact }}">Compact</span>
+                <span onClick="{{ pickRegular }}" style="{{ segRegular }}">Regular</span>
+                <span onClick="{{ pickRoomy }}" style="{{ segRoomy }}">Roomy</span>
+              </div>
+              <span style="font:400 11px/1.5 'DM Sans',sans-serif;color:#a1a1aa">Row height {{ rowLabel }} · axis label size follows.</span>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#a1a1aa">Appearance</span>
+              <div onClick="{{ toggleTheme }}" style="display:flex;padding:3px;gap:2px;background:#f4f4f5;border:1.5px solid #e4e4e7;border-radius:9px;cursor:pointer">
+                <span style="{{ segLight }}">Light</span>
+                <span style="{{ segDark }}">Dark</span>
+              </div>
+            </div>
+
+            <div style="margin-top:auto;padding-top:16px;border-top:1px solid #f4f4f5;display:flex;align-items:center;justify-content:space-between">
+              <button onClick="{{ reset }}" style="height:32px;padding:0 12px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#52525b;font:600 12px/1 'DM Sans',sans-serif;cursor:pointer" style-hover="border-color:#d4d4d8;color:#18181b">Reset to defaults</button>
+              <span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">4 of 12 tokens</span>
+            </div>
+          </div>
+
+          <div style="{{ stagePad }}">
+            <div style="{{ sShell }}">
+              <div style="{{ sHeader }}">
+                <span style="{{ sHeaderTitle }}">Thu 3 September</span>
+                <div style="{{ sSegWrap }}">
+                  <span style="{{ sSegOn }}">Timeline</span>
+                  <span style="{{ sSegOff }}">Week</span>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:132px 1fr">
+                <div style="{{ sGutter }}">
+                  <div style="{{ sGutterHead }}">Resource</div>
+                  <div style="{{ sGutterRow }}">Alex Fernando</div>
+                  <div style="{{ sGutterRow }}">Nadeesha Perera</div>
+                  <div style="{{ sGutterRowLast }}">Room A</div>
+                </div>
+                <div style="position:relative">
+                  <div style="{{ sAxis }}">
+                    <span style="{{ sAxisCell }}">09:00</span>
+                    <span style="{{ sAxisCell }}">10:00</span>
+                    <span style="{{ sAxisCell }}">11:00</span>
+                    <span style="{{ sAxisCell }}">12:00</span>
+                    <span style="{{ sAxisCell }}">13:00</span>
+                    <span style="{{ sAxisCell }}">14:00</span>
+                  </div>
+                  <div style="{{ sBody }}">
+                    <div style="{{ sColLines }}"><span style="{{ sColLine }}"></span><span style="{{ sColLine }}"></span><span style="{{ sColLine }}"></span><span style="{{ sColLine }}"></span><span style="{{ sColLine }}"></span><span style="{{ sColLine }}"></span></div>
+                    <div style="{{ sRowLines }}"><div style="{{ sRowLine }}"></div><div style="{{ sRowLine }}"></div></div>
+                    <div style="{{ sNowLine }}"></div>
+                    <div style="{{ sEvent1 }}"><span style="{{ sEventText }}">Design sync</span></div>
+                    <div style="{{ sEvent2 }}"><span style="{{ sEventText }}">Sprint planning</span></div>
+                    <div style="{{ sEvent3 }}"><span style="{{ sNeutralText }}">Held</span></div>
+                    <div style="{{ sEvent4 }}"><span style="{{ sEventText }}">Client workshop</span></div>
+                  </div>
+                </div>
+              </div>
+              <div style="{{ sFooter }}">
+                <span style="{{ sFooterText }}">3 resources · 4 events</span>
+                <span style="{{ sChip }}">{{ tokenSummary }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1.5px solid #e4e4e7;background:#18181b">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid #27272a;background:#09090b">
+            <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#a1a1aa">Generated CSS · theme.css</span>
+            <button onClick="{{ copyCss }}" style="height:26px;padding:0 9px;border:1.5px solid #27272a;border-radius:9px;background:transparent;color:#a1a1aa;font:500 11px/1 'JetBrains Mono',monospace;cursor:pointer" style-hover="border-color:#3f3f46;color:#fafafa">{{ cssLabel }}</button>
+          </div>
+          <pre style="margin:0;padding:18px 20px;font:400 13px/1.85 'JetBrains Mono',monospace;color:#e4e4e7;overflow-x:auto"><div><span style="color:#7dd3fc">janus-timeline</span><span style="color:#a1a1aa">,</span> <span style="color:#7dd3fc">janus-month</span> {</div><div>  <span style="color:#f97316">--janus-accent</span><span style="color:#a1a1aa">:</span> <span style="color:#a3e635">{{ accent }}</span><span style="color:#a1a1aa">;</span></div><div>  <span style="color:#f97316">--janus-accent-tint</span><span style="color:#a1a1aa">:</span> <span style="color:#a3e635">{{ tint }}</span><span style="color:#a1a1aa">;</span></div><div>  <span style="color:#f97316">--janus-radius</span><span style="color:#a1a1aa">:</span> <span style="color:#a3e635">{{ radiusLabel }}</span><span style="color:#a1a1aa">;</span></div><div>  <span style="color:#f97316">--janus-row-height</span><span style="color:#a1a1aa">:</span> <span style="color:#a3e635">{{ rowLabel }}</span><span style="color:#a1a1aa">;</span></div><div>  <span style="color:#f97316">--janus-bg</span><span style="color:#a1a1aa">:</span> <span style="color:#a3e635">{{ cssBg }}</span><span style="color:#a1a1aa">;</span></div><div>  <span style="color:#f97316">--janus-surface</span><span style="color:#a1a1aa">:</span> <span style="color:#a3e635">{{ cssSurface }}</span><span style="color:#a1a1aa">;</span></div><div>  <span style="color:#f97316">--janus-border</span><span style="color:#a1a1aa">:</span> <span style="color:#a3e635">{{ cssBorder }}</span><span style="color:#a1a1aa">;</span></div><div>  <span style="color:#f97316">--janus-text</span><span style="color:#a1a1aa">:</span> <span style="color:#a3e635">{{ cssText }}</span><span style="color:#a1a1aa">;</span></div><div>}</div></pre>
+        </div>
+      </div>
+      <span style="display:block;margin-top:9px;font:400 11.5px/1.5 'DM Sans',sans-serif;color:#a1a1aa">Scope the same block to a wrapper element to theme one calendar differently from the rest of the page.</span>
+
+      <!-- TOKEN REFERENCE -->
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin:48px 0 0">
+        <h2 style="margin:0;font:600 24px/1.25 'DM Sans',sans-serif;letter-spacing:-0.018em">Token reference</h2>
+        <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">21 tokens · 7 groups · defaults shown for light</span>
+      </div>
+      <div class="jtable" style="margin-top:14px;border:1.5px solid #e4e4e7;border-radius:14px">
+        <div style="display:grid;grid-template-columns:250px 168px 128px minmax(240px,1fr)">
+          <span style="position:sticky;top:0;z-index:3;padding:9px 18px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Token</span>
+          <span style="position:sticky;top:0;z-index:3;padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Default</span>
+          <span style="position:sticky;top:0;z-index:3;padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Dark</span>
+          <span style="position:sticky;top:0;z-index:3;padding:9px 18px 9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Applies to</span>
+
+          <span style="grid-column:1/-1;padding:8px 18px;background:#fafafa;border-bottom:1px solid #e4e4e7;font:600 10px/1.4 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#f97316">Colour</span>
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-accent</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#f97316"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#f97316</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#f97316"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">same</span></span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Event borders, now-line, focus ring, selection outline.</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-accent-tint</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.32)"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">12% accent</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.32)"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">same</span></span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Event fill, hover wash, drop-target row.</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-accent-strong</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#c2560a"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#c2560a</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#fb8c3a"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#fb8c3a</span></span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Text on tinted fills, pressed states.</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-conflict</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#18181b"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#18181b</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#fafafa;border:1px solid #e4e4e7"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#fafafa</span></span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Conflict badges and blocked-drop hatching.</span>
+
+          <span style="grid-column:1/-1;padding:8px 18px;background:#fafafa;border-top:1px solid #e4e4e7;border-bottom:1px solid #e4e4e7;font:600 10px/1.4 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#f97316">Surface</span>
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-bg</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#ffffff;border:1px solid #e4e4e7"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#ffffff</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#09090b"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#09090b</span></span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Grid canvas behind the rows.</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-surface</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#f4f4f5;border:1px solid #e4e4e7"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#f4f4f5</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#18181b"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#18181b</span></span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Axis header, resource gutter, toolbar.</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-surface-off</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#fafafa;border:1px solid #e4e4e7"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#fafafa</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#0f0f11"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#0f0f11</span></span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Non-working hours and weekend columns.</span>
+
+          <span style="grid-column:1/-1;padding:8px 18px;background:#fafafa;border-top:1px solid #e4e4e7;border-bottom:1px solid #e4e4e7;font:600 10px/1.4 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#f97316">Border</span>
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-border</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#e4e4e7"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#e4e4e7</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#27272a"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#27272a</span></span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Structural rules, gutter divider, outer edge.</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-border-hairline</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#f4f4f5;border:1px solid #e4e4e7"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#f4f4f5</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#18181b"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#18181b</span></span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Row and column lines inside the grid.</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-border-width</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">1.5px</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">same</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Interactive containers only; hairlines stay at 1px.</span>
+
+          <span style="grid-column:1/-1;padding:8px 18px;background:#fafafa;border-top:1px solid #e4e4e7;border-bottom:1px solid #e4e4e7;font:600 10px/1.4 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#f97316">Text</span>
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-text</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#18181b"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#18181b</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#fafafa;border:1px solid #e4e4e7"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#fafafa</span></span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Resource names and event titles.</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-text-secondary</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#52525b"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#52525b</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#a1a1aa"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#a1a1aa</span></span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Times inside blocks, secondary resource lines.</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-text-muted</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#a1a1aa"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#a1a1aa</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#52525b"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">#52525b</span></span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Axis labels and empty-state copy.</span>
+
+          <span style="grid-column:1/-1;padding:8px 18px;background:#fafafa;border-top:1px solid #e4e4e7;border-bottom:1px solid #e4e4e7;font:600 10px/1.4 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#f97316">Typography</span>
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-font</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">inherit</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">same</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">All UI text. Inherits your page font by default.</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-font-mono</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">ui-monospace</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">same</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Times, axis labels, numeric badges.</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-font-size</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">13px</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">same</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Base size; everything else is a ratio of it.</span>
+
+          <span style="grid-column:1/-1;padding:8px 18px;background:#fafafa;border-top:1px solid #e4e4e7;border-bottom:1px solid #e4e4e7;font:600 10px/1.4 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#f97316">Geometry</span>
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-radius</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:9px;background:#f4f4f5;border:1.5px solid #e4e4e7"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">9px</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">same</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Event blocks and in-grid controls.</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-radius-panel</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:14px;background:#f4f4f5;border:1.5px solid #e4e4e7"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">14px</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">same</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Outer shell, popovers, conflict dialog.</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-row-height</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">52px</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">same</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Row pitch. Under 32px the secondary line is hidden.</span>
+
+          <span style="grid-column:1/-1;padding:8px 18px;background:#fafafa;border-top:1px solid #e4e4e7;border-bottom:1px solid #e4e4e7;font:600 10px/1.4 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#f97316">Elevation</span>
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-shadow</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;flex:none;border-radius:5px;background:#ffffff;box-shadow:0 4px 20px rgba(0,0,0,0.08)"></span><span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">0 4px 20px</span></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">same</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Dragged blocks, popovers, dialogs.</span>
+
+          <span style="padding:10px 18px;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">--janus-shadow-none</code></span>
+          <span style="padding:10px 12px;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">none</span>
+          <span style="padding:10px 12px;display:flex;align-items:center;font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">same</span>
+          <span style="padding:10px 18px 10px 12px;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">Set to <span style="font-family:'JetBrains Mono',monospace;font-size:12px">--janus-shadow</span> to flatten the component entirely.</span>
+        </div>
+      </div>
+
+      <div style="margin-top:26px;border:1.5px dashed #52525b;border-radius:14px;background:#18181b;padding:18px;display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="width:5px;height:5px;background:#fafafa"></span>
+          <span style="font:700 11px/1 'JetBrains Mono',monospace;letter-spacing:0.12em;text-transform:uppercase;color:#fafafa">Limitation</span>
+        </div>
+        <p style="margin:0;max-width:78ch;font:400 13.5px/1.6 'DM Sans',sans-serif;color:#e4e4e7">Global stylesheets do not leak into the shadow root. Tailwind classes, CSS resets, utility frameworks and your own <span style="font-family:'JetBrains Mono',monospace;font-size:13px">.event { … }</span> rules have no effect on anything Janus renders — only the tokens above do. If you need a visual change no token covers, use a slot or the <span style="font-family:'JetBrains Mono',monospace;font-size:13px">renderEvent</span> hook rather than reaching in; we will not add <span style="font-family:'JetBrains Mono',monospace;font-size:13px">::part</span> for every internal node, because that would freeze the internal DOM as public API.</p>
+      </div>
+
+      <div style="margin-top:44px;padding-top:22px;border-top:1.5px solid #e4e4e7;display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <a href="#" style="border:1.5px solid #e4e4e7;border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:5px" style-hover="border-color:#f97316">
+          <span style="font:400 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">← Previous</span>
+          <span style="font:600 15px/1.3 'DM Sans',sans-serif">Events</span>
+        </a>
+        <a href="#" style="border:1.5px solid #e4e4e7;border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:5px;align-items:flex-end;text-align:right" style-hover="border-color:#f97316">
+          <span style="font:400 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">Next →</span>
+          <span style="font:600 15px/1.3 'DM Sans',sans-serif">Natural language</span>
+        </a>
+      </div>
+    </main>
+
+    <aside style="border-left:1px solid #e4e4e7;padding:34px 22px 40px;display:flex;flex-direction:column;gap:12px;align-self:start;position:sticky;top:56px">
+      <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">On this page</span>
+      <div style="display:flex;flex-direction:column;gap:9px">
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#52525b">How tokens pierce the boundary</a>
+        <a href="#" style="font:600 12.5px/1.4 'DM Sans',sans-serif;color:#c2560a">Try it</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#52525b">Token reference</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#a1a1aa;padding-left:12px">Colour</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#a1a1aa;padding-left:12px">Surface</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#a1a1aa;padding-left:12px">Border</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#a1a1aa;padding-left:12px">Text</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#a1a1aa;padding-left:12px">Typography</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#a1a1aa;padding-left:12px">Geometry</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#a1a1aa;padding-left:12px">Elevation</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#52525b">Limitation</a>
+      </div>
+      <div style="margin-top:8px;padding-top:14px;border-top:1px solid #e4e4e7;display:flex;flex-direction:column;gap:8px">
+        <a href="#" style="font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">Theme playground ↗</a>
+        <a href="#" style="font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">Edit this page ↗</a>
+      </div>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;defaultAccent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#f97316&quot;,&quot;#2563eb&quot;,&quot;#0d9488&quot;,&quot;#7c3aed&quot;],&quot;default&quot;:&quot;#f97316&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Editor defaults&quot;},&quot;defaultRadius&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:20,&quot;step&quot;:1,&quot;default&quot;:9,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Editor defaults&quot;},&quot;defaultDensity&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Compact&quot;,&quot;Regular&quot;,&quot;Roomy&quot;],&quot;default&quot;:&quot;Regular&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Editor defaults&quot;},&quot;defaultTheme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Light&quot;,&quot;Dark&quot;],&quot;default&quot;:&quot;Light&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Editor defaults&quot;}}">
+class Component extends DCLogic {
+  state = {
+    accent: this.props.defaultAccent || '#f97316',
+    radius: this.props.defaultRadius != null ? this.props.defaultRadius : 9,
+    density: this.props.defaultDensity || 'Regular',
+    dark: (this.props.defaultTheme || 'Light') === 'Dark',
+    copied: false
+  };
+  componentWillUnmount() { clearTimeout(this._t); }
+  rgba(hex, a) {
+    const h = hex.replace('#', '');
+    const n = parseInt(h.length === 3 ? h.split('').map(c => c + c).join('') : h, 16);
+    return 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',' + a + ')';
+  }
+  shade(hex, f) {
+    const h = hex.replace('#', '');
+    const n = parseInt(h.length === 3 ? h.split('').map(c => c + c).join('') : h, 16);
+    const ch = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map(v =>
+      Math.max(0, Math.min(255, Math.round(f < 1 ? v * f : v + (255 - v) * (f - 1)))));
+    return '#' + ch.map(v => v.toString(16).padStart(2, '0')).join('');
+  }
+  strongFor(hex, dark) {
+    const pairs = {
+      '#f97316': ['#c2560a', '#fb8c3a'], '#2563eb': ['#1e40af', '#60a5fa'],
+      '#0d9488': ['#0f766e', '#2dd4bf'], '#7c3aed': ['#5b21b6', '#a78bfa'],
+      '#18181b': ['#18181b', '#fafafa']
+    };
+    const p = pairs[hex.toLowerCase()];
+    if (p) return dark ? p[1] : p[0];
+    return dark ? this.shade(hex, 1.45) : this.shade(hex, 0.62);
+  }
+  copyCss(css) {
+    if (navigator.clipboard) navigator.clipboard.writeText(css).catch(() => {});
+    this.setState({ copied: true });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ copied: false }), 1600);
+  }
+  renderVals() {
+    const { accent, radius, density, dark } = this.state;
+    const tint = this.rgba(accent, 0.12);
+    const strong = this.strongFor(accent, dark);
+    const rowH = density === 'Compact' ? 34 : density === 'Roomy' ? 58 : 44;
+    const fs = density === 'Compact' ? 10.5 : density === 'Roomy' ? 12.5 : 11.5;
+    const r = radius + 'px';
+
+    const bg = dark ? '#09090b' : '#ffffff';
+    const surface = dark ? '#18181b' : '#f4f4f5';
+    const border = dark ? '#27272a' : '#e4e4e7';
+    const hair = dark ? '#18181b' : '#f4f4f5';
+    const text = dark ? '#fafafa' : '#18181b';
+    const muted = dark ? '#52525b' : '#a1a1aa';
+    const secondary = dark ? '#a1a1aa' : '#52525b';
+    const mono = "'JetBrains Mono',monospace";
+    const sans = "'DM Sans',sans-serif";
+
+    const sw = hex => 'width:36px;height:36px;border-radius:9px;cursor:pointer;background:' + hex +
+      (accent === hex ? ';box-shadow:0 0 0 3px ' + this.rgba(hex, 0.32) : '');
+    const seg = on => 'flex:1;text-align:center;padding:7px 0;border-radius:6px;font:' + (on ? '600' : '500') +
+      ' 11.5px/1 ' + sans + ';cursor:pointer;' +
+      (on ? 'background:#ffffff;color:#18181b;box-shadow:0 1px 2px rgba(0,0,0,0.06);' : 'color:#52525b;');
+
+    const ev = (top, left, width) => 'position:absolute;top:' + top + 'px;left:' + left + '%;width:' + width +
+      '%;height:' + (rowH - 14) + 'px;border-radius:' + r + ';background:' + tint + ';border:1.5px solid ' + accent +
+      ';padding:0 9px;display:flex;align-items:center;z-index:2;overflow:hidden';
+
+    const css = 'janus-timeline, janus-month {\n  --janus-accent: ' + accent + ';\n  --janus-accent-tint: ' + tint +
+      ';\n  --janus-radius: ' + r + ';\n  --janus-row-height: ' + rowH + 'px;\n  --janus-bg: ' + bg +
+      ';\n  --janus-surface: ' + surface + ';\n  --janus-border: ' + border + ';\n  --janus-text: ' + text + ';\n}';
+
+    return {
+      accent: accent, tint: tint, radius: radius, radiusLabel: r, rowLabel: rowH + 'px',
+      cssBg: bg, cssSurface: surface, cssBorder: border, cssText: text,
+      tokenSummary: 'radius ' + r + ' · row ' + rowH + 'px',
+
+      swOrange: sw('#f97316'), swBlue: sw('#2563eb'), swTeal: sw('#0d9488'), swViolet: sw('#7c3aed'), swInk: sw('#18181b'),
+      pickOrange: () => this.setState({ accent: '#f97316' }),
+      pickBlue: () => this.setState({ accent: '#2563eb' }),
+      pickTeal: () => this.setState({ accent: '#0d9488' }),
+      pickViolet: () => this.setState({ accent: '#7c3aed' }),
+      pickInk: () => this.setState({ accent: '#18181b' }),
+      setRadius: e => this.setState({ radius: Number(e.target.value) }),
+      segCompact: seg(density === 'Compact'), segRegular: seg(density === 'Regular'), segRoomy: seg(density === 'Roomy'),
+      pickCompact: () => this.setState({ density: 'Compact' }),
+      pickRegular: () => this.setState({ density: 'Regular' }),
+      pickRoomy: () => this.setState({ density: 'Roomy' }),
+      segLight: seg(!dark), segDark: seg(dark),
+      toggleTheme: () => this.setState(s => ({ dark: !s.dark })),
+      reset: () => this.setState({ accent: '#f97316', radius: 9, density: 'Regular', dark: false }),
+      copyCss: () => this.copyCss(css), cssLabel: this.state.copied ? 'Copied' : 'Copy',
+
+      stagePad: 'padding:20px;background:' + (dark ? '#09090b' : '#fafafa'),
+      sShell: 'border:1.5px solid ' + border + ';border-radius:14px;background:' + bg + ';overflow:hidden',
+      sHeader: 'display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid ' + border + ';background:' + bg,
+      sHeaderTitle: 'font:600 13px/1 ' + sans + ';color:' + text,
+      sSegWrap: 'display:inline-flex;padding:3px;gap:2px;background:' + surface + ';border:1.5px solid ' + border + ';border-radius:' + r,
+      sSegOn: 'padding:5px 10px;border-radius:' + Math.max(0, radius - 3) + 'px;background:' + bg + ';color:' + text + ';font:600 11.5px/1 ' + sans,
+      sSegOff: 'padding:5px 10px;border-radius:' + Math.max(0, radius - 3) + 'px;color:' + secondary + ';font:500 11.5px/1 ' + sans,
+      sGutter: 'border-right:1.5px solid ' + border,
+      sGutterHead: 'height:30px;display:flex;align-items:center;padding:0 12px;border-bottom:1px solid ' + border + ';background:' + surface + ';font:500 9.5px/1 ' + mono + ';letter-spacing:0.08em;text-transform:uppercase;color:' + muted,
+      sGutterRow: 'height:' + rowH + 'px;display:flex;align-items:center;padding:0 12px;border-bottom:1px solid ' + hair + ';font:500 ' + fs + 'px/1.2 ' + sans + ';color:' + text + ';white-space:nowrap;overflow:hidden;text-overflow:ellipsis',
+      sGutterRowLast: 'height:' + rowH + 'px;display:flex;align-items:center;padding:0 12px;font:500 ' + fs + 'px/1.2 ' + sans + ';color:' + text,
+      sAxis: 'height:30px;display:grid;grid-template-columns:repeat(6,1fr);background:' + surface + ';border-bottom:1px solid ' + border,
+      sAxisCell: 'padding-left:7px;display:flex;align-items:center;border-left:1px solid ' + border + ';font:500 ' + (fs - 1.5) + 'px/1 ' + mono + ';color:' + muted,
+      sBody: 'position:relative;height:' + rowH * 3 + 'px',
+      sColLines: 'position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);pointer-events:none',
+      sColLine: 'border-left:1px solid ' + hair,
+      sRowLines: 'position:absolute;inset:0;pointer-events:none',
+      sRowLine: 'height:' + rowH + 'px;border-bottom:1px solid ' + hair,
+      sNowLine: 'position:absolute;left:34%;top:0;bottom:0;width:1.5px;background:' + accent + ';z-index:3',
+      sEvent1: ev(7, 4, 30),
+      sEvent2: ev(rowH + 7, 20, 34),
+      sEvent3: 'position:absolute;top:' + (rowH * 2 + 7) + 'px;left:8%;width:22%;height:' + (rowH - 14) + 'px;border-radius:' + r + ';background:' + surface + ';border:1.5px solid ' + border + ';padding:0 9px;display:flex;align-items:center;z-index:2;overflow:hidden',
+      sEvent4: ev(rowH * 2 + 7, 44, 34),
+      sEventText: 'font:600 ' + fs + 'px/1.2 ' + sans + ';color:' + strong + ';white-space:nowrap;overflow:hidden;text-overflow:ellipsis',
+      sNeutralText: 'font:500 ' + fs + 'px/1.2 ' + sans + ';color:' + secondary,
+      sFooter: 'display:flex;align-items:center;justify-content:space-between;padding:9px 14px;border-top:1px solid ' + border + ';background:' + surface,
+      sFooterText: 'font:400 10.5px/1 ' + mono + ';color:' + muted,
+      sChip: 'padding:3px 8px;border-radius:999px;background:' + tint + ';color:' + strong + ';font:500 10px/1.35 ' + mono,
+      strong: strong,
+      setHex: e => { const v = e.target.value.trim(); if (/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(v)) this.setState({ accent: v }); },
+      swCustom: 'width:36px;height:36px;flex:none;padding:0;border:1.5px solid #e4e4e7;border-radius:9px;background:' + accent + ';cursor:pointer'
+    };
+  }
+}
+</script>
+</body>
+</html>

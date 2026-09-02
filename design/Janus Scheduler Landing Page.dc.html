@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ffffff;font-family:"DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#18181b;text-decoration:none}
+a:hover{color:#c2560a}
+*{box-sizing:border-box}
+::placeholder{color:#a1a1aa}
+</style>
+</helmet>
+
+<div style="width:1440px;margin:0 auto;background:#ffffff;color:#18181b">
+
+  <!-- ── NAV ─────────────────────────── -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.86);backdrop-filter:blur(14px);border-bottom:1px solid #e4e4e7">
+    <div style="height:64px;padding:0 40px;display:flex;align-items:center;gap:28px">
+      <a href="#" style="display:flex;align-items:center;gap:10px;flex:none">
+        <span style="width:20px;height:20px;border-radius:6px;background:#f97316;box-shadow:0 0 0 4px rgba(249,115,22,0.12)"></span>
+        <span style="font:700 16px/1 'DM Sans',sans-serif;letter-spacing:-0.02em">Janus<span style="color:#a1a1aa;font-weight:500">Scheduler</span></span>
+      </a>
+      <div style="display:flex;align-items:center;gap:22px">
+        <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">Docs</a>
+        <a href="#features" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">Features</a>
+        <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">Packages</a>
+        <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">FAQ</a>
+      </div>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;gap:8px;height:34px;padding:0 11px;width:236px;border:1.5px solid #e4e4e7;border-radius:9px;background:#f4f4f5" style-hover="border-color:#d4d4d8">
+        <span style="font:400 13px/1 'JetBrains Mono',monospace;color:#a1a1aa">⌕</span>
+        <input type="text" placeholder="Search the docs" style="flex:1;min-width:0;border:0;background:transparent;outline:none;font:400 13px/1 'DM Sans',sans-serif;color:#18181b">
+        <span style="padding:2px 5px;border-radius:5px;border:1px solid #e4e4e7;background:#ffffff;font:500 10.5px/1.3 'JetBrains Mono',monospace;color:#a1a1aa">⌘K</span>
+      </div>
+      <div style="display:flex;align-items:center;height:34px;border:1.5px solid #e4e4e7;border-radius:9px;overflow:hidden;background:#ffffff">
+        <span style="display:flex;align-items:center;gap:7px;padding:0 11px;height:100%;font:600 12.5px/1 'DM Sans',sans-serif;color:#18181b;cursor:pointer" style-hover="background:#f4f4f5">
+          <span style="font:400 12px/1 'JetBrains Mono',monospace;color:#52525b">★</span>Star
+        </span>
+        <span style="padding:0 11px;height:100%;display:flex;align-items:center;border-left:1.5px solid #e4e4e7;background:#f4f4f5;font:500 12.5px/1 'JetBrains Mono',monospace;color:#52525b">2,418</span>
+      </div>
+      <div onClick="{{ toggleTheme }}" style="width:56px;height:34px;flex:none;display:flex;align-items:center;padding:3px;gap:2px;border:1.5px solid #e4e4e7;border-radius:9px;background:#f4f4f5;cursor:pointer" title="Switch preview theme">
+        <span style="flex:1;height:100%;display:flex;align-items:center;justify-content:center;border-radius:6px;background:{{ sunBg }};font:400 12px/1 'JetBrains Mono',monospace;color:{{ sunFg }}">☀</span>
+        <span style="flex:1;height:100%;display:flex;align-items:center;justify-content:center;border-radius:6px;background:{{ moonBg }};font:400 12px/1 'JetBrains Mono',monospace;color:{{ moonFg }}">☾</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────── -->
+  <section style="padding:88px 40px 0;display:flex;flex-direction:column;align-items:center;text-align:center">
+    <span style="display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:999px;background:rgba(249,115,22,0.12);font:500 12px/1.35 'JetBrains Mono',monospace;color:#c2560a">
+      <span style="width:5px;height:5px;border-radius:50%;background:#f97316"></span>v2.4.0 · resource timeline is stable
+    </span>
+    <h1 style="margin:22px 0 0;max-width:19ch;font:700 68px/1.03 'DM Sans',sans-serif;letter-spacing:-0.032em;text-wrap:balance">Natural-language scheduling for any web app.</h1>
+    <p style="margin:24px 0 0;max-width:74ch;font:400 17.5px/1.6 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">Framework-agnostic Web Components with a resource timeline, month grid, drag-and-drop, timezone-aware conflict detection, browser-side NLP and Google Calendar sync.</p>
+    <div style="display:flex;gap:10px;margin-top:32px">
+      <button style="height:44px;padding:0 22px;border:0;border-radius:9px;background:#f97316;color:#ffffff;font:600 14.5px/1 'DM Sans',sans-serif;cursor:pointer" style-hover="background:#ea6a0a;box-shadow:0 0 0 4px rgba(249,115,22,0.12)" style-active="background:#c2560a">Get started</button>
+      <button style="height:44px;padding:0 20px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#18181b;font:600 14.5px/1 'DM Sans',sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:8px" style-hover="background:#f4f4f5;border-color:#d4d4d8"><span style="font:400 13px/1 'JetBrains Mono',monospace;color:#52525b">◍</span>View on GitHub</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:22px;padding:11px 14px;border:1.5px solid #e4e4e7;border-radius:9px;background:#f4f4f5">
+      <span style="font:400 13.5px/1 'JetBrains Mono',monospace;color:#f97316">$</span>
+      <span style="font:400 13.5px/1 'JetBrains Mono',monospace;color:#18181b">npm i @janus-scheduler/react</span>
+      <button onClick="{{ copyInstall }}" style="height:26px;padding:0 9px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#52525b;font:500 11px/1 'JetBrains Mono',monospace;cursor:pointer" style-hover="border-color:#d4d4d8;color:#18181b">{{ installLabel }}</button>
+    </div>
+  </section>
+
+  <!-- ── HERO VISUAL ─────────────────────────── -->
+  <section style="padding:56px 40px 0">
+    <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#f4f4f5;padding:20px;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 12px 10px 16px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <span style="font:400 15px/1 'JetBrains Mono',monospace;color:#f97316">✦</span>
+        <input type="text" placeholder="Try 'Schedule a design sync with Alex tomorrow at 10am in Room A'" style="flex:1;height:32px;border:0;background:transparent;outline:none;font:400 14.5px/1 'DM Sans',sans-serif;color:#18181b">
+        <span style="font:400 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">parsed locally</span>
+        <button style="height:34px;padding:0 16px;border:0;border-radius:9px;background:#f97316;color:#ffffff;font:600 13.5px/1 'DM Sans',sans-serif;cursor:pointer" style-hover="background:#ea6a0a">Schedule</button>
+      </div>
+
+      <div style="margin-top:16px;border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;overflow:hidden">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #e4e4e7">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="font:600 14px/1 'DM Sans',sans-serif">Thursday, 3 September</span>
+            <div style="display:inline-flex;padding:3px;gap:2px;background:#f4f4f5;border:1.5px solid #e4e4e7;border-radius:9px">
+              <span style="padding:5px 11px;border-radius:6px;background:#ffffff;color:#18181b;font:600 12px/1 'DM Sans',sans-serif;box-shadow:0 1px 2px rgba(0,0,0,0.06)">Timeline</span>
+              <span style="padding:5px 11px;border-radius:6px;color:#52525b;font:500 12px/1 'DM Sans',sans-serif">Week</span>
+              <span style="padding:5px 11px;border-radius:6px;color:#52525b;font:500 12px/1 'DM Sans',sans-serif">Month</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">Europe/Colombo · UTC+5:30</span>
+            <div style="display:inline-flex;align-items:center;border:1.5px solid #e4e4e7;border-radius:9px;overflow:hidden">
+              <span style="padding:5px 10px;font:500 12px/1 'JetBrains Mono',monospace;color:#52525b;cursor:pointer" style-hover="background:#f4f4f5">−</span>
+              <span style="padding:5px 10px;border-left:1.5px solid #e4e4e7;border-right:1.5px solid #e4e4e7;font:500 11.5px/1 'JetBrains Mono',monospace;color:#52525b">1 h</span>
+              <span style="padding:5px 10px;font:500 12px/1 'JetBrains Mono',monospace;color:#52525b;cursor:pointer" style-hover="background:#f4f4f5">+</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:212px 1fr">
+          <div style="border-right:1.5px solid #e4e4e7">
+            <div style="height:34px;display:flex;align-items:center;padding:0 16px;border-bottom:1px solid #e4e4e7;background:#f4f4f5;font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#a1a1aa">Resources</div>
+            <div style="height:52px;display:flex;align-items:center;gap:10px;padding:0 16px;border-bottom:1px solid #f4f4f5"><span style="width:24px;height:24px;border-radius:999px;background:#e4e4e7;display:flex;align-items:center;justify-content:center;font:600 10px/1 'JetBrains Mono',monospace;color:#52525b">AF</span><div style="display:flex;flex-direction:column;gap:2px"><span style="font:500 13px/1.2 'DM Sans',sans-serif">Alex Fernando</span><span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">Design</span></div></div>
+            <div style="height:52px;display:flex;align-items:center;gap:10px;padding:0 16px;border-bottom:1px solid #f4f4f5"><span style="width:24px;height:24px;border-radius:999px;background:#e4e4e7;display:flex;align-items:center;justify-content:center;font:600 10px/1 'JetBrains Mono',monospace;color:#52525b">NP</span><div style="display:flex;flex-direction:column;gap:2px"><span style="font:500 13px/1.2 'DM Sans',sans-serif">Nadeesha Perera</span><span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">Engineering</span></div></div>
+            <div style="height:52px;display:flex;align-items:center;gap:10px;padding:0 16px;border-bottom:1px solid #f4f4f5"><span style="width:24px;height:24px;border-radius:999px;background:#e4e4e7;display:flex;align-items:center;justify-content:center;font:600 10px/1 'JetBrains Mono',monospace;color:#52525b">CS</span><div style="display:flex;flex-direction:column;gap:2px"><span style="font:500 13px/1.2 'DM Sans',sans-serif">Chamath Silva</span><span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">Engineering</span></div></div>
+            <div style="height:52px;display:flex;align-items:center;gap:10px;padding:0 16px;border-bottom:1px solid #f4f4f5"><span style="width:24px;height:24px;border-radius:6px;background:#f4f4f5;border:1.5px solid #e4e4e7;display:flex;align-items:center;justify-content:center;font:600 10px/1 'JetBrains Mono',monospace;color:#52525b">A</span><div style="display:flex;flex-direction:column;gap:2px"><span style="font:500 13px/1.2 'DM Sans',sans-serif">Room A</span><span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">Seats 8 · display</span></div></div>
+            <div style="height:52px;display:flex;align-items:center;gap:10px;padding:0 16px"><span style="width:24px;height:24px;border-radius:6px;background:#f4f4f5;border:1.5px solid #e4e4e7;display:flex;align-items:center;justify-content:center;font:600 10px/1 'JetBrains Mono',monospace;color:#52525b">B</span><div style="display:flex;flex-direction:column;gap:2px"><span style="font:500 13px/1.2 'DM Sans',sans-serif">Room B</span><span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">Seats 20 · video</span></div></div>
+          </div>
+
+          <div style="position:relative">
+            <div style="height:34px;display:grid;grid-template-columns:repeat(10,1fr);border-bottom:1px solid #e4e4e7;background:#f4f4f5">
+              <span style="padding:0 0 0 8px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">08:00</span>
+              <span style="padding:0 0 0 8px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">09:00</span>
+              <span style="padding:0 0 0 8px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">10:00</span>
+              <span style="padding:0 0 0 8px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">11:00</span>
+              <span style="padding:0 0 0 8px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">12:00</span>
+              <span style="padding:0 0 0 8px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">13:00</span>
+              <span style="padding:0 0 0 8px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">14:00</span>
+              <span style="padding:0 0 0 8px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">15:00</span>
+              <span style="padding:0 0 0 8px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">16:00</span>
+              <span style="padding:0 0 0 8px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">17:00</span>
+            </div>
+
+            <div style="position:relative;height:260px">
+              <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(10,1fr);pointer-events:none">
+                <span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5;background:#fafafa"></span><span style="border-left:1px solid #f4f4f5;background:#fafafa"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span>
+              </div>
+              <div style="position:absolute;inset:0;pointer-events:none">
+                <div style="height:52px;border-bottom:1px solid #f4f4f5"></div><div style="height:52px;border-bottom:1px solid #f4f4f5"></div><div style="height:52px;border-bottom:1px solid #f4f4f5"></div><div style="height:52px;border-bottom:1px solid #f4f4f5"></div>
+              </div>
+
+              <div style="position:absolute;left:32%;top:0;bottom:0;width:1.5px;background:#f97316;z-index:3">
+                <span style="position:absolute;top:-1px;left:-4px;width:9px;height:9px;border-radius:999px;background:#f97316"></span>
+                <span style="position:absolute;top:12px;left:8px;padding:2px 6px;border-radius:5px;background:#f97316;color:#ffffff;font:600 9.5px/1.3 'JetBrains Mono',monospace;white-space:nowrap">now 11:15</span>
+              </div>
+
+              <div style="position:absolute;top:8px;left:1%;width:19%;height:36px;border-radius:9px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316;padding:6px 9px;display:flex;flex-direction:column;gap:2px;z-index:2;cursor:grab"><span style="font:600 11.5px/1.2 'DM Sans',sans-serif;color:#7c3a06;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Design sync · Room A</span><span style="font:400 10px/1 'JetBrains Mono',monospace;color:#c2560a">08:00 – 09:50</span></div>
+              <div style="position:absolute;top:8px;left:41%;width:14%;height:36px;border-radius:9px;background:oklch(0.93 0.045 240);border:1.5px solid oklch(0.62 0.12 240);padding:6px 9px;display:flex;flex-direction:column;gap:2px;z-index:2"><span style="font:600 11.5px/1.2 'DM Sans',sans-serif;color:oklch(0.38 0.09 240);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">1:1 Nadeesha</span><span style="font:400 10px/1 'JetBrains Mono',monospace;color:oklch(0.52 0.1 240)">12:00 – 13:20</span></div>
+              <div style="position:absolute;top:8px;left:70%;width:22%;height:36px;border-radius:9px;background:#f4f4f5;border:1.5px dashed #a1a1aa;padding:6px 9px;display:flex;align-items:center;z-index:2"><span style="font:500 11px/1.2 'JetBrains Mono',monospace;color:#52525b">Focus block (tentative)</span></div>
+
+              <div style="position:absolute;top:60px;left:11%;width:20%;height:36px;border-radius:9px;background:oklch(0.93 0.045 165);border:1.5px solid oklch(0.62 0.12 165);padding:6px 9px;display:flex;flex-direction:column;gap:2px;z-index:2"><span style="font:600 11.5px/1.2 'DM Sans',sans-serif;color:oklch(0.36 0.08 165);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Sprint planning</span><span style="font:400 10px/1 'JetBrains Mono',monospace;color:oklch(0.5 0.1 165)">09:00 – 11:00</span></div>
+              <div style="position:absolute;top:60px;left:41%;width:14%;height:36px;border-radius:9px;background:oklch(0.93 0.045 240);border:1.5px solid oklch(0.62 0.12 240);padding:6px 9px;display:flex;flex-direction:column;gap:2px;z-index:2"><span style="font:600 11.5px/1.2 'DM Sans',sans-serif;color:oklch(0.38 0.09 240);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">1:1 Alex</span><span style="font:400 10px/1 'JetBrains Mono',monospace;color:oklch(0.52 0.1 240)">12:00 – 13:20</span></div>
+
+              <div style="position:absolute;top:112px;left:22%;width:17%;height:36px;border-radius:9px;background:oklch(0.93 0.045 165);border:1.5px solid oklch(0.62 0.12 165);padding:6px 9px;display:flex;flex-direction:column;gap:2px;z-index:2"><span style="font:600 11.5px/1.2 'DM Sans',sans-serif;color:oklch(0.36 0.08 165);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Code review</span><span style="font:400 10px/1 'JetBrains Mono',monospace;color:oklch(0.5 0.1 165)">10:15 – 11:55</span></div>
+              <div style="position:absolute;top:112px;left:61%;width:12%;height:36px;border-radius:9px;background:#f4f4f5;border:1.5px solid #e4e4e7;padding:6px 9px;display:flex;align-items:center;z-index:2"><span style="font:500 11px/1.2 'DM Sans',sans-serif;color:#52525b">Lunch</span></div>
+
+              <div style="position:absolute;top:164px;left:1%;width:19%;height:36px;border-radius:9px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316;padding:6px 9px;display:flex;flex-direction:column;gap:2px;z-index:2"><span style="font:600 11.5px/1.2 'DM Sans',sans-serif;color:#7c3a06;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Design sync</span><span style="font:400 10px/1 'JetBrains Mono',monospace;color:#c2560a">08:00 – 09:50</span></div>
+              <div style="position:absolute;top:164px;left:52%;width:16%;height:36px;border-radius:9px;background:oklch(0.94 0.05 55);border:1.5px solid oklch(0.66 0.13 55);padding:6px 9px;display:flex;flex-direction:column;gap:2px;z-index:2"><span style="font:600 11.5px/1.2 'DM Sans',sans-serif;color:oklch(0.38 0.08 55);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Client workshop</span><span style="font:400 10px/1 'JetBrains Mono',monospace;color:oklch(0.52 0.11 55)">13:10 – 14:50</span></div>
+
+              <div style="position:absolute;top:216px;left:31%;width:24%;height:36px;border-radius:9px;background:oklch(0.93 0.045 240);border:1.5px solid oklch(0.62 0.12 240);padding:6px 9px;display:flex;flex-direction:column;gap:2px;z-index:2"><span style="font:600 11.5px/1.2 'DM Sans',sans-serif;color:oklch(0.38 0.09 240);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">All-hands</span><span style="font:400 10px/1 'JetBrains Mono',monospace;color:oklch(0.52 0.1 240)">11:00 – 13:20</span></div>
+              <div style="position:absolute;top:216px;left:57%;width:15%;height:36px;border-radius:9px;background:#18181b;border:1.5px solid #18181b;padding:6px 9px;display:flex;flex-direction:column;gap:2px;z-index:2"><span style="font:600 11.5px/1.2 'DM Sans',sans-serif;color:#fafafa;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Conflict · 2 events</span><span style="font:400 10px/1 'JetBrains Mono',monospace;color:#a1a1aa">13:40 – 15:10</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BADGE STRIP ─────────────────────────── -->
+  <section style="padding:36px 40px 0">
+    <div style="display:flex;align-items:center;justify-content:center;gap:34px;padding:18px 24px;border-top:1px solid #e4e4e7;border-bottom:1px solid #e4e4e7">
+      <div style="display:flex;gap:8px">
+        <span style="padding:4px 10px;border-radius:999px;background:rgba(249,115,22,0.12);color:#c2560a;font:500 12px/1.35 'JetBrains Mono',monospace">npm v2.4.0</span>
+        <span style="padding:4px 10px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 12px/1.35 'JetBrains Mono',monospace">MIT licence</span>
+        <span style="padding:4px 10px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 12px/1.35 'JetBrains Mono',monospace">14.2 kB min+gzip</span>
+      </div>
+      <span style="width:1px;height:22px;background:#e4e4e7"></span>
+      <div style="display:flex;align-items:center;gap:26px">
+        <span style="font:600 14.5px/1 'DM Sans',sans-serif;color:#a1a1aa;letter-spacing:-0.01em">React</span>
+        <span style="font:600 14.5px/1 'DM Sans',sans-serif;color:#a1a1aa;letter-spacing:-0.01em">Angular</span>
+        <span style="font:600 14.5px/1 'DM Sans',sans-serif;color:#a1a1aa;letter-spacing:-0.01em">Solid</span>
+        <span style="font:600 14.5px/1 'DM Sans',sans-serif;color:#a1a1aa;letter-spacing:-0.01em">Vue</span>
+        <span style="font:600 14.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">Vanilla JS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROBLEM ─────────────────────────── -->
+  <section style="padding:96px 40px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+    <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">The state of scheduling components</span>
+    <p style="margin:8px 0 0;font:600 30px/1.35 'DM Sans',sans-serif;letter-spacing:-0.02em;max-width:28ch">Every scheduler is locked to one framework.</p>
+    <p style="margin:0;font:600 30px/1.35 'DM Sans',sans-serif;letter-spacing:-0.02em;color:#a1a1aa;max-width:34ch">The good ones are commercially licensed.</p>
+    <p style="margin:0;font:600 30px/1.35 'DM Sans',sans-serif;letter-spacing:-0.02em;color:#a1a1aa;max-width:34ch">And almost all of them need a backend.</p>
+  </section>
+
+  <!-- ── FEATURES ─────────────────────────── -->
+  <section id="features" style="padding:0 40px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:26px">
+      <h2 style="margin:0;font:700 34px/1.15 'DM Sans',sans-serif;letter-spacing:-0.025em">Everything a scheduler owes you</h2>
+      <a href="#" style="font:600 13.5px/1 'JetBrains Mono',monospace;color:#c2560a">All features →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px;cursor:default" style-hover="border-color:#f97316;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="width:22px;height:22px;border-radius:6px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316"></div>
+        <span style="font:600 17px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Resource timeline</span>
+        <p style="margin:0;font:400 14px/1.6 'DM Sans',sans-serif;color:#52525b">Rows for people, rooms or machines against a zoomable time axis, from five minutes to a full quarter.</p>
+        <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa;margin-top:2px">view="timeline"</span>
+      </div>
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#f97316;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="width:22px;height:22px;border-radius:6px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316"></div>
+        <span style="font:600 17px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Month grid</span>
+        <p style="margin:0;font:400 14px/1.6 'DM Sans',sans-serif;color:#52525b">A dense month view with overflow chips, week numbers and locale-correct first day of week.</p>
+        <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa;margin-top:2px">view="month"</span>
+      </div>
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#f97316;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="width:22px;height:22px;border-radius:6px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316"></div>
+        <span style="font:600 17px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Drag to create, move and resize</span>
+        <p style="margin:0;font:400 14px/1.6 'DM Sans',sans-serif;color:#52525b">Pointer and keyboard driven, with configurable snapping and an optimistic rollback if your handler rejects.</p>
+        <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa;margin-top:2px">snapMinutes={15}</span>
+      </div>
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#f97316;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="width:22px;height:22px;border-radius:6px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316"></div>
+        <span style="font:600 17px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Timezone-aware</span>
+        <p style="margin:0;font:400 14px/1.6 'DM Sans',sans-serif;color:#52525b">Events are stored as UTC instants and rendered in a display zone, so daylight-saving shifts never move a meeting.</p>
+        <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa;margin-top:2px">timeZone="Asia/Colombo"</span>
+      </div>
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#f97316;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="width:22px;height:22px;border-radius:6px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316"></div>
+        <span style="font:600 17px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Conflict detection</span>
+        <p style="margin:0;font:400 14px/1.6 'DM Sans',sans-serif;color:#52525b">Overlaps per resource are computed as you drag, across zones, and surfaced before the drop commits.</p>
+        <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa;margin-top:2px">onConflict={…}</span>
+      </div>
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#f97316;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="width:22px;height:22px;border-radius:6px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316"></div>
+        <span style="font:600 17px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Recurring events</span>
+        <p style="margin:0;font:400 14px/1.6 'DM Sans',sans-serif;color:#52525b">RFC 5545 rules expanded in a worker, with per-instance exceptions and "this event or all following".</p>
+        <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa;margin-top:2px">rrule="FREQ=WEEKLY"</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NLP ─────────────────────────── -->
+  <section style="padding:104px 40px 0">
+    <div style="display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Natural language</span>
+        <h2 style="margin:0;font:700 42px/1.1 'DM Sans',sans-serif;letter-spacing:-0.028em;max-width:16ch">Type it, don't build it</h2>
+        <p style="margin:0;font:400 16px/1.65 'DM Sans',sans-serif;color:#52525b;max-width:48ch;text-wrap:pretty">A compact grammar-based parser turns a sentence into a structured event: dates, times, durations, participants and locations, resolved against the display time zone and your resource list. It ships as part of the bundle and runs on the main thread in under a millisecond.</p>
+        <div style="display:flex;flex-direction:column;gap:11px;margin-top:4px">
+          <span style="display:flex;align-items:center;gap:10px;font:500 14.5px/1.3 'DM Sans',sans-serif"><span style="width:18px;height:18px;flex:none;border-radius:999px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316;display:flex;align-items:center;justify-content:center;font:700 9px/1 'JetBrains Mono',monospace;color:#c2560a">✓</span>Runs entirely in the browser</span>
+          <span style="display:flex;align-items:center;gap:10px;font:500 14.5px/1.3 'DM Sans',sans-serif"><span style="width:18px;height:18px;flex:none;border-radius:999px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316;display:flex;align-items:center;justify-content:center;font:700 9px/1 'JetBrains Mono',monospace;color:#c2560a">✓</span>No API key required</span>
+          <span style="display:flex;align-items:center;gap:10px;font:500 14.5px/1.3 'DM Sans',sans-serif"><span style="width:18px;height:18px;flex:none;border-radius:999px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316;display:flex;align-items:center;justify-content:center;font:700 9px/1 'JetBrains Mono',monospace;color:#c2560a">✓</span>No data leaves the device</span>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#f4f4f5;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,0.08);display:flex;flex-direction:column;gap:22px">
+        <div style="padding:18px 20px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;font:400 18px/1.9 'DM Sans',sans-serif;color:#18181b">
+          Schedule a <span style="box-shadow:inset 0 -8px 0 rgba(249,115,22,0.12)">design sync</span> with <span style="box-shadow:inset 0 -8px 0 oklch(0.93 0.045 240)">Alex</span> <span style="box-shadow:inset 0 -8px 0 oklch(0.93 0.045 165)">tomorrow</span> at <span style="box-shadow:inset 0 -8px 0 oklch(0.94 0.05 55)">10am</span> in <span style="box-shadow:inset 0 -8px 0 oklch(0.93 0.05 300)">Room A</span>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:9px">
+          <div style="display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:9px;background:#ffffff;border:1.5px solid oklch(0.62 0.12 165)"><span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.5 0.1 165)">date</span><span style="font:500 12.5px/1 'JetBrains Mono',monospace;color:#18181b">2026-08-30</span></div>
+          <div style="display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:9px;background:#ffffff;border:1.5px solid oklch(0.66 0.13 55)"><span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.52 0.11 55)">time</span><span style="font:500 12.5px/1 'JetBrains Mono',monospace;color:#18181b">10:00 – 11:00</span></div>
+          <div style="display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:9px;background:#ffffff;border:1.5px solid oklch(0.62 0.12 240)"><span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.52 0.1 240)">participant</span><span style="font:500 12.5px/1 'JetBrains Mono',monospace;color:#18181b">alex.f</span></div>
+          <div style="display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:9px;background:#ffffff;border:1.5px solid oklch(0.62 0.12 300)"><span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.5 0.11 300)">location</span><span style="font:500 12.5px/1 'JetBrains Mono',monospace;color:#18181b">room-a</span></div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:14px">
+          <span style="flex:1;height:1.5px;background:#e4e4e7"></span>
+          <span style="font:400 13px/1 'JetBrains Mono',monospace;color:#a1a1aa">↓ committed</span>
+          <span style="flex:1;height:1.5px;background:#e4e4e7"></span>
+        </div>
+
+        <div style="border-radius:9px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316;padding:12px 14px;display:flex;align-items:center;justify-content:space-between">
+          <div style="display:flex;flex-direction:column;gap:3px">
+            <span style="font:600 14px/1.2 'DM Sans',sans-serif;color:#7c3a06">Design sync · Alex Fernando</span>
+            <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#c2560a">Sun 30 Aug · 10:00 – 11:00 · Room A</span>
+          </div>
+          <span style="padding:3px 8px;border-radius:999px;background:#ffffff;font:500 10.5px/1.3 'JetBrains Mono',monospace;color:#c2560a">no conflicts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GOOGLE CALENDAR ─────────────────────────── -->
+  <section style="padding:104px 40px 0">
+    <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center">
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#f4f4f5;padding:34px 28px;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="display:grid;grid-template-columns:1fr 132px 1fr;align-items:center;gap:0">
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;padding:18px;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:5px;background:#f97316"></span><span style="font:600 13px/1 'DM Sans',sans-serif">Janus calendar</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span style="height:22px;border-radius:6px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316"></span>
+              <span style="height:22px;border-radius:6px;background:oklch(0.93 0.045 240);border:1.5px solid oklch(0.62 0.12 240)"></span>
+              <span style="height:22px;border-radius:6px;background:#f4f4f5;border:1.5px solid #e4e4e7"></span>
+            </div>
+            <span style="font:400 10.5px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">local state · source of truth</span>
+          </div>
+
+          <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 12px">
+            <div style="width:100%;display:flex;align-items:center;gap:6px">
+              <span style="flex:1;height:1.5px;background:#f97316"></span>
+              <span style="font:400 12px/1 'JetBrains Mono',monospace;color:#f97316">▶</span>
+            </div>
+            <span style="padding:4px 9px;border-radius:999px;background:#ffffff;border:1.5px solid #e4e4e7;font:500 10.5px/1.3 'JetBrains Mono',monospace;color:#52525b">two-way sync</span>
+            <div style="width:100%;display:flex;align-items:center;gap:6px">
+              <span style="font:400 12px/1 'JetBrains Mono',monospace;color:#52525b">◀</span>
+              <span style="flex:1;height:1.5px;background:#a1a1aa"></span>
+            </div>
+            <span style="font:400 10px/1.4 'JetBrains Mono',monospace;color:#a1a1aa;text-align:center">incremental<br>syncToken</span>
+          </div>
+
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;padding:18px;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:5px;background:#e4e4e7;border:1.5px solid #a1a1aa"></span><span style="font:600 13px/1 'DM Sans',sans-serif">Google Calendar</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span style="height:22px;border-radius:6px;background:#f4f4f5;border:1.5px solid #e4e4e7"></span>
+              <span style="height:22px;border-radius:6px;background:#f4f4f5;border:1.5px solid #e4e4e7"></span>
+              <span style="height:22px;border-radius:6px;background:#f4f4f5;border:1.5px solid #e4e4e7"></span>
+            </div>
+            <span style="font:400 10.5px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">OAuth 2.0 · events.watch</span>
+          </div>
+        </div>
+        <div style="margin-top:22px;padding-top:16px;border-top:1px solid #e4e4e7;display:flex;justify-content:space-between">
+          <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#52525b">conflict policy: last-write-wins, per field</span>
+          <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#52525b">delta poll: 30 s</span>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Google Calendar sync</span>
+        <h2 style="margin:0;font:700 42px/1.1 'DM Sans',sans-serif;letter-spacing:-0.028em;max-width:17ch">One calendar, two directions</h2>
+        <p style="margin:0;font:400 16px/1.65 'DM Sans',sans-serif;color:#52525b;max-width:48ch;text-wrap:pretty">Connect a Google account and Janus keeps both sides current: an incremental sync token pulls remote changes, local edits push straight back. Field-level merging means a title edited here and a time moved there do not overwrite each other.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px;border:1.5px solid #e4e4e7;border-radius:14px;background:#f4f4f5">
+          <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#52525b">Limitation</span>
+          <p style="margin:0;font:400 13.5px/1.6 'DM Sans',sans-serif;color:#52525b">The sync adapter needs a token endpoint of your own — Janus never holds a client secret in the browser.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FRAMEWORK TABS ─────────────────────────── -->
+  <section style="padding:128px 40px 0">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;margin-bottom:44px">
+      <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Integration</span>
+      <h2 style="margin:0;font:700 48px/1.08 'DM Sans',sans-serif;letter-spacing:-0.03em;max-width:24ch">The same component, in the framework you already use</h2>
+      <p style="margin:0;max-width:62ch;font:400 17px/1.6 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">One Lit core, thin wrappers. Props, events and theming are identical everywhere — the wrappers exist only to make the ergonomics native.</p>
+    </div>
+
+    <div style="border:1.5px solid #e4e4e7;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7">
+        <div style="display:flex">
+          <span onClick="{{ pickReact }}" style="{{ tabReact }}">React</span>
+          <span onClick="{{ pickAngular }}" style="{{ tabAngular }}">Angular</span>
+          <span onClick="{{ pickSolid }}" style="{{ tabSolid }}">Solid</span>
+          <span onClick="{{ pickVue }}" style="{{ tabVue }}">Vue</span>
+          <span onClick="{{ pickVanilla }}" style="{{ tabVanilla }}">Vanilla</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">{{ pkgName }}</span>
+          <button onClick="{{ copySnippet }}" style="height:26px;padding:0 9px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#52525b;font:500 11px/1 'JetBrains Mono',monospace;cursor:pointer" style-hover="border-color:#d4d4d8;color:#18181b">{{ snippetLabel }}</button>
+        </div>
+      </div>
+
+      <div style="background:#18181b;min-height:392px;display:flex">
+        <div style="width:60px;flex:none;padding:26px 0;border-right:1px solid #27272a;display:flex;flex-direction:column;align-items:flex-end;gap:0;font:400 13px/1.85 'JetBrains Mono',monospace;color:#3f3f46">
+          <span style="padding-right:16px">1</span><span style="padding-right:16px">2</span><span style="padding-right:16px">3</span><span style="padding-right:16px">4</span><span style="padding-right:16px">5</span><span style="padding-right:16px">6</span><span style="padding-right:16px">7</span><span style="padding-right:16px">8</span><span style="padding-right:16px">9</span><span style="padding-right:16px">10</span><span style="padding-right:16px">11</span>
+        </div>
+        <div style="flex:1;padding:26px 28px;overflow-x:auto">
+          <sc-if value="{{ isReact }}" hint-placeholder-val="{{ true }}">
+            <pre style="margin:0;font:400 13.5px/1.85 'JetBrains Mono',monospace;color:#e4e4e7"><div><span style="color:#f97316">import</span> { JanusScheduler } <span style="color:#f97316">from</span> <span style="color:#a3e635">'@janus-scheduler/react'</span></div><div>&#8203;</div><div><span style="color:#f97316">export function</span> <span style="color:#7dd3fc">Calendar</span>({ events }) {</div><div>  <span style="color:#f97316">return</span> (</div><div>    <span style="color:#a1a1aa">&lt;</span><span style="color:#7dd3fc">JanusScheduler</span></div><div>      view<span style="color:#a1a1aa">=</span><span style="color:#a3e635">"timeline"</span></div><div>      events<span style="color:#a1a1aa">=</span>{events}</div><div>      timeZone<span style="color:#a1a1aa">=</span><span style="color:#a3e635">"Asia/Colombo"</span></div><div>      onEventDrop<span style="color:#a1a1aa">=</span>{(e) <span style="color:#a1a1aa">=&gt;</span> persist(e)}</div><div>    <span style="color:#a1a1aa">/&gt;</span></div><div>  )</div><div>}</div></pre>
+          </sc-if>
+          <sc-if value="{{ isAngular }}">
+            <pre style="margin:0;font:400 13.5px/1.85 'JetBrains Mono',monospace;color:#e4e4e7"><div><span style="color:#f97316">import</span> { JanusSchedulerModule } <span style="color:#f97316">from</span> <span style="color:#a3e635">'@janus-scheduler/angular'</span></div><div>&#8203;</div><div><span style="color:#52525b">// calendar.component.html</span></div><div><span style="color:#a1a1aa">&lt;</span><span style="color:#7dd3fc">janus-scheduler</span></div><div>  view<span style="color:#a1a1aa">=</span><span style="color:#a3e635">"timeline"</span></div><div>  [events]<span style="color:#a1a1aa">=</span><span style="color:#a3e635">"events"</span></div><div>  timeZone<span style="color:#a1a1aa">=</span><span style="color:#a3e635">"Asia/Colombo"</span></div><div>  (eventDrop)<span style="color:#a1a1aa">=</span><span style="color:#a3e635">"persist($event)"</span><span style="color:#a1a1aa">&gt;</span></div><div><span style="color:#a1a1aa">&lt;/</span><span style="color:#7dd3fc">janus-scheduler</span><span style="color:#a1a1aa">&gt;</span></div></pre>
+          </sc-if>
+          <sc-if value="{{ isSolid }}">
+            <pre style="margin:0;font:400 13.5px/1.85 'JetBrains Mono',monospace;color:#e4e4e7"><div><span style="color:#f97316">import</span> { JanusScheduler } <span style="color:#f97316">from</span> <span style="color:#a3e635">'@janus-scheduler/solid'</span></div><div>&#8203;</div><div><span style="color:#f97316">export function</span> <span style="color:#7dd3fc">Calendar</span>(props) {</div><div>  <span style="color:#f97316">return</span> (</div><div>    <span style="color:#a1a1aa">&lt;</span><span style="color:#7dd3fc">JanusScheduler</span></div><div>      view<span style="color:#a1a1aa">=</span><span style="color:#a3e635">"timeline"</span></div><div>      events<span style="color:#a1a1aa">=</span>{props.events}</div><div>      timeZone<span style="color:#a1a1aa">=</span><span style="color:#a3e635">"Asia/Colombo"</span></div><div>      onEventDrop<span style="color:#a1a1aa">=</span>{persist}</div><div>    <span style="color:#a1a1aa">/&gt;</span></div><div>  )</div><div>}</div></pre>
+          </sc-if>
+          <sc-if value="{{ isVue }}">
+            <pre style="margin:0;font:400 13.5px/1.85 'JetBrains Mono',monospace;color:#e4e4e7"><div><span style="color:#a1a1aa">&lt;</span><span style="color:#7dd3fc">script setup</span><span style="color:#a1a1aa">&gt;</span></div><div><span style="color:#f97316">import</span> { JanusScheduler } <span style="color:#f97316">from</span> <span style="color:#a3e635">'@janus-scheduler/vue'</span></div><div><span style="color:#f97316">const</span> events <span style="color:#a1a1aa">=</span> useEvents()</div><div><span style="color:#a1a1aa">&lt;/</span><span style="color:#7dd3fc">script</span><span style="color:#a1a1aa">&gt;</span></div><div>&#8203;</div><div><span style="color:#a1a1aa">&lt;</span><span style="color:#7dd3fc">JanusScheduler</span></div><div>  view<span style="color:#a1a1aa">=</span><span style="color:#a3e635">"timeline"</span></div><div>  :events<span style="color:#a1a1aa">=</span><span style="color:#a3e635">"events"</span></div><div>  time-zone<span style="color:#a1a1aa">=</span><span style="color:#a3e635">"Asia/Colombo"</span></div><div>  @event-drop<span style="color:#a1a1aa">=</span><span style="color:#a3e635">"persist"</span> <span style="color:#a1a1aa">/&gt;</span></div></pre>
+          </sc-if>
+          <sc-if value="{{ isVanilla }}">
+            <pre style="margin:0;font:400 13.5px/1.85 'JetBrains Mono',monospace;color:#e4e4e7"><div><span style="color:#f97316">import</span> <span style="color:#a3e635">'@janus-scheduler/ui'</span></div><div>&#8203;</div><div><span style="color:#f97316">const</span> el <span style="color:#a1a1aa">=</span> document<span style="color:#a1a1aa">.</span>createElement(<span style="color:#a3e635">'janus-scheduler'</span>)</div><div>el<span style="color:#a1a1aa">.</span>view <span style="color:#a1a1aa">=</span> <span style="color:#a3e635">'timeline'</span></div><div>el<span style="color:#a1a1aa">.</span>events <span style="color:#a1a1aa">=</span> <span style="color:#f97316">await</span> loadEvents()</div><div>el<span style="color:#a1a1aa">.</span>timeZone <span style="color:#a1a1aa">=</span> <span style="color:#a3e635">'Asia/Colombo'</span></div><div>&#8203;</div><div>el<span style="color:#a1a1aa">.</span>addEventListener(<span style="color:#a3e635">'event-drop'</span><span style="color:#a1a1aa">,</span> (e) <span style="color:#a1a1aa">=&gt;</span> {</div><div>  persist(e<span style="color:#a1a1aa">.</span>detail)</div><div>})</div><div>document<span style="color:#a1a1aa">.</span>body<span style="color:#a1a1aa">.</span>append(el)</div></pre>
+          </sc-if>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-top:1.5px solid #e4e4e7;background:#ffffff">
+        <span style="font:400 12.5px/1 'DM Sans',sans-serif;color:#52525b">Identical props and events across all five wrappers.</span>
+        <div style="display:flex;gap:8px">
+          <span style="padding:4px 10px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 11.5px/1.35 'JetBrains Mono',monospace">SSR safe</span>
+          <span style="padding:4px 10px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 11.5px/1.35 'JetBrains Mono',monospace">Typed events</span>
+          <span style="padding:4px 10px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 11.5px/1.35 'JetBrains Mono',monospace">Tree-shakeable</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THEMING ─────────────────────────── -->
+  <section style="padding:112px 40px 0">
+    <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center">
+      <div style="border:1.5px solid {{ prevBorder }};border-radius:14px;background:{{ prevBg }};padding:18px;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <span style="font:600 13px/1 'DM Sans',sans-serif;color:{{ prevText }}">September 2026</span>
+          <div style="display:inline-flex;padding:3px;gap:2px;background:{{ prevSurface }};border:1.5px solid {{ prevBorder }};border-radius:9px">
+            <span style="padding:4px 9px;border-radius:6px;background:{{ prevActiveBg }};color:{{ prevText }};font:600 11px/1 'DM Sans',sans-serif">Week</span>
+            <span style="padding:4px 9px;border-radius:6px;color:{{ prevMuted }};font:500 11px/1 'DM Sans',sans-serif">Month</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:44px repeat(5,1fr);gap:0">
+          <span></span>
+          <span style="padding-bottom:8px;font:500 10.5px/1 'JetBrains Mono',monospace;color:{{ prevMuted }};text-align:center">MON</span>
+          <span style="padding-bottom:8px;font:500 10.5px/1 'JetBrains Mono',monospace;color:{{ prevMuted }};text-align:center">TUE</span>
+          <span style="padding-bottom:8px;font:500 10.5px/1 'JetBrains Mono',monospace;color:{{ prevMuted }};text-align:center">WED</span>
+          <span style="padding-bottom:8px;font:500 10.5px/1 'JetBrains Mono',monospace;color:{{ prevMuted }};text-align:center">THU</span>
+          <span style="padding-bottom:8px;font:500 10.5px/1 'JetBrains Mono',monospace;color:{{ prevMuted }};text-align:center">FRI</span>
+        </div>
+        <div style="display:grid;grid-template-columns:44px repeat(5,1fr);border-top:1px solid {{ prevBorder }}">
+          <div style="display:flex;flex-direction:column;font:400 10px/1 'JetBrains Mono',monospace;color:{{ prevMuted }}">
+            <span style="height:38px;padding:4px 8px 0 0;text-align:right;border-bottom:1px solid {{ prevHairline }}">09:00</span>
+            <span style="height:38px;padding:4px 8px 0 0;text-align:right;border-bottom:1px solid {{ prevHairline }}">10:00</span>
+            <span style="height:38px;padding:4px 8px 0 0;text-align:right;border-bottom:1px solid {{ prevHairline }}">11:00</span>
+            <span style="height:38px;padding:4px 8px 0 0;text-align:right">12:00</span>
+          </div>
+          <div style="position:relative;border-left:1px solid {{ prevHairline }};height:152px">
+            <span style="position:absolute;top:4px;left:3px;right:3px;height:52px;border-radius:9px;background:{{ prevAccentTint }};border:1.5px solid #f97316"></span>
+          </div>
+          <div style="position:relative;border-left:1px solid {{ prevHairline }};height:152px">
+            <span style="position:absolute;top:42px;left:3px;right:3px;height:34px;border-radius:9px;background:{{ prevSurface }};border:1.5px solid {{ prevBorder }}"></span>
+          </div>
+          <div style="position:relative;border-left:1px solid {{ prevHairline }};height:152px">
+            <span style="position:absolute;top:80px;left:3px;right:3px;height:52px;border-radius:9px;background:{{ prevAccentTint }};border:1.5px solid #f97316"></span>
+          </div>
+          <div style="position:relative;border-left:1px solid {{ prevHairline }};height:152px">
+            <span style="position:absolute;top:4px;left:3px;right:3px;height:34px;border-radius:9px;background:{{ prevSurface }};border:1.5px solid {{ prevBorder }}"></span>
+          </div>
+          <div style="position:relative;border-left:1px solid {{ prevHairline }};height:152px">
+            <span style="position:absolute;top:56px;left:3px;right:3px;height:70px;border-radius:9px;background:{{ prevAccentTint }};border:1.5px solid #f97316"></span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Theming</span>
+        <h2 style="margin:0;font:700 42px/1.1 'DM Sans',sans-serif;letter-spacing:-0.028em;max-width:18ch">Twelve custom properties, no build step</h2>
+        <p style="margin:0;font:400 16px/1.65 'DM Sans',sans-serif;color:#52525b;max-width:46ch;text-wrap:pretty">Colour, radius and density are plain CSS custom properties on the host element. Change them at runtime, scope them per calendar, or leave them alone and inherit your own tokens.</p>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#a1a1aa">Accent</span>
+          <div style="display:flex;gap:9px;align-items:center">
+            <span style="width:34px;height:34px;border-radius:9px;background:#f97316;box-shadow:0 0 0 3px rgba(249,115,22,0.12);cursor:pointer"></span>
+            <span style="width:34px;height:34px;border-radius:9px;background:oklch(0.62 0.12 240);cursor:pointer"></span>
+            <span style="width:34px;height:34px;border-radius:9px;background:oklch(0.62 0.12 165);cursor:pointer"></span>
+            <span style="width:34px;height:34px;border-radius:9px;background:oklch(0.62 0.12 300);cursor:pointer"></span>
+            <span style="width:34px;height:34px;border-radius:9px;background:#18181b;cursor:pointer"></span>
+            <span style="width:1px;height:26px;background:#e4e4e7;margin:0 4px"></span>
+            <div onClick="{{ toggleTheme }}" style="display:inline-flex;padding:3px;gap:2px;background:#f4f4f5;border:1.5px solid #e4e4e7;border-radius:9px;cursor:pointer">
+              <span style="padding:6px 12px;border-radius:6px;background:{{ sunBg }};color:{{ sunFg }};font:600 11.5px/1 'DM Sans',sans-serif">Light</span>
+              <span style="padding:6px 12px;border-radius:6px;background:{{ moonBg }};color:{{ moonFg }};font:600 11.5px/1 'DM Sans',sans-serif">Dark</span>
+            </div>
+          </div>
+          <span style="font:400 12px/1.5 'JetBrains Mono',monospace;color:#a1a1aa;margin-top:2px">--janus-accent · --janus-radius · --janus-row-height</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PERFORMANCE ─────────────────────────── -->
+  <section style="padding:112px 40px 0">
+    <div style="background:#09090b;border-radius:14px;padding:56px 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font:700 60px/1 'DM Sans',sans-serif;letter-spacing:-0.035em;color:#fafafa">14.2<span style="font-size:26px;color:#f97316"> kB</span></span>
+        <span style="font:500 14px/1.4 'DM Sans',sans-serif;color:#fafafa">Core plus timeline, min+gzip</span>
+        <span style="font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">no dependencies, no polyfills</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding-left:32px;border-left:1px solid #27272a">
+        <span style="font:700 60px/1 'DM Sans',sans-serif;letter-spacing:-0.035em;color:#fafafa">10k<span style="font-size:26px;color:#f97316"> events</span></span>
+        <span style="font:500 14px/1.4 'DM Sans',sans-serif;color:#fafafa">Scrolled at 60 fps, virtualised</span>
+        <span style="font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">M2 Air, Chrome 128, 2× DPR</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding-left:32px;border-left:1px solid #27272a">
+        <span style="font:700 60px/1 'DM Sans',sans-serif;letter-spacing:-0.035em;color:#fafafa">0.8<span style="font-size:26px;color:#f97316"> ms</span></span>
+        <span style="font:500 14px/1.4 'DM Sans',sans-serif;color:#fafafa">Median sentence parse</span>
+        <span style="font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">1,000-sentence benchmark suite</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ARCHITECTURE ─────────────────────────── -->
+  <section style="padding:112px 40px 0">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;margin-bottom:40px">
+      <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Architecture</span>
+      <h2 style="margin:0;font:700 34px/1.15 'DM Sans',sans-serif;letter-spacing:-0.025em">Three packages, one direction of dependency</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 64px 1fr 64px 1fr;align-items:stretch">
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:10px">
+        <span style="font:500 13px/1.4 'JetBrains Mono',monospace;color:#c2560a">@janus-scheduler/core</span>
+        <span style="font:600 17px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">State</span>
+        <p style="margin:0;font:400 13.5px/1.6 'DM Sans',sans-serif;color:#52525b">Events, resources, ranges, recurrence expansion, conflict detection and the parser. No DOM.</p>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:4px">
+        <span style="flex:1;height:1.5px;background:#e4e4e7"></span>
+        <span style="font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▶</span>
+      </div>
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:10px">
+        <span style="font:500 13px/1.4 'JetBrains Mono',monospace;color:#c2560a">@janus-scheduler/ui</span>
+        <span style="font:600 17px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Lit Web Components</span>
+        <p style="margin:0;font:400 13.5px/1.6 'DM Sans',sans-serif;color:#52525b">Timeline, month grid, prompt bar and drag layer, styled through custom properties.</p>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:4px">
+        <span style="flex:1;height:1.5px;background:#e4e4e7"></span>
+        <span style="font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▶</span>
+      </div>
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:10px">
+        <span style="font:500 13px/1.4 'JetBrains Mono',monospace;color:#c2560a">/react · /angular · /solid · /vue</span>
+        <span style="font:600 17px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Framework wrappers</span>
+        <p style="margin:0;font:400 13.5px/1.6 'DM Sans',sans-serif;color:#52525b">Typed props, native event handlers, correct SSR behaviour. Roughly 200 lines each.</p>
+      </div>
+    </div>
+    <p style="margin:22px 0 0;text-align:center;font:400 13.5px/1.6 'DM Sans',sans-serif;color:#a1a1aa">Nothing below depends on anything above it — you can use the core on its own, headless.</p>
+  </section>
+
+  <!-- ── CTA ─────────────────────────── -->
+  <section style="padding:112px 40px 0">
+    <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#f4f4f5;padding:64px 48px;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center">
+      <h2 style="margin:0;font:700 40px/1.1 'DM Sans',sans-serif;letter-spacing:-0.028em;max-width:24ch">Add a scheduler this afternoon</h2>
+      <p style="margin:0;max-width:56ch;font:400 16px/1.6 'DM Sans',sans-serif;color:#52525b">Install the wrapper for your framework, pass an array of events, and you have a working timeline. Everything else is optional.</p>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:6px;padding:12px 14px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff">
+        <span style="font:400 13.5px/1 'JetBrains Mono',monospace;color:#f97316">$</span>
+        <span style="font:400 13.5px/1 'JetBrains Mono',monospace;color:#18181b">npm i @janus-scheduler/react</span>
+        <button onClick="{{ copyCta }}" style="height:26px;padding:0 9px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#52525b;font:500 11px/1 'JetBrains Mono',monospace;cursor:pointer" style-hover="border-color:#d4d4d8;color:#18181b">{{ ctaLabel }}</button>
+      </div>
+      <button style="height:44px;padding:0 22px;border:0;border-radius:9px;background:#f97316;color:#ffffff;font:600 14.5px/1 'DM Sans',sans-serif;cursor:pointer" style-hover="background:#ea6a0a;box-shadow:0 0 0 4px rgba(249,115,22,0.12)">Read the documentation</button>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────── -->
+  <footer style="margin-top:96px;border-top:1px solid #e4e4e7;padding:48px 40px 40px">
+    <div style="display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:32px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="width:18px;height:18px;border-radius:6px;background:#f97316"></span>
+          <span style="font:700 15px/1 'DM Sans',sans-serif;letter-spacing:-0.02em">Janus<span style="color:#a1a1aa;font-weight:500">Scheduler</span></span>
+        </div>
+        <span style="font:400 13px/1.6 'DM Sans',sans-serif;color:#a1a1aa;max-width:30ch">Open-source scheduling components for the web. MIT licensed.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Documentation</span>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">Getting started</a>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">Timeline view</a>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">Theming</a>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">API reference</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Packages</span>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">core</a>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">ui</a>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">react · vue · solid</a>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">angular</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Community</span>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">GitHub</a>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">Discussions</a>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">Issues</a>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">Contributing</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Project</span>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">Roadmap</a>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">Changelog</a>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">Licence</a>
+        <a href="#" style="font:400 13.5px/1 'DM Sans',sans-serif;color:#52525b" style-hover="color:#18181b">Acknowledgements</a>
+      </div>
+    </div>
+    <div style="margin-top:40px;padding-top:20px;border-top:1px solid #e4e4e7;display:flex;justify-content:space-between;align-items:baseline">
+      <span style="font:400 12.5px/1.5 'DM Sans',sans-serif;color:#a1a1aa">A final-year project at the University of Ruhuna.</span>
+      <span style="font:400 12px/1.5 'JetBrains Mono',monospace;color:#a1a1aa">v2.4.0 · MIT</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;defaultFramework&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;React&quot;,&quot;Angular&quot;,&quot;Solid&quot;,&quot;Vue&quot;,&quot;Vanilla&quot;],&quot;default&quot;:&quot;React&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;previewTheme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Light&quot;,&quot;Dark&quot;],&quot;default&quot;:&quot;Light&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+class Component extends DCLogic {
+  state = {
+    tab: this.props.defaultFramework || 'React',
+    dark: (this.props.previewTheme || 'Light') === 'Dark',
+    copied: null
+  };
+  copy(key, text) {
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+    this.setState({ copied: key });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ copied: null }), 1600);
+  }
+  componentWillUnmount() { clearTimeout(this._t); }
+  renderVals() {
+    const tab = this.state.tab, dark = this.state.dark;
+    const lbl = k => (this.state.copied === k ? 'Copied' : 'Copy');
+    const base = 'padding:14px 15px;font:500 13px/1 "DM Sans",sans-serif;cursor:pointer;';
+    const tabStyle = name => base + (tab === name
+      ? 'color:#18181b;box-shadow:inset 0 -2px 0 #f97316;background:#ffffff;'
+      : 'color:#52525b;');
+    const pkgs = {
+      React: '@janus-scheduler/react', Angular: '@janus-scheduler/angular',
+      Solid: '@janus-scheduler/solid', Vue: '@janus-scheduler/vue', Vanilla: '@janus-scheduler/ui'
+    };
+    const install = 'npm i @janus-scheduler/react';
+    return {
+      tabReact: tabStyle('React'), tabAngular: tabStyle('Angular'), tabSolid: tabStyle('Solid'),
+      tabVue: tabStyle('Vue'), tabVanilla: tabStyle('Vanilla'),
+      pickReact: () => this.setState({ tab: 'React' }),
+      pickAngular: () => this.setState({ tab: 'Angular' }),
+      pickSolid: () => this.setState({ tab: 'Solid' }),
+      pickVue: () => this.setState({ tab: 'Vue' }),
+      pickVanilla: () => this.setState({ tab: 'Vanilla' }),
+      isReact: tab === 'React', isAngular: tab === 'Angular', isSolid: tab === 'Solid',
+      isVue: tab === 'Vue', isVanilla: tab === 'Vanilla',
+      pkgName: pkgs[tab],
+      copyInstall: () => this.copy('i', install), installLabel: lbl('i'),
+      copyCta: () => this.copy('c', install), ctaLabel: lbl('c'),
+      copySnippet: () => this.copy('s', 'npm i ' + pkgs[tab]), snippetLabel: lbl('s'),
+      toggleTheme: () => this.setState(s => ({ dark: !s.dark })),
+      sunBg: dark ? 'transparent' : '#ffffff', sunFg: dark ? '#a1a1aa' : '#18181b',
+      moonBg: dark ? '#18181b' : 'transparent', moonFg: dark ? '#fafafa' : '#a1a1aa',
+      prevBg: dark ? '#09090b' : '#ffffff',
+      prevSurface: dark ? '#18181b' : '#f4f4f5',
+      prevActiveBg: dark ? '#27272a' : '#ffffff',
+      prevBorder: dark ? '#27272a' : '#e4e4e7',
+      prevHairline: dark ? '#18181b' : '#f4f4f5',
+      prevText: dark ? '#fafafa' : '#18181b',
+      prevMuted: dark ? '#52525b' : '#a1a1aa',
+      prevAccentTint: 'rgba(249,115,22,0.12)'
+    };
+  }
+}
+</script>
+</body>
+</html>

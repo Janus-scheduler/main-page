@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ffffff;font-family:"DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#18181b;text-decoration:none}
+a:hover{color:#c2560a}
+*{box-sizing:border-box}
+::placeholder{color:#a1a1aa}
+</style>
+</helmet>
+
+<div style="width:1440px;margin:0 auto;background:#ffffff;color:#18181b">
+
+  <div style="position:sticky;top:0;z-index:60;height:56px;padding:0 40px;display:flex;align-items:center;gap:26px;border-bottom:1px solid #e4e4e7;background:rgba(255,255,255,0.92);backdrop-filter:blur(14px)">
+    <a href="#" style="display:flex;align-items:center;gap:9px">
+      <span style="width:18px;height:18px;border-radius:6px;background:#f97316;box-shadow:0 0 0 4px rgba(249,115,22,0.12)"></span>
+      <span style="font:700 15px/1 'DM Sans',sans-serif;letter-spacing:-0.02em">Janus<span style="color:#a1a1aa;font-weight:500">Scheduler</span></span>
+    </a>
+    <div style="display:flex;align-items:center;gap:20px">
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">Docs</a>
+      <span style="font:600 13.5px/1 'DM Sans',sans-serif;color:#c2560a">Features</span>
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">Packages</a>
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">FAQ</a>
+    </div>
+    <div style="flex:1"></div>
+    <span style="padding:4px 10px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 11.5px/1.35 'JetBrains Mono',monospace">v2.4.0</span>
+    <button style="height:34px;padding:0 14px;border:0;border-radius:9px;background:#f97316;color:#ffffff;font:600 13px/1 'DM Sans',sans-serif;cursor:pointer" style-hover="background:#ea6a0a">Get started</button>
+  </div>
+
+  <header style="padding:72px 40px 56px;display:flex;flex-direction:column;gap:18px;border-bottom:1px solid #e4e4e7">
+    <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Features · fourteen of them</span>
+    <h1 style="margin:0;max-width:24ch;font:700 56px/1.05 'DM Sans',sans-serif;letter-spacing:-0.03em">Everything the component does, and nothing it pretends to.</h1>
+    <p style="margin:0;max-width:70ch;font:400 17px/1.6 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">Each section below is a capability that ships today, with a link to the reference page that documents its edges. Where Janus stops, we say so.</p>
+  </header>
+
+  <div style="display:grid;grid-template-columns:236px 1fr;align-items:start">
+
+    <!-- sticky sub-nav -->
+    <nav style="position:sticky;top:56px;padding:44px 24px 44px 40px;display:flex;flex-direction:column;gap:14px">
+      <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">On this page</span>
+      <div style="display:flex;flex-direction:column;gap:1px">
+        <a href="#f01" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;background:rgba(249,115,22,0.12);font:600 12.5px/1.35 'DM Sans',sans-serif;color:#c2560a"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#c2560a">01</span>Resource Timeline</a>
+        <a href="#" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;font:400 12.5px/1.35 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#a1a1aa">02</span>Month Grid</a>
+        <a href="#f03" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;font:400 12.5px/1.35 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#a1a1aa">03</span>Drag to create, move and resize</a>
+        <a href="#" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;font:400 12.5px/1.35 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#a1a1aa">04</span>Timezone-aware</a>
+        <a href="#f05" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;font:400 12.5px/1.35 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#a1a1aa">05</span>Conflict detection</a>
+        <a href="#" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;font:400 12.5px/1.35 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#a1a1aa">06</span>Recurring events</a>
+        <a href="#" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;font:400 12.5px/1.35 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#a1a1aa">07</span>Natural language</a>
+        <a href="#" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;font:400 12.5px/1.35 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#a1a1aa">08</span>Google Calendar sync</a>
+        <a href="#" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;font:400 12.5px/1.35 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#a1a1aa">09</span>Theming</a>
+        <a href="#f10" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;font:400 12.5px/1.35 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#a1a1aa">10</span>Performance</a>
+        <a href="#" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;font:400 12.5px/1.35 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#a1a1aa">11</span>Accessibility</a>
+        <a href="#" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;font:400 12.5px/1.35 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#a1a1aa">12</span>Framework wrappers</a>
+        <a href="#" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;font:400 12.5px/1.35 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#a1a1aa">13</span>Headless core</a>
+        <a href="#" style="display:flex;gap:9px;padding:6px 9px;border-radius:9px;font:400 12.5px/1.35 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b"><span style="font:500 10px/1.6 'JetBrains Mono',monospace;color:#a1a1aa">14</span>TypeScript types</a>
+      </div>
+      <div style="margin-top:8px;padding-top:14px;border-top:1px solid #e4e4e7;display:flex;flex-direction:column;gap:7px">
+        <span style="font:400 11px/1.5 'JetBrains Mono',monospace;color:#a1a1aa">14 sections · ~6 min read</span>
+        <a href="#" style="font:600 11.5px/1.4 'JetBrains Mono',monospace;color:#c2560a">Compare with alternatives ↗</a>
+      </div>
+    </nav>
+
+    <div style="padding:0 40px 0 8px;min-width:0">
+
+      <!-- 01 · text left / visual right -->
+      <section id="f01" style="padding:44px 0 60px;display:grid;grid-template-columns:1fr 1.25fr;gap:44px;align-items:center;scroll-margin-top:72px">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#f97316">01 · Resource Timeline</span>
+          <h2 style="margin:0;max-width:18ch;font:700 36px/1.12 'DM Sans',sans-serif;letter-spacing:-0.028em">Rows for the things you are actually booking</h2>
+          <p style="margin:0;max-width:46ch;font:400 15.5px/1.65 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">People, rooms, vehicles or machines run down the left; a zoomable axis runs across the top from five minutes to a full quarter. Rows and columns are both virtualised, so the axis range costs nothing until you scroll to it. Groups nest one level, and the resource gutter stays pinned while the grid scrolls.</p>
+          <a href="#" style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">Read the docs →</a>
+        </div>
+        <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#f4f4f5;padding:14px;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+          <div style="border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;overflow:hidden">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e4e4e7">
+              <span style="font:600 12.5px/1 'DM Sans',sans-serif">Thu 3 September</span>
+              <span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">zoom: hour</span>
+            </div>
+            <div style="display:grid;grid-template-columns:140px 1fr">
+              <div style="border-right:1.5px solid #e4e4e7">
+                <div style="height:26px;background:#f4f4f5;border-bottom:1px solid #e4e4e7"></div>
+                <div style="height:42px;display:flex;align-items:center;padding:0 12px;border-bottom:1px solid #f4f4f5;font:500 12px/1.2 'DM Sans',sans-serif">Alex Fernando</div>
+                <div style="height:42px;display:flex;align-items:center;padding:0 12px;border-bottom:1px solid #f4f4f5;font:500 12px/1.2 'DM Sans',sans-serif">Nadeesha Perera</div>
+                <div style="height:42px;display:flex;align-items:center;padding:0 12px;border-bottom:1px solid #f4f4f5;font:500 12px/1.2 'DM Sans',sans-serif">Room A</div>
+                <div style="height:42px;display:flex;align-items:center;padding:0 12px;font:500 12px/1.2 'DM Sans',sans-serif">Room B</div>
+              </div>
+              <div style="position:relative">
+                <div style="height:26px;display:grid;grid-template-columns:repeat(7,1fr);background:#f4f4f5;border-bottom:1px solid #e4e4e7">
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">09</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">10</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">11</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">12</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">13</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">14</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">15</span>
+                </div>
+                <div style="position:relative;height:168px">
+                  <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(7,1fr);pointer-events:none"><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5;background:#fafafa"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span></div>
+                  <div style="position:absolute;inset:0;pointer-events:none"><div style="height:42px;border-bottom:1px solid #f4f4f5"></div><div style="height:42px;border-bottom:1px solid #f4f4f5"></div><div style="height:42px;border-bottom:1px solid #f4f4f5"></div></div>
+                  <div style="position:absolute;left:34%;top:0;bottom:0;width:1.5px;background:#f97316"><span style="position:absolute;top:-1px;left:-4px;width:9px;height:9px;border-radius:999px;background:#f97316"></span></div>
+                  <div style="position:absolute;top:6px;left:2%;width:26%;height:30px;border-radius:9px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316;padding:5px 8px;display:flex;align-items:center"><span style="font:600 11px/1.2 'DM Sans',sans-serif;color:#7c3a06;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Design sync</span></div>
+                  <div style="position:absolute;top:48px;left:16%;width:30%;height:30px;border-radius:9px;background:oklch(0.93 0.045 240);border:1.5px solid oklch(0.62 0.12 240);padding:5px 8px;display:flex;align-items:center"><span style="font:600 11px/1.2 'DM Sans',sans-serif;color:oklch(0.38 0.09 240);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Sprint planning</span></div>
+                  <div style="position:absolute;top:90px;left:2%;width:26%;height:30px;border-radius:9px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316;padding:5px 8px;display:flex;align-items:center"><span style="font:600 11px/1.2 'DM Sans',sans-serif;color:#7c3a06;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Design sync</span></div>
+                  <div style="position:absolute;top:90px;left:56%;width:20%;height:30px;border-radius:9px;background:#f4f4f5;border:1.5px solid #e4e4e7;padding:5px 8px;display:flex;align-items:center"><span style="font:500 11px/1.2 'DM Sans',sans-serif;color:#52525b">Held</span></div>
+                  <div style="position:absolute;top:132px;left:30%;width:34%;height:30px;border-radius:9px;background:oklch(0.93 0.045 165);border:1.5px solid oklch(0.62 0.12 165);padding:5px 8px;display:flex;align-items:center"><span style="font:600 11px/1.2 'DM Sans',sans-serif;color:oklch(0.36 0.08 165);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">All-hands</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 · visual left / text right -->
+      <section id="f03" style="padding:60px 0;border-top:1px solid #e4e4e7;display:grid;grid-template-columns:1.25fr 1fr;gap:44px;align-items:center;scroll-margin-top:72px">
+        <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#f4f4f5;padding:14px;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+          <div style="border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;overflow:hidden">
+            <div style="display:grid;grid-template-columns:120px 1fr">
+              <div style="border-right:1.5px solid #e4e4e7">
+                <div style="height:26px;background:#f4f4f5;border-bottom:1px solid #e4e4e7"></div>
+                <div style="height:52px;display:flex;align-items:center;padding:0 12px;border-bottom:1px solid #f4f4f5;font:500 12px/1.2 'DM Sans',sans-serif">Alex F.</div>
+                <div style="height:52px;display:flex;align-items:center;padding:0 12px;font:500 12px/1.2 'DM Sans',sans-serif;color:#c2560a">Room A</div>
+              </div>
+              <div style="position:relative">
+                <div style="height:26px;display:grid;grid-template-columns:repeat(6,1fr);background:#f4f4f5;border-bottom:1px solid #e4e4e7">
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">09:00</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">10:00</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">11:00</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">12:00</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">13:00</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">14:00</span>
+                </div>
+                <div style="position:relative;height:104px">
+                  <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);pointer-events:none"><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span></div>
+                  <div style="position:absolute;top:52px;left:0;right:0;bottom:0;background:rgba(249,115,22,0.12);border-top:1.5px solid #f97316;border-bottom:1.5px solid #f97316"></div>
+                  <div style="position:absolute;top:11px;left:10%;width:28%;height:30px;border-radius:9px;background:#f4f4f5;border:1.5px dashed #a1a1aa;padding:5px 8px;display:flex;align-items:center;opacity:0.75"><span style="font:500 10.5px/1.2 'JetBrains Mono',monospace;color:#a1a1aa">was 09:30</span></div>
+                  <div style="position:absolute;top:63px;left:38%;width:28%;height:30px;border-radius:9px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316;box-shadow:0 4px 20px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:space-between;padding:0 4px">
+                    <span style="width:3px;height:14px;border-radius:2px;background:#f97316"></span>
+                    <span style="font:600 11px/1.2 'DM Sans',sans-serif;color:#7c3a06">Design sync</span>
+                    <span style="width:3px;height:14px;border-radius:2px;background:#f97316"></span>
+                  </div>
+                  <span style="position:absolute;top:38px;left:38%;padding:3px 7px;border-radius:5px;background:#18181b;color:#fafafa;font:600 10px/1.3 'JetBrains Mono',monospace;white-space:nowrap">11:15 → 12:15 · snap 15m</span>
+                  <span style="position:absolute;bottom:6px;right:8px;padding:2px 7px;border-radius:999px;background:#ffffff;border:1.5px solid #f97316;font:600 9.5px/1.4 'JetBrains Mono',monospace;color:#c2560a;letter-spacing:0.06em;text-transform:uppercase">drop target</span>
+                </div>
+              </div>
+            </div>
+            <div style="padding:9px 12px;border-top:1px solid #e4e4e7;display:flex;gap:14px">
+              <span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">⇧ drag = copy</span>
+              <span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">⌥ drag = ignore snap</span>
+              <span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">esc = cancel</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#f97316">03 · Drag to create, move and resize</span>
+          <h2 style="margin:0;max-width:18ch;font:700 36px/1.12 'DM Sans',sans-serif;letter-spacing:-0.028em">Direct manipulation, with a way back</h2>
+          <p style="margin:0;max-width:46ch;font:400 15.5px/1.65 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">Drag on empty grid to create, drag a block to move it between resources, pull either edge to resize. The ghost shows where the event came from and the target row highlights as you cross it. Every interaction is also available from the keyboard, and returning a rejected promise rolls the whole thing back.</p>
+          <a href="#" style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">Read the docs →</a>
+        </div>
+      </section>
+
+      <!-- 05 · text left / visual right -->
+      <section id="f05" style="padding:60px 0;border-top:1px solid #e4e4e7;display:grid;grid-template-columns:1fr 1.25fr;gap:44px;align-items:center;scroll-margin-top:72px">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#f97316">05 · Conflict detection</span>
+          <h2 style="margin:0;max-width:18ch;font:700 36px/1.12 'DM Sans',sans-serif;letter-spacing:-0.028em">Double bookings caught before the drop</h2>
+          <p style="margin:0;max-width:46ch;font:400 15.5px/1.65 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">Overlaps are computed per resource on every pointer move, across time zones and daylight-saving boundaries. Set <span style="font-family:'JetBrains Mono',monospace;font-size:14.5px">conflictMode</span> to warn and the affected blocks are flagged; set it to block and the drop is refused with a dialog you can style or replace.</p>
+          <a href="#" style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">Read the docs →</a>
+        </div>
+        <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#f4f4f5;padding:14px;box-shadow:0 4px 20px rgba(0,0,0,0.08);display:grid;grid-template-columns:1.7fr 1fr;gap:12px;align-items:center">
+          <div style="border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;overflow:hidden">
+            <div style="display:grid;grid-template-columns:96px 1fr">
+              <div style="border-right:1.5px solid #e4e4e7">
+                <div style="height:26px;background:#f4f4f5;border-bottom:1px solid #e4e4e7"></div>
+                <div style="height:78px;display:flex;align-items:center;padding:0 10px;font:500 11.5px/1.2 'DM Sans',sans-serif">Room A</div>
+              </div>
+              <div style="position:relative">
+                <div style="height:26px;display:grid;grid-template-columns:repeat(4,1fr);background:#f4f4f5;border-bottom:1px solid #e4e4e7">
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">10:00</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">11:00</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">12:00</span>
+                  <span style="padding-left:6px;display:flex;align-items:center;border-left:1px solid #e4e4e7;font:500 9.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">13:00</span>
+                </div>
+                <div style="position:relative;height:78px">
+                  <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);pointer-events:none"><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span><span style="border-left:1px solid #f4f4f5"></span></div>
+                  <div style="position:absolute;top:26px;left:14%;right:22%;bottom:14px;background:repeating-linear-gradient(135deg,rgba(249,115,22,0.18) 0 4px,transparent 4px 8px);border-left:1.5px solid #f97316;border-right:1.5px solid #f97316"></div>
+                  <div style="position:absolute;top:8px;left:6%;width:46%;height:28px;border-radius:9px;background:rgba(249,115,22,0.12);border:1.5px solid #f97316;padding:5px 8px;display:flex;align-items:center"><span style="font:600 10.5px/1.2 'DM Sans',sans-serif;color:#7c3a06;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Client workshop</span></div>
+                  <div style="position:absolute;top:42px;left:14%;width:52%;height:28px;border-radius:9px;background:#ffffff;border:1.5px solid #18181b;padding:5px 9px;display:flex;align-items:center"><span style="font:600 10.5px/1.2 'DM Sans',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Design sync</span></div>
+                  <span style="position:absolute;top:46px;left:69%;padding:2px 6px;border-radius:999px;background:#f97316;color:#ffffff;font:700 8.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.06em;white-space:nowrap">2 CONFLICTS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;padding:16px;box-shadow:0 4px 20px rgba(0,0,0,0.08);display:flex;flex-direction:column;gap:10px">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#f97316">Move blocked</span>
+            <span style="font:600 14px/1.3 'DM Sans',sans-serif">Room A is already booked</span>
+            <p style="margin:0;font:400 12px/1.55 'DM Sans',sans-serif;color:#52525b">Client workshop occupies 10:20 – 12:10. Moving Design sync here would overlap by 1 h 50 m.</p>
+            <div style="display:flex;flex-direction:column;gap:6px;margin-top:2px">
+              <button style="height:32px;border:0;border-radius:9px;background:#f97316;color:#ffffff;font:600 12px/1 'DM Sans',sans-serif;cursor:pointer" style-hover="background:#ea6a0a">Pick another time</button>
+              <button style="height:32px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#18181b;font:600 12px/1 'DM Sans',sans-serif;cursor:pointer" style-hover="background:#f4f4f5">Book anyway</button>
+            </div>
+            <span style="font:400 10px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">conflictMode="block"</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 · visual left / text right -->
+      <section id="f10" style="padding:60px 0;border-top:1px solid #e4e4e7;display:grid;grid-template-columns:1.25fr 1fr;gap:44px;align-items:center;scroll-margin-top:72px">
+        <div style="background:#09090b;border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between">
+            <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#a1a1aa">Render time · v1.8 → v2.4</span>
+            <span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#52525b">lower is better · ms</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;flex-direction:column;gap:7px">
+              <div style="display:flex;justify-content:space-between"><span style="font:500 11.5px/1 'DM Sans',sans-serif;color:#fafafa">First paint · 200 events</span><span style="font:400 11px/1 'JetBrains Mono',monospace;color:#52525b">−72%</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><span style="width:46%;height:11px;border-radius:999px;background:#27272a"></span><span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#52525b">64</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><span style="width:13%;height:11px;border-radius:999px;background:#f97316"></span><span style="font:600 10.5px/1 'JetBrains Mono',monospace;color:#fafafa">18</span></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:7px">
+              <div style="display:flex;justify-content:space-between"><span style="font:500 11.5px/1 'DM Sans',sans-serif;color:#fafafa">First paint · 10,000 events</span><span style="font:400 11px/1 'JetBrains Mono',monospace;color:#52525b">−94%</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><span style="width:92%;height:11px;border-radius:999px;background:#27272a"></span><span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#52525b">1,480</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><span style="width:6%;height:11px;border-radius:999px;background:#f97316"></span><span style="font:600 10.5px/1 'JetBrains Mono',monospace;color:#fafafa">86</span></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:7px">
+              <div style="display:flex;justify-content:space-between"><span style="font:500 11.5px/1 'DM Sans',sans-serif;color:#fafafa">Scroll frame · 10,000 events</span><span style="font:400 11px/1 'JetBrains Mono',monospace;color:#52525b">−84%</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><span style="width:38%;height:11px;border-radius:999px;background:#27272a"></span><span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#52525b">51</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><span style="width:6%;height:11px;border-radius:999px;background:#f97316"></span><span style="font:600 10.5px/1 'JetBrains Mono',monospace;color:#fafafa">8</span></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:7px">
+              <div style="display:flex;justify-content:space-between"><span style="font:500 11.5px/1 'DM Sans',sans-serif;color:#fafafa">Drag response</span><span style="font:400 11px/1 'JetBrains Mono',monospace;color:#52525b">−79%</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><span style="width:24%;height:11px;border-radius:999px;background:#27272a"></span><span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#52525b">33</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><span style="width:5%;height:11px;border-radius:999px;background:#f97316"></span><span style="font:600 10.5px/1 'JetBrains Mono',monospace;color:#fafafa">7</span></div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:18px;padding-top:16px;border-top:1px solid #27272a">
+            <span style="display:flex;align-items:center;gap:7px;font:400 10.5px/1 'JetBrains Mono',monospace;color:#a1a1aa"><span style="width:14px;height:8px;border-radius:999px;background:#27272a"></span>v1.8</span>
+            <span style="display:flex;align-items:center;gap:7px;font:400 10.5px/1 'JetBrains Mono',monospace;color:#fafafa"><span style="width:14px;height:8px;border-radius:999px;background:#f97316"></span>v2.4</span>
+            <span style="flex:1"></span>
+            <span style="font:400 10px/1 'JetBrains Mono',monospace;color:#52525b">M2 Air · Chrome 128 · median of 50 runs</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#f97316">10 · Performance</span>
+          <h2 style="margin:0;max-width:18ch;font:700 36px/1.12 'DM Sans',sans-serif;letter-spacing:-0.028em">Ten thousand events, one frame budget</h2>
+          <p style="margin:0;max-width:46ch;font:400 15.5px/1.65 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">Version 2 moved layout into a typed-array pass and virtualised both axes, so cost scales with what is on screen rather than what is in the store. Recurrence expansion runs in a worker. The benchmark suite ships in the repository, so you can reproduce these numbers on your own hardware.</p>
+          <a href="#" style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">Read the docs →</a>
+        </div>
+      </section>
+
+      <!-- pattern indicator -->
+      <section style="padding:52px 0 0;border-top:1px solid #e4e4e7">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+          <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Pattern continues</span>
+          <span style="flex:1;height:1px;background:#e4e4e7"></span>
+          <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">sections 02 · 04 · 06 · 07 · 08 · 09 · 11 · 12 · 13 · 14</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="border:1.5px dashed #e4e4e7;border-radius:14px;padding:24px;display:grid;grid-template-columns:1fr 1.25fr;gap:44px;align-items:center;background:#fdfdfd">
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <span style="width:120px;height:9px;border-radius:999px;background:rgba(249,115,22,0.32)"></span>
+              <span style="width:88%;height:22px;border-radius:6px;background:#f4f4f5"></span>
+              <span style="width:64%;height:22px;border-radius:6px;background:#f4f4f5"></span>
+              <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px">
+                <span style="width:100%;height:9px;border-radius:999px;background:#f4f4f5"></span>
+                <span style="width:94%;height:9px;border-radius:999px;background:#f4f4f5"></span>
+                <span style="width:72%;height:9px;border-radius:999px;background:#f4f4f5"></span>
+              </div>
+              <span style="width:96px;height:9px;border-radius:999px;background:rgba(249,115,22,0.32);margin-top:4px"></span>
+            </div>
+            <div style="height:172px;border-radius:14px;border:1.5px solid #e4e4e7;background:repeating-linear-gradient(135deg,#f4f4f5 0 6px,#ffffff 6px 12px);display:flex;align-items:center;justify-content:center">
+              <span style="padding:4px 10px;border-radius:999px;background:#ffffff;border:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;color:#52525b">visual · text-left variant</span>
+            </div>
+          </div>
+          <div style="border:1.5px dashed #e4e4e7;border-radius:14px;padding:24px;display:grid;grid-template-columns:1.25fr 1fr;gap:44px;align-items:center;background:#fdfdfd">
+            <div style="height:172px;border-radius:14px;border:1.5px solid #e4e4e7;background:repeating-linear-gradient(135deg,#f4f4f5 0 6px,#ffffff 6px 12px);display:flex;align-items:center;justify-content:center">
+              <span style="padding:4px 10px;border-radius:999px;background:#ffffff;border:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;color:#52525b">visual · text-right variant</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <span style="width:120px;height:9px;border-radius:999px;background:rgba(249,115,22,0.32)"></span>
+              <span style="width:88%;height:22px;border-radius:6px;background:#f4f4f5"></span>
+              <span style="width:58%;height:22px;border-radius:6px;background:#f4f4f5"></span>
+              <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px">
+                <span style="width:100%;height:9px;border-radius:999px;background:#f4f4f5"></span>
+                <span style="width:90%;height:9px;border-radius:999px;background:#f4f4f5"></span>
+                <span style="width:66%;height:9px;border-radius:999px;background:#f4f4f5"></span>
+              </div>
+              <span style="width:96px;height:9px;border-radius:999px;background:rgba(249,115,22,0.32);margin-top:4px"></span>
+            </div>
+          </div>
+        </div>
+        <p style="margin:16px 0 0;max-width:70ch;font:400 13px/1.6 'DM Sans',sans-serif;color:#a1a1aa">Every remaining section uses the same block: eyebrow, heading of at most eighteen characters per line, two or three sentences, one docs link — alternating side each time, with a 60px rule between blocks.</p>
+      </section>
+
+      <!-- remaining features grid -->
+      <section style="padding:60px 0 80px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px">
+          <h2 style="margin:0;font:700 30px/1.15 'DM Sans',sans-serif;letter-spacing:-0.025em">The other ten, in brief</h2>
+          <a href="#" style="font:600 12.5px/1 'JetBrains Mono',monospace;color:#c2560a">Full changelog ↗</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px" style-hover="border-color:#f97316">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">02</span>
+            <span style="font:600 15px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Month Grid</span>
+            <p style="margin:0;font:400 13px/1.55 'DM Sans',sans-serif;color:#52525b">Dense month view with overflow chips, week numbers and locale-correct first day.</p>
+            <a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a;margin-top:2px">Read the docs →</a>
+          </div>
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px" style-hover="border-color:#f97316">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">04</span>
+            <span style="font:600 15px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Timezone-aware</span>
+            <p style="margin:0;font:400 13px/1.55 'DM Sans',sans-serif;color:#52525b">UTC instants in the store, a display zone in the view. DST shifts never move a meeting.</p>
+            <a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a;margin-top:2px">Read the docs →</a>
+          </div>
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px" style-hover="border-color:#f97316">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">06</span>
+            <span style="font:600 15px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Recurring events</span>
+            <p style="margin:0;font:400 13px/1.55 'DM Sans',sans-serif;color:#52525b">RFC 5545 rules expanded in a worker, with per-instance exceptions.</p>
+            <a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a;margin-top:2px">Read the docs →</a>
+          </div>
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px" style-hover="border-color:#f97316">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">07</span>
+            <span style="font:600 15px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Natural language</span>
+            <p style="margin:0;font:400 13px/1.55 'DM Sans',sans-serif;color:#52525b">A sentence becomes a structured event in under a millisecond, entirely in the browser.</p>
+            <a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a;margin-top:2px">Read the docs →</a>
+          </div>
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px" style-hover="border-color:#f97316">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">08</span>
+            <span style="font:600 15px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Google Calendar sync</span>
+            <p style="margin:0;font:400 13px/1.55 'DM Sans',sans-serif;color:#52525b">Two-way, incremental, field-level merge. Needs a token endpoint of your own.</p>
+            <a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a;margin-top:2px">Read the docs →</a>
+          </div>
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px" style-hover="border-color:#f97316">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">09</span>
+            <span style="font:600 15px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Theming</span>
+            <p style="margin:0;font:400 13px/1.55 'DM Sans',sans-serif;color:#52525b">Twelve custom properties on the host. No build step, no theme compiler.</p>
+            <a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a;margin-top:2px">Read the docs →</a>
+          </div>
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px" style-hover="border-color:#f97316">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">11</span>
+            <span style="font:600 15px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Accessibility</span>
+            <p style="margin:0;font:400 13px/1.55 'DM Sans',sans-serif;color:#52525b">Full keyboard grid navigation, live-region announcements, focus-visible throughout.</p>
+            <a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a;margin-top:2px">Read the docs →</a>
+          </div>
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px" style-hover="border-color:#f97316">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">12</span>
+            <span style="font:600 15px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Framework wrappers</span>
+            <p style="margin:0;font:400 13px/1.55 'DM Sans',sans-serif;color:#52525b">React, Angular, Solid and Vue. Roughly 200 lines each, identical props and events.</p>
+            <a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a;margin-top:2px">Read the docs →</a>
+          </div>
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px" style-hover="border-color:#f97316">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">13</span>
+            <span style="font:600 15px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">Headless core</span>
+            <p style="margin:0;font:400 13px/1.55 'DM Sans',sans-serif;color:#52525b">State, parser and conflict logic with no DOM — usable on a server or in tests.</p>
+            <a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a;margin-top:2px">Read the docs →</a>
+          </div>
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px" style-hover="border-color:#f97316">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">14</span>
+            <span style="font:600 15px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em">TypeScript types</span>
+            <p style="margin:0;font:400 13px/1.55 'DM Sans',sans-serif;color:#52525b">Hand-written declarations, generic over your own event payload. No <span style="font-family:'JetBrains Mono',monospace;font-size:12px">any</span>.</p>
+            <a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a;margin-top:2px">Read the docs →</a>
+          </div>
+          <div style="border:1.5px solid #18181b;border-radius:14px;padding:18px;background:#18181b;display:flex;flex-direction:column;gap:8px;grid-column:span 2">
+            <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">Not on the list</span>
+            <span style="font:600 15px/1.25 'DM Sans',sans-serif;letter-spacing:-0.01em;color:#fafafa">Things Janus deliberately does not do</span>
+            <p style="margin:0;max-width:60ch;font:400 13px/1.55 'DM Sans',sans-serif;color:#e4e4e7">No booking backend, no availability engine, no print or PDF export from the virtualised grid, no built-in RRULE editor UI. Each one is a scope decision, written up with its reasoning.</p>
+            <a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#fb8c3a;margin-top:2px">Read the scope notes →</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer style="border-top:1px solid #e4e4e7;padding:32px 40px;display:flex;justify-content:space-between;align-items:baseline">
+    <span style="font:400 12.5px/1.5 'DM Sans',sans-serif;color:#a1a1aa">A final-year project at the University of Ruhuna.</span>
+    <span style="font:400 12px/1.5 'JetBrains Mono',monospace;color:#a1a1aa">v2.4.0 · MIT</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440}}"></script>
+</body>
+</html>

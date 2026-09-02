@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ffffff;font-family:"DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#18181b;text-decoration:none}
+a:hover{color:#c2560a}
+*{box-sizing:border-box}
+::placeholder{color:#a1a1aa}
+</style>
+</helmet>
+
+<div style="width:1440px;margin:0 auto;background:#ffffff;color:#18181b">
+
+  <div style="position:sticky;top:0;z-index:60;height:56px;padding:0 40px;display:flex;align-items:center;gap:26px;border-bottom:1px solid #e4e4e7;background:rgba(255,255,255,0.92);backdrop-filter:blur(14px)">
+    <a href="#" style="display:flex;align-items:center;gap:9px">
+      <span style="width:18px;height:18px;border-radius:6px;background:#f97316;box-shadow:0 0 0 4px rgba(249,115,22,0.12)"></span>
+      <span style="font:700 15px/1 'DM Sans',sans-serif;letter-spacing:-0.02em">Janus<span style="color:#a1a1aa;font-weight:500">Scheduler</span></span>
+    </a>
+    <div style="display:flex;align-items:center;gap:20px">
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">Docs</a>
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">Features</a>
+      <span style="font:600 13.5px/1 'DM Sans',sans-serif;color:#c2560a">Packages</span>
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">FAQ</a>
+    </div>
+    <div style="flex:1"></div>
+    <span style="padding:4px 10px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 11.5px/1.35 'JetBrains Mono',monospace">v2.4.0</span>
+    <button style="height:34px;padding:0 14px;border:0;border-radius:9px;background:#f97316;color:#ffffff;font:600 13px/1 'DM Sans',sans-serif;cursor:pointer" style-hover="background:#ea6a0a">Get started</button>
+  </div>
+
+  <header style="padding:64px 40px 40px;display:flex;flex-direction:column;gap:16px">
+    <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Packages · seven, published together</span>
+    <h1 style="margin:0;max-width:26ch;font:700 52px/1.06 'DM Sans',sans-serif;letter-spacing:-0.03em">Install only the part you need</h1>
+    <p style="margin:0;max-width:72ch;font:400 17px/1.6 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">Every package is versioned in lockstep and published from one repository. Most projects install a single framework wrapper; the rest exist so you can go lower-level or leave features out entirely.</p>
+  </header>
+
+  <!-- CARDS -->
+  <section style="padding:0 40px">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#f97316;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <code style="font:600 14px/1.3 'JetBrains Mono',monospace;letter-spacing:-0.01em">@janus-scheduler/core</code>
+          <span style="padding:3px 8px;border-radius:999px;background:rgba(249,115,22,0.12);color:#c2560a;font:500 11px/1.35 'JetBrains Mono',monospace;white-space:nowrap">2.4.0</span>
+        </div>
+        <p style="margin:0;font:400 13.5px/1.55 'DM Sans',sans-serif;color:#52525b">State, ranges, recurrence expansion and conflict logic — no DOM.</p>
+        <div style="display:flex;align-items:center;gap:8px;padding:9px 11px;border:1.5px solid #e4e4e7;border-radius:9px;background:#f4f4f5">
+          <span style="font:400 12px/1 'JetBrains Mono',monospace;color:#f97316">$</span>
+          <span style="flex:1;min-width:0;font:400 12px/1 'JetBrains Mono',monospace;color:#18181b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">npm i @janus-scheduler/core</span>
+          <button onClick="{{ copyCore }}" style="height:26px;padding:0 8px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#52525b;font:500 10.5px/1 'JetBrains Mono',monospace;cursor:pointer" style-hover="border-color:#d4d4d8;color:#18181b">{{ labelCore }}</button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid #f4f4f5">
+          <span style="padding:3px 8px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 10.5px/1.35 'JetBrains Mono',monospace">6.4 kB gzip</span>
+          <div style="display:flex;gap:12px"><a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#52525b">npm ↗</a><a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a">docs →</a></div>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#f97316;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <code style="font:600 14px/1.3 'JetBrains Mono',monospace;letter-spacing:-0.01em">@janus-scheduler/ui</code>
+          <span style="padding:3px 8px;border-radius:999px;background:rgba(249,115,22,0.12);color:#c2560a;font:500 11px/1.35 'JetBrains Mono',monospace;white-space:nowrap">2.4.0</span>
+        </div>
+        <p style="margin:0;font:400 13.5px/1.55 'DM Sans',sans-serif;color:#52525b">The Lit Web Components: timeline, month grid, prompt bar, drag layer.</p>
+        <div style="display:flex;align-items:center;gap:8px;padding:9px 11px;border:1.5px solid #e4e4e7;border-radius:9px;background:#f4f4f5">
+          <span style="font:400 12px/1 'JetBrains Mono',monospace;color:#f97316">$</span>
+          <span style="flex:1;min-width:0;font:400 12px/1 'JetBrains Mono',monospace;color:#18181b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">npm i @janus-scheduler/ui</span>
+          <button onClick="{{ copyUi }}" style="height:26px;padding:0 8px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#52525b;font:500 10.5px/1 'JetBrains Mono',monospace;cursor:pointer" style-hover="border-color:#d4d4d8;color:#18181b">{{ labelUi }}</button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid #f4f4f5">
+          <span style="padding:3px 8px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 10.5px/1.35 'JetBrains Mono',monospace">11.8 kB gzip</span>
+          <div style="display:flex;gap:12px"><a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#52525b">npm ↗</a><a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a">docs →</a></div>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid #f97316;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <code style="font:600 14px/1.3 'JetBrains Mono',monospace;letter-spacing:-0.01em">@janus-scheduler/react</code>
+          <span style="padding:3px 8px;border-radius:999px;background:#f97316;color:#ffffff;font:500 11px/1.35 'JetBrains Mono',monospace;white-space:nowrap">2.4.0</span>
+        </div>
+        <p style="margin:0;font:400 13.5px/1.55 'DM Sans',sans-serif;color:#52525b">React wrapper with typed props and native handlers. Most people start here.</p>
+        <div style="display:flex;align-items:center;gap:8px;padding:9px 11px;border:1.5px solid #e4e4e7;border-radius:9px;background:#f4f4f5">
+          <span style="font:400 12px/1 'JetBrains Mono',monospace;color:#f97316">$</span>
+          <span style="flex:1;min-width:0;font:400 12px/1 'JetBrains Mono',monospace;color:#18181b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">npm i @janus-scheduler/react</span>
+          <button onClick="{{ copyReact }}" style="height:26px;padding:0 8px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#52525b;font:500 10.5px/1 'JetBrains Mono',monospace;cursor:pointer" style-hover="border-color:#d4d4d8;color:#18181b">{{ labelReact }}</button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid #f4f4f5">
+          <span style="padding:3px 8px;border-radius:999px;background:rgba(249,115,22,0.12);color:#c2560a;font:500 10.5px/1.35 'JetBrains Mono',monospace">14.2 kB gzip</span>
+          <div style="display:flex;gap:12px"><a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#52525b">npm ↗</a><a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a">docs →</a></div>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#f97316;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <code style="font:600 14px/1.3 'JetBrains Mono',monospace;letter-spacing:-0.01em">@janus-scheduler/angular</code>
+          <span style="padding:3px 8px;border-radius:999px;background:rgba(249,115,22,0.12);color:#c2560a;font:500 11px/1.35 'JetBrains Mono',monospace;white-space:nowrap">2.4.0</span>
+        </div>
+        <p style="margin:0;font:400 13.5px/1.55 'DM Sans',sans-serif;color:#52525b">Standalone component and module, with outputs instead of DOM events.</p>
+        <div style="display:flex;align-items:center;gap:8px;padding:9px 11px;border:1.5px solid #e4e4e7;border-radius:9px;background:#f4f4f5">
+          <span style="font:400 12px/1 'JetBrains Mono',monospace;color:#f97316">$</span>
+          <span style="flex:1;min-width:0;font:400 12px/1 'JetBrains Mono',monospace;color:#18181b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">npm i @janus-scheduler/angular</span>
+          <button onClick="{{ copyAngular }}" style="height:26px;padding:0 8px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#52525b;font:500 10.5px/1 'JetBrains Mono',monospace;cursor:pointer" style-hover="border-color:#d4d4d8;color:#18181b">{{ labelAngular }}</button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid #f4f4f5">
+          <span style="padding:3px 8px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 10.5px/1.35 'JetBrains Mono',monospace">14.6 kB gzip</span>
+          <div style="display:flex;gap:12px"><a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#52525b">npm ↗</a><a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a">docs →</a></div>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#f97316;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <code style="font:600 14px/1.3 'JetBrains Mono',monospace;letter-spacing:-0.01em">@janus-scheduler/solid</code>
+          <span style="padding:3px 8px;border-radius:999px;background:rgba(249,115,22,0.12);color:#c2560a;font:500 11px/1.35 'JetBrains Mono',monospace;white-space:nowrap">2.4.0</span>
+        </div>
+        <p style="margin:0;font:400 13.5px/1.55 'DM Sans',sans-serif;color:#52525b">Solid wrapper with fine-grained reactivity — signals pass straight through.</p>
+        <div style="display:flex;align-items:center;gap:8px;padding:9px 11px;border:1.5px solid #e4e4e7;border-radius:9px;background:#f4f4f5">
+          <span style="font:400 12px/1 'JetBrains Mono',monospace;color:#f97316">$</span>
+          <span style="flex:1;min-width:0;font:400 12px/1 'JetBrains Mono',monospace;color:#18181b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">npm i @janus-scheduler/solid</span>
+          <button onClick="{{ copySolid }}" style="height:26px;padding:0 8px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#52525b;font:500 10.5px/1 'JetBrains Mono',monospace;cursor:pointer" style-hover="border-color:#d4d4d8;color:#18181b">{{ labelSolid }}</button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid #f4f4f5">
+          <span style="padding:3px 8px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 10.5px/1.35 'JetBrains Mono',monospace">13.9 kB gzip</span>
+          <div style="display:flex;gap:12px"><a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#52525b">npm ↗</a><a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a">docs →</a></div>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#f97316;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <code style="font:600 14px/1.3 'JetBrains Mono',monospace;letter-spacing:-0.01em">@janus-scheduler/nlp</code>
+          <span style="padding:3px 8px;border-radius:999px;background:#18181b;color:#fafafa;font:500 11px/1.35 'JetBrains Mono',monospace;white-space:nowrap">2.4.0-rc.2</span>
+        </div>
+        <p style="margin:0;font:400 13.5px/1.55 'DM Sans',sans-serif;color:#52525b">Sentence parser and entity resolver. Loads its language artefact on demand.</p>
+        <div style="display:flex;align-items:center;gap:8px;padding:9px 11px;border:1.5px solid #e4e4e7;border-radius:9px;background:#f4f4f5">
+          <span style="font:400 12px/1 'JetBrains Mono',monospace;color:#f97316">$</span>
+          <span style="flex:1;min-width:0;font:400 12px/1 'JetBrains Mono',monospace;color:#18181b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">npm i @janus-scheduler/nlp</span>
+          <button onClick="{{ copyNlp }}" style="height:26px;padding:0 8px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#52525b;font:500 10.5px/1 'JetBrains Mono',monospace;cursor:pointer" style-hover="border-color:#d4d4d8;color:#18181b">{{ labelNlp }}</button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid #f4f4f5">
+          <span style="padding:3px 8px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 10.5px/1.35 'JetBrains Mono',monospace">4.9 kB + 38 kB lazy</span>
+          <div style="display:flex;gap:12px"><a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#52525b">npm ↗</a><a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a">docs →</a></div>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;grid-column:span 3" style-hover="border-color:#f97316;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:center">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:center;gap:10px">
+              <code style="font:600 14px/1.3 'JetBrains Mono',monospace;letter-spacing:-0.01em">@janus-scheduler/google-calendar</code>
+              <span style="padding:3px 8px;border-radius:999px;background:rgba(249,115,22,0.12);color:#c2560a;font:500 11px/1.35 'JetBrains Mono',monospace;white-space:nowrap">2.4.0</span>
+            </div>
+            <p style="margin:0;max-width:44ch;font:400 13.5px/1.55 'DM Sans',sans-serif;color:#52525b">Two-way sync adapter: incremental pull by sync token, field-level merge on push. Optional, and it never holds a client secret in the browser.</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:9px 11px;border:1.5px solid #e4e4e7;border-radius:9px;background:#f4f4f5">
+            <span style="font:400 12px/1 'JetBrains Mono',monospace;color:#f97316">$</span>
+            <span style="flex:1;min-width:0;font:400 12px/1 'JetBrains Mono',monospace;color:#18181b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">npm i @janus-scheduler/google-calendar</span>
+            <button onClick="{{ copyGcal }}" style="height:26px;padding:0 8px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#52525b;font:500 10.5px/1 'JetBrains Mono',monospace;cursor:pointer" style-hover="border-color:#d4d4d8;color:#18181b">{{ labelGcal }}</button>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:flex-end;gap:16px">
+            <span style="padding:3px 8px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 10.5px/1.35 'JetBrains Mono',monospace">3.1 kB gzip</span>
+            <span style="padding:3px 8px;border-radius:999px;border:1.5px solid #e4e4e7;color:#52525b;font:500 10.5px/1.35 'JetBrains Mono',monospace">needs token endpoint</span>
+            <a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#52525b">npm ↗</a>
+            <a href="#" style="font:600 11.5px/1 'JetBrains Mono',monospace;color:#c2560a">docs →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPENDENCY GRAPH -->
+  <section style="padding:64px 40px 0">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px">
+      <h2 style="margin:0;font:700 30px/1.15 'DM Sans',sans-serif;letter-spacing:-0.025em">Dependency graph</h2>
+      <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">every edge is two-way · imports one way, events and state the other</span>
+    </div>
+    <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#f4f4f5;padding:32px 40px">
+      <div style="position:relative;width:1200px;height:404px;margin:0 auto">
+
+        <div style="position:absolute;left:300px;top:0;width:180px;height:62px;border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:0 14px">
+          <span style="font:600 12.5px/1.3 'JetBrains Mono',monospace">/react</span>
+          <span style="font:400 10px/1.3 'JetBrains Mono',monospace;color:#a1a1aa">peer: react ≥18</span>
+        </div>
+        <div style="position:absolute;left:510px;top:0;width:180px;height:62px;border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:0 14px">
+          <span style="font:600 12.5px/1.3 'JetBrains Mono',monospace">/angular</span>
+          <span style="font:400 10px/1.3 'JetBrains Mono',monospace;color:#a1a1aa">peer: @angular ≥16</span>
+        </div>
+        <div style="position:absolute;left:720px;top:0;width:180px;height:62px;border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:0 14px">
+          <span style="font:600 12.5px/1.3 'JetBrains Mono',monospace">/solid</span>
+          <span style="font:400 10px/1.3 'JetBrains Mono',monospace;color:#a1a1aa">peer: solid-js ≥1.8</span>
+        </div>
+
+        <div style="position:absolute;left:389px;top:74px;width:1.5px;height:46px;background:#a1a1aa"></div>
+        <div style="position:absolute;left:389px;top:119px;width:132px;height:1.5px;background:#a1a1aa"></div>
+        <div style="position:absolute;left:520px;top:119px;width:1.5px;height:27px;background:#a1a1aa"></div>
+        <span style="position:absolute;left:383.5px;top:62px;font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▲</span>
+        <span style="position:absolute;left:514.5px;top:144px;font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▼</span>
+
+        <div style="position:absolute;left:599px;top:74px;width:1.5px;height:72px;background:#a1a1aa"></div>
+        <span style="position:absolute;left:593.5px;top:62px;font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▲</span>
+        <span style="position:absolute;left:593.5px;top:144px;font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▼</span>
+        <span style="position:absolute;left:150px;top:170px;width:200px;font:400 10.5px/1.6 'JetBrains Mono',monospace;color:#52525b">Wrappers ↔ ui<br>▼ imports the elements<br>▲ events, slots, refs</span>
+
+        <div style="position:absolute;left:809px;top:74px;width:1.5px;height:46px;background:#a1a1aa"></div>
+        <div style="position:absolute;left:679px;top:119px;width:132px;height:1.5px;background:#a1a1aa"></div>
+        <div style="position:absolute;left:679px;top:119px;width:1.5px;height:27px;background:#a1a1aa"></div>
+        <span style="position:absolute;left:803.5px;top:62px;font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▲</span>
+        <span style="position:absolute;left:673.5px;top:144px;font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▼</span>
+
+        <div style="position:absolute;left:480px;top:158px;width:240px;height:66px;border:1.5px solid #18181b;border-radius:14px;background:#ffffff;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:0 16px;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+          <span style="font:600 13px/1.3 'JetBrains Mono',monospace">@janus-scheduler/ui</span>
+          <span style="font:400 10px/1.3 'JetBrains Mono',monospace;color:#52525b">Lit Web Components · 11.8 kB</span>
+        </div>
+
+        <div style="position:absolute;left:599px;top:236px;width:1.5px;height:42px;background:#f97316"></div>
+        <span style="position:absolute;left:593.5px;top:224px;font:400 12px/1 'JetBrains Mono',monospace;color:#f97316">▲</span>
+        <span style="position:absolute;left:593.5px;top:276px;font:400 12px/1 'JetBrains Mono',monospace;color:#f97316">▼</span>
+        <span style="position:absolute;left:614px;top:238px;font:400 10.5px/1.6 'JetBrains Mono',monospace;color:#c2560a">▼ reads the store<br>▲ commits mutations</span>
+
+        <div style="position:absolute;left:460px;top:290px;width:280px;height:74px;border:1.5px solid #f97316;border-radius:14px;background:rgba(249,115,22,0.12);display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 18px;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+          <span style="font:700 14px/1.3 'JetBrains Mono',monospace;color:#7c3a06">@janus-scheduler/core</span>
+          <span style="font:400 10.5px/1.3 'JetBrains Mono',monospace;color:#c2560a">state · no DOM · zero dependencies</span>
+        </div>
+
+        <div style="position:absolute;left:80px;top:296px;width:220px;height:62px;border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:0 14px">
+          <span style="font:600 12.5px/1.3 'JetBrains Mono',monospace">/nlp</span>
+          <span style="font:400 10px/1.3 'JetBrains Mono',monospace;color:#a1a1aa">+ 38 kB lazy artefact</span>
+        </div>
+        <div style="position:absolute;left:312px;top:326px;width:136px;height:1.5px;background:#a1a1aa"></div>
+        <span style="position:absolute;left:300px;top:320px;font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">◀</span>
+        <span style="position:absolute;left:450px;top:320px;font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▶</span>
+        <span style="position:absolute;left:300px;top:340px;width:146px;font:400 10.5px/1.6 'JetBrains Mono',monospace;color:#52525b">▶ parses into events<br>◀ resolves resources</span>
+
+        <div style="position:absolute;left:900px;top:296px;width:220px;height:62px;border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:0 14px">
+          <span style="font:600 12.5px/1.3 'JetBrains Mono',monospace">/google-calendar</span>
+          <span style="font:400 10px/1.3 'JetBrains Mono',monospace;color:#a1a1aa">optional adapter</span>
+        </div>
+        <div style="position:absolute;left:752px;top:326px;width:136px;height:1.5px;background:#a1a1aa"></div>
+        <span style="position:absolute;left:740px;top:320px;font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">◀</span>
+        <span style="position:absolute;left:890px;top:320px;font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▶</span>
+        <span style="position:absolute;left:744px;top:340px;width:152px;text-align:center;font:400 10.5px/1.6 'JetBrains Mono',monospace;color:#52525b">◀ pushes remote changes<br>▶ observes local edits</span>
+
+        <span style="position:absolute;left:80px;top:384px;font:400 11px/1.5 'JetBrains Mono',monospace;color:#a1a1aa">Every edge carries traffic in both directions. Only the <span style="color:#52525b">build-time</span> dependency is one-way: nothing above core is ever imported by it.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPATIBILITY MATRIX -->
+  <section style="padding:64px 40px 0">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px">
+      <h2 style="margin:0;font:700 30px/1.15 'DM Sans',sans-serif;letter-spacing:-0.025em">Compatibility matrix</h2>
+      <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">peer ranges as published · TypeScript ≥5.0 throughout</span>
+    </div>
+    <div style="border:1.5px solid #e4e4e7;border-radius:14px;overflow:hidden">
+      <div style="display:grid;grid-template-columns:1.5fr repeat(5,1fr) 1.1fr">
+        <span style="padding:9px 18px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Package</span>
+        <span style="padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">React</span>
+        <span style="padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Angular</span>
+        <span style="padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Solid</span>
+        <span style="padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Vue</span>
+        <span style="padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Vanilla</span>
+        <span style="padding:9px 18px 9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Node / SSR</span>
+
+        <span style="padding:11px 18px;border-bottom:1px solid #f4f4f5;font:500 12.5px/1.4 'JetBrains Mono',monospace">/core</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 18px 11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">≥18 · full</span>
+
+        <span style="padding:11px 18px;border-bottom:1px solid #f4f4f5;font:500 12.5px/1.4 'JetBrains Mono',monospace">/ui</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><span style="padding:2px 7px;border-radius:999px;background:rgba(249,115,22,0.12);color:#c2560a;font:600 10px/1.4 'JetBrains Mono',monospace">native</span></span>
+        <span style="padding:11px 18px 11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">≥18 · declarative shadow</span>
+
+        <span style="padding:11px 18px;border-bottom:1px solid #f4f4f5;font:500 12.5px/1.4 'JetBrains Mono',monospace">/react</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><span style="padding:2px 7px;border-radius:999px;background:rgba(249,115,22,0.12);color:#c2560a;font:600 10px/1.4 'JetBrains Mono',monospace">18 · 19</span></span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">—</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">—</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">—</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">—</span>
+        <span style="padding:11px 18px 11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">Next 14 · 15</span>
+
+        <span style="padding:11px 18px;border-bottom:1px solid #f4f4f5;font:500 12.5px/1.4 'JetBrains Mono',monospace">/angular</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">—</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><span style="padding:2px 7px;border-radius:999px;background:rgba(249,115,22,0.12);color:#c2560a;font:600 10px/1.4 'JetBrains Mono',monospace">16 – 19</span></span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">—</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">—</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">—</span>
+        <span style="padding:11px 18px 11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">Angular Universal</span>
+
+        <span style="padding:11px 18px;border-bottom:1px solid #f4f4f5;font:500 12.5px/1.4 'JetBrains Mono',monospace">/solid</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">—</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">—</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><span style="padding:2px 7px;border-radius:999px;background:rgba(249,115,22,0.12);color:#c2560a;font:600 10px/1.4 'JetBrains Mono',monospace">1.8+</span></span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">—</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">—</span>
+        <span style="padding:11px 18px 11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">SolidStart 1.0</span>
+
+        <span style="padding:11px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:7px;flex-wrap:wrap"><span style="font:500 12.5px/1.4 'JetBrains Mono',monospace">/nlp</span><span style="padding:2px 6px;border-radius:999px;background:#18181b;color:#fafafa;font:700 9px/1.3 'JetBrains Mono',monospace;letter-spacing:0.06em;text-transform:uppercase">rc</span></span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 18px 11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">≥18 · en-GB only</span>
+
+        <span style="padding:11px 18px;font:500 12.5px/1.4 'JetBrains Mono',monospace">/google-calendar</span>
+        <span style="padding:11px 12px;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 12px;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">any</span>
+        <span style="padding:11px 18px 11px 12px;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">≥20 · token endpoint</span>
+      </div>
+    </div>
+    <span style="display:block;margin-top:9px;font:400 11.5px/1.5 'DM Sans',sans-serif;color:#a1a1aa">A Vue wrapper is in progress; until it lands, use <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px">/ui</span> directly — Vue consumes custom elements natively.</span>
+  </section>
+
+  <!-- BUNDLE SIZE -->
+  <section style="padding:64px 40px 0">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px">
+      <h2 style="margin:0;font:700 30px/1.15 'DM Sans',sans-serif;letter-spacing:-0.025em">Bundle size</h2>
+      <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">measured with esbuild + brotli · bars scale to 60 kB</span>
+    </div>
+    <div style="border:1.5px solid #e4e4e7;border-radius:14px;overflow:hidden">
+      <div style="display:grid;grid-template-columns:1.4fr 96px 110px 1.5fr 1.4fr">
+        <span style="padding:9px 18px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Artefact</span>
+        <span style="padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Min</span>
+        <span style="padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Min+gzip</span>
+        <span style="padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Relative</span>
+        <span style="padding:9px 18px 9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">When it loads</span>
+
+        <span style="padding:11px 18px;border-bottom:1px solid #f4f4f5;font:500 12.5px/1.4 'JetBrains Mono',monospace">/core</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">18.1 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#18181b">6.4 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><span style="width:11%;height:9px;border-radius:999px;background:#f97316"></span></span>
+        <span style="padding:11px 18px 11px 12px;border-bottom:1px solid #f4f4f5;font:400 12.5px/1.5 'DM Sans',sans-serif;color:#52525b">Always, with any package.</span>
+
+        <span style="padding:11px 18px;border-bottom:1px solid #f4f4f5;font:500 12.5px/1.4 'JetBrains Mono',monospace">/ui</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">34.6 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#18181b">11.8 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><span style="width:20%;height:9px;border-radius:999px;background:#f97316"></span></span>
+        <span style="padding:11px 18px 11px 12px;border-bottom:1px solid #f4f4f5;font:400 12.5px/1.5 'DM Sans',sans-serif;color:#52525b">On first render of a scheduler element.</span>
+
+        <span style="padding:11px 18px;border-bottom:1px solid #f4f4f5;font:500 12.5px/1.4 'JetBrains Mono',monospace">/react</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">41.2 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#18181b">14.2 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><span style="width:24%;height:9px;border-radius:999px;background:#f97316"></span></span>
+        <span style="padding:11px 18px 11px 12px;border-bottom:1px solid #f4f4f5;font:400 12.5px/1.5 'DM Sans',sans-serif;color:#52525b">Eagerly — includes core and ui.</span>
+
+        <span style="padding:11px 18px;border-bottom:1px solid #f4f4f5;font:500 12.5px/1.4 'JetBrains Mono',monospace">/angular</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">42.4 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#18181b">14.6 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><span style="width:24%;height:9px;border-radius:999px;background:#f97316"></span></span>
+        <span style="padding:11px 18px 11px 12px;border-bottom:1px solid #f4f4f5;font:400 12.5px/1.5 'DM Sans',sans-serif;color:#52525b">Eagerly — includes core and ui.</span>
+
+        <span style="padding:11px 18px;border-bottom:1px solid #f4f4f5;font:500 12.5px/1.4 'JetBrains Mono',monospace">/solid</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">40.1 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#18181b">13.9 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><span style="width:23%;height:9px;border-radius:999px;background:#f97316"></span></span>
+        <span style="padding:11px 18px 11px 12px;border-bottom:1px solid #f4f4f5;font:400 12.5px/1.5 'DM Sans',sans-serif;color:#52525b">Eagerly — includes core and ui.</span>
+
+        <span style="padding:11px 18px;border-bottom:1px solid #f4f4f5;font:500 12.5px/1.4 'JetBrains Mono',monospace">/nlp</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">13.8 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#18181b">4.9 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><span style="width:8%;height:9px;border-radius:999px;background:#f97316"></span></span>
+        <span style="padding:11px 18px 11px 12px;border-bottom:1px solid #f4f4f5;font:400 12.5px/1.5 'DM Sans',sans-serif;color:#52525b">With the prompt bar, if you render one.</span>
+
+        <span style="padding:11px 18px;border-bottom:1px solid #f4f4f5;background:#f4f4f5;display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font:500 12.5px/1.4 'JetBrains Mono',monospace">nlp/en-GB.model</span><span style="padding:2px 6px;border-radius:999px;border:1.5px solid #18181b;font:700 9px/1.3 'JetBrains Mono',monospace;letter-spacing:0.06em;text-transform:uppercase;color:#18181b">lazy</span></span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;background:#f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">96.0 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;background:#f4f4f5;font:400 12px/1.4 'JetBrains Mono',monospace;color:#18181b">38.0 kB</span>
+        <span style="padding:11px 12px;border-bottom:1px solid #f4f4f5;background:#f4f4f5;display:flex;align-items:center"><span style="width:63%;height:9px;border-radius:999px;background:repeating-linear-gradient(135deg,#18181b 0 4px,#52525b 4px 8px)"></span></span>
+        <span style="padding:11px 18px 11px 12px;border-bottom:1px solid #f4f4f5;background:#f4f4f5;font:400 12.5px/1.5 'DM Sans',sans-serif;color:#18181b">Not bundled. Fetched on the first keystroke in the prompt bar, then cached.</span>
+
+        <span style="padding:11px 18px;font:500 12.5px/1.4 'JetBrains Mono',monospace">/google-calendar</span>
+        <span style="padding:11px 12px;font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">8.9 kB</span>
+        <span style="padding:11px 12px;font:400 12px/1.4 'JetBrains Mono',monospace;color:#18181b">3.1 kB</span>
+        <span style="padding:11px 12px;display:flex;align-items:center"><span style="width:5%;height:9px;border-radius:999px;background:#f97316"></span></span>
+        <span style="padding:11px 18px 11px 12px;font:400 12.5px/1.5 'DM Sans',sans-serif;color:#52525b">When you call <span style="font-family:'JetBrains Mono',monospace;font-size:12px">connectGoogle()</span>.</span>
+      </div>
+    </div>
+    <div style="margin-top:12px;display:flex;align-items:center;gap:20px">
+      <span style="display:flex;align-items:center;gap:7px;font:400 11px/1 'JetBrains Mono',monospace;color:#a1a1aa"><span style="width:16px;height:8px;border-radius:999px;background:#f97316"></span>shipped in the bundle</span>
+      <span style="display:flex;align-items:center;gap:7px;font:400 11px/1 'JetBrains Mono',monospace;color:#a1a1aa"><span style="width:16px;height:8px;border-radius:999px;background:repeating-linear-gradient(135deg,#18181b 0 4px,#52525b 4px 8px)"></span>fetched at runtime</span>
+    </div>
+  </section>
+
+  <footer style="margin-top:72px;border-top:1px solid #e4e4e7;padding:32px 40px;display:flex;justify-content:space-between;align-items:baseline">
+    <span style="font:400 12.5px/1.5 'DM Sans',sans-serif;color:#a1a1aa">A final-year project at the University of Ruhuna.</span>
+    <span style="font:400 12px/1.5 'JetBrains Mono',monospace;color:#a1a1aa">v2.4.0 · MIT</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440}}">
+class Component extends DCLogic {
+  state = { copied: null };
+  copy(key, pkg) {
+    if (navigator.clipboard) navigator.clipboard.writeText('npm i @janus-scheduler/' + pkg).catch(() => {});
+    this.setState({ copied: key });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ copied: null }), 1600);
+  }
+  componentWillUnmount() { clearTimeout(this._t); }
+  renderVals() {
+    const lbl = k => (this.state.copied === k ? 'Copied' : 'Copy');
+    const mk = (k, pkg) => () => this.copy(k, pkg);
+    return {
+      copyCore: mk('core', 'core'), labelCore: lbl('core'),
+      copyUi: mk('ui', 'ui'), labelUi: lbl('ui'),
+      copyReact: mk('react', 'react'), labelReact: lbl('react'),
+      copyAngular: mk('angular', 'angular'), labelAngular: lbl('angular'),
+      copySolid: mk('solid', 'solid'), labelSolid: lbl('solid'),
+      copyNlp: mk('nlp', 'nlp'), labelNlp: lbl('nlp'),
+      copyGcal: mk('gcal', 'google-calendar'), labelGcal: lbl('gcal')
+    };
+  }
+}
+</script>
+</body>
+</html>

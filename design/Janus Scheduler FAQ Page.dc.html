@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ffffff;font-family:"DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#18181b;text-decoration:none}
+a:hover{color:#c2560a}
+*{box-sizing:border-box}
+::placeholder{color:#a1a1aa}
+.jscroll{overflow-x:auto;scrollbar-width:thin}
+.jscroll::-webkit-scrollbar{height:10px}
+.jscroll::-webkit-scrollbar-thumb{background:#e4e4e7;border-radius:999px;border:3px solid #ffffff}
+</style>
+</helmet>
+
+<div style="width:1440px;margin:0 auto;background:#ffffff;color:#18181b">
+
+  <div style="position:sticky;top:0;z-index:60;height:56px;padding:0 40px;display:flex;align-items:center;gap:26px;border-bottom:1px solid #e4e4e7;background:rgba(255,255,255,0.92);backdrop-filter:blur(14px)">
+    <a href="#" style="display:flex;align-items:center;gap:9px">
+      <span style="width:18px;height:18px;border-radius:6px;background:#f97316;box-shadow:0 0 0 4px rgba(249,115,22,0.12)"></span>
+      <span style="font:700 15px/1 'DM Sans',sans-serif;letter-spacing:-0.02em">Janus<span style="color:#a1a1aa;font-weight:500">Scheduler</span></span>
+    </a>
+    <div style="display:flex;align-items:center;gap:20px">
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">Docs</a>
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">Features</a>
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">Packages</a>
+      <span style="font:600 13.5px/1 'DM Sans',sans-serif;color:#c2560a">FAQ</span>
+    </div>
+    <div style="flex:1"></div>
+    <span style="padding:4px 10px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 11.5px/1.35 'JetBrains Mono',monospace">v2.4.0</span>
+    <button style="height:34px;padding:0 14px;border:0;border-radius:9px;background:#f97316;color:#ffffff;font:600 13px/1 'DM Sans',sans-serif;cursor:pointer" style-hover="background:#ea6a0a">Get started</button>
+  </div>
+
+  <header style="padding:64px 40px 36px;display:flex;flex-direction:column;gap:16px">
+    <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">FAQ and comparison</span>
+    <h1 style="margin:0;max-width:24ch;font:700 50px/1.07 'DM Sans',sans-serif;letter-spacing:-0.03em">How Janus compares, and where it does not</h1>
+    <p style="margin:0;max-width:72ch;font:400 17px/1.6 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">The table below was compiled in August 2026 from public documentation and pricing pages. Where a competitor does something better, the row says so — a comparison that only flatters us would not be worth publishing.</p>
+  </header>
+
+  <!-- COMPARISON -->
+  <section style="padding:0 40px">
+    <div class="jscroll" style="border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff">
+      <div style="display:grid;grid-template-columns:280px 232px repeat(4,258px);min-width:max-content">
+
+        <span style="position:sticky;left:0;z-index:3;padding:14px 20px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;border-right:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Criterion</span>
+        <span style="padding:14px 18px;background:rgba(249,115,22,0.12);border-bottom:1.5px solid #f97316;display:flex;flex-direction:column;gap:3px"><span style="font:700 14px/1.2 'DM Sans',sans-serif;color:#7c3a06;letter-spacing:-0.01em">Janus Scheduler</span><span style="font:400 10.5px/1.3 'JetBrains Mono',monospace;color:#c2560a">v2.4.0</span></span>
+        <span style="padding:14px 18px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;display:flex;flex-direction:column;gap:3px"><span style="font:600 14px/1.2 'DM Sans',sans-serif;letter-spacing:-0.01em">FullCalendar</span><span style="font:400 10.5px/1.3 'JetBrains Mono',monospace;color:#a1a1aa">v6.1</span></span>
+        <span style="padding:14px 18px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;display:flex;flex-direction:column;gap:3px"><span style="font:600 14px/1.2 'DM Sans',sans-serif;letter-spacing:-0.01em">Bryntum</span><span style="font:400 10.5px/1.3 'JetBrains Mono',monospace;color:#a1a1aa">v6.0</span></span>
+        <span style="padding:14px 18px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;display:flex;flex-direction:column;gap:3px"><span style="font:600 14px/1.2 'DM Sans',sans-serif;letter-spacing:-0.01em">Syncfusion</span><span style="font:400 10.5px/1.3 'JetBrains Mono',monospace;color:#a1a1aa">2026 vol 2</span></span>
+        <span style="padding:14px 18px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;display:flex;flex-direction:column;gap:3px"><span style="font:600 14px/1.2 'DM Sans',sans-serif;letter-spacing:-0.01em">DHTMLX</span><span style="font:400 10.5px/1.3 'JetBrains Mono',monospace;color:#a1a1aa">v7.2</span></span>
+
+        <span style="position:sticky;left:0;z-index:2;padding:12px 20px;background:#ffffff;border-bottom:1px solid #f4f4f5;border-right:1.5px solid #e4e4e7;font:500 13px/1.4 'DM Sans',sans-serif">Licence</span>
+        <span style="padding:12px 18px;background:rgba(249,115,22,0.05);border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">✓</span><span style="font:500 12.5px/1.4 'JetBrains Mono',monospace;color:#7c3a06">MIT</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">MIT + paid</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✕</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Commercial</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✕</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Commercial</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✕</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Commercial</span></span>
+
+        <span style="position:sticky;left:0;z-index:2;padding:12px 20px;background:#ffffff;border-bottom:1px solid #f4f4f5;border-right:1.5px solid #e4e4e7;font:500 13px/1.4 'DM Sans',sans-serif">Cost for a team of five</span>
+        <span style="padding:12px 18px;background:rgba(249,115,22,0.05);border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">✓</span><span style="font:500 12.5px/1.4 'JetBrains Mono',monospace;color:#7c3a06">Free</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">from $480/yr</span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">from $3,500</span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">from $2,495/yr</span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">from $1,299</span>
+
+        <span style="position:sticky;left:0;z-index:2;padding:12px 20px;background:#ffffff;border-bottom:1px solid #f4f4f5;border-right:1.5px solid #e4e4e7;font:500 13px/1.4 'DM Sans',sans-serif">Framework-agnostic core</span>
+        <span style="padding:12px 18px;background:rgba(249,115,22,0.05);border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">✓</span><span style="font:500 12.5px/1.4 'JetBrains Mono',monospace;color:#7c3a06">Web Components</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">JS core + wrappers</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">JS core + wrappers</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✕</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Per-framework builds</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">JS core + wrappers</span></span>
+
+        <span style="position:sticky;left:0;z-index:2;padding:12px 20px;background:#ffffff;border-bottom:1px solid #f4f4f5;border-right:1.5px solid #e4e4e7;font:500 13px/1.4 'DM Sans',sans-serif">Bundle size · min+gzip</span>
+        <span style="padding:12px 18px;background:rgba(249,115,22,0.05);border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">✓</span><span style="font:500 12.5px/1.4 'JetBrains Mono',monospace;color:#7c3a06">14.2 kB</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">≈ 78 kB</span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">≈ 340 kB</span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">≈ 290 kB</span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">≈ 210 kB</span>
+
+        <span style="position:sticky;left:0;z-index:2;padding:12px 20px;background:#ffffff;border-bottom:1px solid #f4f4f5;border-right:1.5px solid #e4e4e7;font:500 13px/1.4 'DM Sans',sans-serif">Resource timeline</span>
+        <span style="padding:12px 18px;background:rgba(249,115,22,0.05);border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">✓</span><span style="font:500 12.5px/1.4 'JetBrains Mono',monospace;color:#7c3a06">Included</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Premium only</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Best in class</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Included</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Included</span></span>
+
+        <span style="position:sticky;left:0;z-index:2;padding:12px 20px;background:#ffffff;border-bottom:1px solid #f4f4f5;border-right:1.5px solid #e4e4e7;font:500 13px/1.4 'DM Sans',sans-serif">Gantt / dependencies</span>
+        <span style="padding:12px 18px;background:rgba(249,115,22,0.05);border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">✕</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#7c3a06">Out of scope</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✕</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">No</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Full Gantt</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Full Gantt</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Separate product</span></span>
+
+        <span style="position:sticky;left:0;z-index:2;padding:12px 20px;background:#ffffff;border-bottom:1px solid #f4f4f5;border-right:1.5px solid #e4e4e7;font:500 13px/1.4 'DM Sans',sans-serif">Timezone-aware storage</span>
+        <span style="padding:12px 18px;background:rgba(249,115,22,0.05);border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">✓</span><span style="font:500 12.5px/1.4 'JetBrains Mono',monospace;color:#7c3a06">UTC + display zone</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Plugin required</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Yes</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Yes</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Partial</span></span>
+
+        <span style="position:sticky;left:0;z-index:2;padding:12px 20px;background:#ffffff;border-bottom:1px solid #f4f4f5;border-right:1.5px solid #e4e4e7;font:500 13px/1.4 'DM Sans',sans-serif">Recurrence editing UI</span>
+        <span style="padding:12px 18px;background:rgba(249,115,22,0.05);border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">✕</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#7c3a06">Engine only</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Basic</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Full editor</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Full editor</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Full editor</span></span>
+
+        <span style="position:sticky;left:0;z-index:2;padding:12px 20px;background:#ffffff;border-bottom:1px solid #f4f4f5;border-right:1.5px solid #e4e4e7;font:500 13px/1.4 'DM Sans',sans-serif">Natural-language entry</span>
+        <span style="padding:12px 18px;background:rgba(249,115,22,0.05);border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">✓</span><span style="font:500 12.5px/1.4 'JetBrains Mono',monospace;color:#7c3a06">On-device</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✕</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">No</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✕</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">No</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Cloud AI add-on</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✕</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">No</span></span>
+
+        <span style="position:sticky;left:0;z-index:2;padding:12px 20px;background:#ffffff;border-bottom:1px solid #f4f4f5;border-right:1.5px solid #e4e4e7;font:500 13px/1.4 'DM Sans',sans-serif">Works without a backend</span>
+        <span style="padding:12px 18px;background:rgba(249,115,22,0.05);border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">✓</span><span style="font:500 12.5px/1.4 'JetBrains Mono',monospace;color:#7c3a06">Fully offline</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Yes</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">CRUD manager assumed</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Data manager assumed</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Backend samples</span></span>
+
+        <span style="position:sticky;left:0;z-index:2;padding:12px 20px;background:#ffffff;border-bottom:1px solid #f4f4f5;border-right:1.5px solid #e4e4e7;font:500 13px/1.4 'DM Sans',sans-serif">Accessibility audit published</span>
+        <span style="padding:12px 18px;background:rgba(249,115,22,0.05);border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#7c3a06">Self-assessed</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Self-assessed</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Third-party VPAT</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Third-party VPAT</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Self-assessed</span></span>
+
+        <span style="position:sticky;left:0;z-index:2;padding:12px 20px;background:#ffffff;border-bottom:1px solid #f4f4f5;border-right:1.5px solid #e4e4e7;font:500 13px/1.4 'DM Sans',sans-serif">Commercial support SLA</span>
+        <span style="padding:12px 18px;background:rgba(249,115,22,0.05);border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">✕</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#7c3a06">Community only</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Paid tiers</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Included</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">24 × 5</span></span>
+        <span style="padding:12px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#52525b">✓</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">Paid tiers</span></span>
+
+        <span style="position:sticky;left:0;z-index:2;padding:12px 20px;background:#ffffff;border-right:1.5px solid #e4e4e7;font:500 13px/1.4 'DM Sans',sans-serif">Years in production</span>
+        <span style="padding:12px 18px;background:rgba(249,115,22,0.05);display:flex;align-items:center;gap:8px"><span style="font:600 13px/1 'JetBrains Mono',monospace;color:#c2560a">~</span><span style="font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#7c3a06">1</span></span>
+        <span style="padding:12px 18px;display:flex;align-items:center;font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">14</span>
+        <span style="padding:12px 18px;display:flex;align-items:center;font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">12</span>
+        <span style="padding:12px 18px;display:flex;align-items:center;font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">24</span>
+        <span style="padding:12px 18px;display:flex;align-items:center;font:400 12.5px/1.4 'JetBrains Mono',monospace;color:#52525b">20</span>
+      </div>
+    </div>
+    <div style="margin-top:10px;display:flex;align-items:center;gap:20px">
+      <span style="display:flex;align-items:center;gap:7px;font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa"><span style="color:#52525b">✓</span>supported</span>
+      <span style="display:flex;align-items:center;gap:7px;font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa"><span style="color:#52525b">~</span>partial, or conditions apply</span>
+      <span style="display:flex;align-items:center;gap:7px;font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa"><span style="color:#52525b">✕</span>not available</span>
+      <span style="flex:1"></span>
+      <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">scroll horizontally for all five ▸</span>
+    </div>
+  </section>
+
+  <!-- WEAKER -->
+  <section style="padding:56px 40px 0">
+    <div style="display:grid;grid-template-columns:1fr 1.7fr;gap:44px;align-items:start">
+      <h2 style="margin:0;font:700 30px/1.15 'DM Sans',sans-serif;letter-spacing:-0.025em">Where Janus is weaker today</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:76ch">
+        <p style="margin:0;font:400 16px/1.7 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">Bryntum's timeline is better than ours. It has had twelve years of edge cases poured into it, and if you need dependency arrows, baselines or a full Gantt, you should buy it rather than wait for us — those are not on our roadmap at all.</p>
+        <p style="margin:0;font:400 16px/1.7 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">Syncfusion and Bryntum both publish third-party accessibility audits. Ours is a self-assessment against WCAG 2.2 AA, run by the people who wrote the code, which is worth less. We are seeking funding for an external audit and will publish the result whatever it says.</p>
+        <p style="margin:0;font:400 16px/1.7 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">There is no recurrence editing interface, no commercial support contract, and no telephone number to ring at two in the morning. Issues are answered by four people who also have a degree to finish; median response last quarter was three days, and the slowest was eleven. If a scheduling failure would cost your business real money, that risk is yours to weigh, and paying a vendor is a legitimate answer to it.</p>
+        <p style="margin:0;font:400 16px/1.7 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">Finally, Janus has been in production for about a year, across perhaps two hundred deployments we know of. FullCalendar has fourteen years and millions. Maturity is not a feature we can ship — only accumulate.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="padding:64px 40px 0">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:22px">
+      <h2 style="margin:0;font:700 30px/1.15 'DM Sans',sans-serif;letter-spacing:-0.025em">Frequently asked questions</h2>
+      <span style="font:400 11.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">18 questions · six groups</span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:34px">
+      <sc-for list="{{ groups }}" as="grp" hint-placeholder-count="6">
+        <div style="display:grid;grid-template-columns:212px 1fr;gap:32px;align-items:start">
+          <div style="display:flex;flex-direction:column;gap:6px;position:sticky;top:76px">
+            <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#f97316">{{ grp.name }}</span>
+            <span style="font:400 12px/1.5 'DM Sans',sans-serif;color:#a1a1aa">{{ grp.note }}</span>
+          </div>
+          <div style="display:flex;flex-direction:column;border-top:1px solid #e4e4e7">
+            <sc-for list="{{ grp.items }}" as="item" hint-placeholder-count="3">
+              <div style="{{ item.rowStyle }}">
+                <div onClick="{{ item.toggle }}" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0;cursor:pointer">
+                  <span style="{{ item.qStyle }}">{{ item.q }}</span>
+                  <span style="{{ item.signStyle }}">{{ item.sign }}</span>
+                </div>
+                <sc-if value="{{ item.open }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:0 0 20px;display:flex;flex-direction:column;gap:12px;max-width:78ch">
+                    <p style="margin:0;font:400 14.5px/1.7 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">{{ item.a }}</p>
+                    <sc-if value="{{ item.hasCode }}" hint-placeholder-val="{{ false }}">
+                      <span style="align-self:flex-start;padding:6px 10px;border-radius:9px;background:#f4f4f5;border:1.5px solid #e4e4e7;font:400 12.5px/1.5 'JetBrains Mono',monospace;color:#18181b">{{ item.code }}</span>
+                    </sc-if>
+                    <a href="#" style="font:600 12.5px/1 'JetBrains Mono',monospace;color:#c2560a">{{ item.link }} →</a>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding:64px 40px 0">
+    <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#f4f4f5;padding:34px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <span style="font:700 24px/1.25 'DM Sans',sans-serif;letter-spacing:-0.02em">Question not answered here?</span>
+        <span style="max-width:60ch;font:400 14.5px/1.6 'DM Sans',sans-serif;color:#52525b">Open a discussion on GitHub. If it turns out to be a common one, it ends up on this page.</span>
+      </div>
+      <div style="display:flex;gap:10px;flex:none">
+        <button style="height:44px;padding:0 20px;border:0;border-radius:9px;background:#f97316;color:#ffffff;font:600 14px/1 'DM Sans',sans-serif;cursor:pointer" style-hover="background:#ea6a0a">Start a discussion</button>
+        <button style="height:44px;padding:0 20px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff;color:#18181b;font:600 14px/1 'DM Sans',sans-serif;cursor:pointer" style-hover="background:#f4f4f5">Read the docs</button>
+      </div>
+    </div>
+  </section>
+
+  <footer style="margin-top:72px;border-top:1px solid #e4e4e7;padding:32px 40px;display:flex;justify-content:space-between;align-items:baseline">
+    <span style="font:400 12.5px/1.5 'DM Sans',sans-serif;color:#a1a1aa">A final-year project at the University of Ruhuna.</span>
+    <span style="font:400 12px/1.5 'JetBrains Mono',monospace;color:#a1a1aa">v2.4.0 · MIT</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440}}">
+class Component extends DCLogic {
+  state = { open: '0-0' };
+  groupData() {
+    return [
+      { name: 'General', note: 'Licence, cost, who is behind it.', items: [
+        { q: 'What exactly is Janus Scheduler?', a: 'A scheduling component library: a resource timeline and month grid, plus the state machine behind them. It renders and manipulates a schedule in the browser and hands changes back to you as events. It is not a booking system, a calendar server, or an availability engine — those remain yours to build, which is why the surface stays small enough to learn in an afternoon.', link: 'Read the introduction' },
+        { q: 'Is it really free for commercial use?', a: 'Yes. MIT licence, no feature gating, no seat count, no attribution requirement. There is no paid tier that unlocks the timeline, because there is no paid tier. The project is funded by being a university project rather than a business.', link: 'Read the licence' },
+        { q: 'Who maintains it, and what happens after the degree?', a: 'Four students at the University of Ruhuna, supervised by Dr. Rajitha Udawalpola, plus 41 outside contributors. After submission the repository stays where it is under the same licence; two of us intend to keep maintaining it. If that changes we will say so on the README rather than let it go quiet.', link: 'Meet the team' }
+      ] },
+      { name: 'Technical', note: 'Frameworks, size, rendering.', items: [
+        { q: 'Which frameworks are supported?', a: 'React, Angular and Solid have published wrappers; Vue is in progress. All four are thin shells over the same custom elements, so anything that renders HTML can use Janus directly — the wrapper only makes props and events feel native.', hasCode: true, code: 'npm i @janus-scheduler/react', link: 'Framework guides' },
+        { q: 'Does it need a backend?', a: 'No. Parsing, layout, recurrence expansion and conflict detection all run on the client, and the component works with the network switched off. You supply an array of events; where they come from is your business.', link: 'Read the architecture note' },
+        { q: 'How does it stay fast with ten thousand events?', a: 'Both axes are virtualised and layout runs as a single pass over typed arrays, so cost tracks what is on screen rather than what is in the store. Recurrence expansion happens in a worker. The benchmark suite is in the repository so you can reproduce the numbers rather than take ours.', link: 'See the benchmarks' }
+      ] },
+      { name: 'Natural language', note: 'What the parser is, and is not.', items: [
+        { q: 'Is there a large language model in here?', a: 'No. It is a quantised static embedding table with a nearest-neighbour classifier over 240 labelled prototypes — about 38 kB, fetched once. That is why it parses in under a millisecond and works offline, and also why it handles one intent per sentence and nothing conversational.', link: 'How the parser works' },
+        { q: 'Which languages does it understand?', a: 'British English only. American spellings are normalised, so "organize" and "organise" both work, but no other language artefact ships today and we would rather publish none than publish a bad one.', link: 'Entity reference' },
+        { q: 'Can I use my own parser or an LLM instead?', a: 'Yes, and several people do. The parser implements a documented interface; send the string wherever you like and hand back a structured event. Nothing else in the library depends on our implementation.', hasCode: true, code: 'scheduler.parser = myParser', link: 'Parser interface' }
+      ] },
+      { name: 'Google Calendar', note: 'Sync behaviour and its one requirement.', items: [
+        { q: 'Is the sync two-way?', a: 'Yes. An incremental sync token pulls remote changes on a 30-second poll, local edits push straight back, and merging is field-level — a title edited on one side and a time moved on the other will not overwrite each other.', link: 'Sync documentation' },
+        { q: 'Do I need a server for it?', a: 'A small one, yes. The adapter needs a token endpoint you host, because Janus will not hold a client secret in the browser. It is about thirty lines; a reference implementation is in the repository.', link: 'Token endpoint guide' },
+        { q: 'What happens if the same event changes on both sides?', a: 'Last write wins, per field, with the remote timestamp as the tiebreak. You can replace the merge function if your domain needs different rules — for instance, treating the calendar as authoritative for times but never for titles.', link: 'Conflict policy' }
+      ] },
+      { name: 'Data and customisation', note: 'Storage, styling, custom content.', items: [
+        { q: 'How should I store events?', a: 'However you already store data. Janus reads an array and emits changes; it has no opinion about your database, and no persistence layer of its own. Store instants as UTC and it will render them correctly in any display zone.', link: 'Data shapes' },
+        { q: 'Can I restyle it to match our design system?', a: 'Twelve CSS custom properties cover colour, radius, density and typography, and they inherit through the shadow boundary. Global stylesheets and utility classes do not reach inside — that is deliberate, and it is what lets internal markup change without breaking your build.', hasCode: true, code: '--janus-accent: #f97316', link: 'Theming and tokens' },
+        { q: 'Can I render my own content inside an event block?', a: 'Yes, via the renderEvent hook or a slot, depending on framework. That is the supported escape hatch for anything the tokens do not cover; reaching into the shadow DOM is not.', link: 'Custom rendering' }
+      ] },
+      { name: 'Support', note: 'Bugs, releases, expectations.', items: [
+        { q: 'How do I report a bug?', a: 'Open an issue with a reproduction — a CodeSandbox or a failing test is ideal. Median response last quarter was three days and the slowest was eleven; we would rather tell you that than promise same-day.', link: 'Open an issue' },
+        { q: 'Is commercial support available?', a: 'No. There is no support contract, no SLA and no phone number. If your deployment needs guaranteed response times, a commercial vendor is the honest answer, and we say so in the comparison above.', link: 'Compare alternatives' },
+        { q: 'How often do you release, and how stable is the API?', a: 'Minor releases roughly every six weeks, patches as needed, semantic versioning enforced by a type-level API snapshot in CI. Nothing has been removed without a deprecation period since v1.0, and the changelog records every behavioural change, not just the flattering ones.', link: 'Read the changelog' }
+      ] }
+    ];
+  }
+  renderVals() {
+    const open = this.state.open;
+    return {
+      groups: this.groupData().map((g, gi) => ({
+        name: g.name, note: g.note,
+        items: g.items.map((it, ii) => {
+          const key = gi + '-' + ii;
+          const isOpen = open === key;
+          return {
+            q: it.q, a: it.a, link: it.link,
+            hasCode: !!it.hasCode, code: it.code || '',
+            open: isOpen, sign: isOpen ? '−' : '+',
+            rowStyle: 'border-bottom:1px solid #e4e4e7;' + (isOpen ? 'background:#ffffff;' : ''),
+            qStyle: 'font:' + (isOpen ? '600' : '500') + ' 16px/1.45 "DM Sans",sans-serif;letter-spacing:-0.01em;color:' + (isOpen ? '#18181b' : '#18181b'),
+            signStyle: 'flex:none;width:26px;height:26px;border-radius:9px;display:flex;align-items:center;justify-content:center;font:500 14px/1 "JetBrains Mono",monospace;' +
+              (isOpen ? 'background:#f97316;color:#ffffff;' : 'border:1.5px solid #e4e4e7;color:#52525b;'),
+            toggle: () => this.setState({ open: isOpen ? null : key })
+          };
+        })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

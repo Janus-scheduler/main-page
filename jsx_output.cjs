@@ -1,0 +1,254 @@
+  {/* ── GOOGLE CALENDAR ─────────────────────────── */}
+  <section style={{ padding: "104px 40px 0" }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: "56px", alignItems: "center" }}>
+      <div style={{ border: "1.5px solid #e4e4e7", borderRadius: "14px", background: "#f4f4f5", padding: "34px 28px", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 132px 1fr", alignItems: "center", gap: "0" }}>
+          <div style={{ border: "1.5px solid #e4e4e7", borderRadius: "14px", background: "#ffffff", padding: "18px", display: "flex", flexDirection: "column", gap: "12px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}><span style={{ width: "16px", height: "16px", borderRadius: "5px", background: "#f97316" }}></span><span style={{ font: "600 13px/1 'DM Sans',sans-serif" }}>Janus calendar</span></div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+              <span style={{ height: "22px", borderRadius: "6px", background: "rgba(249,115,22,0.12)", border: "1.5px solid #f97316" }}></span>
+              <span style={{ height: "22px", borderRadius: "6px", background: "oklch(0.93 0.045 240)", border: "1.5px solid oklch(0.62 0.12 240)" }}></span>
+              <span style={{ height: "22px", borderRadius: "6px", background: "#f4f4f5", border: "1.5px solid #e4e4e7" }}></span>
+            </div>
+            <span style={{ font: "400 10.5px/1.4 'JetBrains Mono',monospace", color: "#a1a1aa" }}>local state · source of truth</span>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px", padding: "0 12px" }}>
+            <div style={{ width: "100%", display: "flex", alignItems: "center", gap: "6px" }}>
+              <span style={{ flex: "1", height: "1.5px", background: "#f97316" }}></span>
+              <span style={{ font: "400 12px/1 'JetBrains Mono',monospace", color: "#f97316" }}>▶</span>
+            </div>
+            <span style={{ padding: "4px 9px", borderRadius: "999px", background: "#ffffff", border: "1.5px solid #e4e4e7", font: "500 10.5px/1.3 'JetBrains Mono',monospace", color: "#52525b" }}>two-way sync</span>
+            <div style={{ width: "100%", display: "flex", alignItems: "center", gap: "6px" }}>
+              <span style={{ font: "400 12px/1 'JetBrains Mono',monospace", color: "#52525b" }}>◀</span>
+              <span style={{ flex: "1", height: "1.5px", background: "#a1a1aa" }}></span>
+            </div>
+            <span style={{ font: "400 10px/1.4 'JetBrains Mono',monospace", color: "#a1a1aa", textAlign: "center" }}>incremental<br />syncToken</span>
+          </div>
+
+          <div style={{ border: "1.5px solid #e4e4e7", borderRadius: "14px", background: "#ffffff", padding: "18px", display: "flex", flexDirection: "column", gap: "12px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}><span style={{ width: "16px", height: "16px", borderRadius: "5px", background: "#e4e4e7", border: "1.5px solid #a1a1aa" }}></span><span style={{ font: "600 13px/1 'DM Sans',sans-serif" }}>Google Calendar</span></div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+              <span style={{ height: "22px", borderRadius: "6px", background: "#f4f4f5", border: "1.5px solid #e4e4e7" }}></span>
+              <span style={{ height: "22px", borderRadius: "6px", background: "#f4f4f5", border: "1.5px solid #e4e4e7" }}></span>
+              <span style={{ height: "22px", borderRadius: "6px", background: "#f4f4f5", border: "1.5px solid #e4e4e7" }}></span>
+            </div>
+            <span style={{ font: "400 10.5px/1.4 'JetBrains Mono',monospace", color: "#a1a1aa" }}>OAuth 2.0 · events.watch</span>
+          </div>
+        </div>
+        <div style={{ marginTop: "22px", paddingTop: "16px", borderTop: "1px solid #e4e4e7", display: "flex", justifyContent: "space-between" }}>
+          <span style={{ font: "400 11.5px/1 'JetBrains Mono',monospace", color: "#52525b" }}>conflict policy: last-write-wins, per field</span>
+          <span style={{ font: "400 11.5px/1 'JetBrains Mono',monospace", color: "#52525b" }}>delta poll: 30 s</span>
+        </div>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <span style={{ font: "500 11px/1 'JetBrains Mono',monospace", letterSpacing: "0.1em", textTransform: "uppercase", color: "#a1a1aa" }}>Google Calendar sync</span>
+        <h2 style={{ margin: "0", font: "700 42px/1.1 'DM Sans',sans-serif", letterSpacing: "-0.028em", maxWidth: "17ch" }}>One calendar, two directions</h2>
+        <p style={{ margin: "0", font: "400 16px/1.65 'DM Sans',sans-serif", color: "#52525b", maxWidth: "48ch", textWrap: "pretty" }}>Connect a Google account and Janus keeps both sides current: an incremental sync token pulls remote changes, local edits push straight back. Field-level merging means a title edited here and a time moved there do not overwrite each other.</p>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px", padding: "16px 18px", border: "1.5px solid #e4e4e7", borderRadius: "14px", background: "#f4f4f5" }}>
+          <span style={{ font: "500 11px/1 'JetBrains Mono',monospace", letterSpacing: "0.08em", textTransform: "uppercase", color: "#52525b" }}>Limitation</span>
+          <p style={{ margin: "0", font: "400 13.5px/1.6 'DM Sans',sans-serif", color: "#52525b" }}>The sync adapter needs a token endpoint of your own — Janus never holds a client secret in the browser.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ── FRAMEWORK TABS ─────────────────────────── */}
+  <section style={{ padding: "128px 40px 0" }}>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px", textAlign: "center", marginBottom: "44px" }}>
+      <span style={{ font: "500 11px/1 'JetBrains Mono',monospace", letterSpacing: "0.1em", textTransform: "uppercase", color: "#a1a1aa" }}>Integration</span>
+      <h2 style={{ margin: "0", font: "700 48px/1.08 'DM Sans',sans-serif", letterSpacing: "-0.03em", maxWidth: "24ch" }}>The same component, in the framework you already use</h2>
+      <p style={{ margin: "0", maxWidth: "62ch", font: "400 17px/1.6 'DM Sans',sans-serif", color: "#52525b", textWrap: "pretty" }}>One Lit core, thin wrappers. Props, events and theming are identical everywhere — the wrappers exist only to make the ergonomics native.</p>
+    </div>
+
+    <div style={{ border: "1.5px solid #e4e4e7", borderRadius: "14px", overflow: "hidden", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 16px", background: "#f4f4f5", borderBottom: "1.5px solid #e4e4e7" }}>
+        <div style={{ display: "flex" }}>
+          <span onClick={ pickReact } style={{  }}>React</span>
+          <span onClick={ pickAngular } style={{  }}>Angular</span>
+          <span onClick={ pickSolid } style={{  }}>Solid</span>
+          <span onClick={ pickVue } style={{  }}>Vue</span>
+          <span onClick={ pickVanilla } style={{  }}>Vanilla</span>
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          <span style={{ font: "400 11.5px/1 'JetBrains Mono',monospace", color: "#a1a1aa" }}>{ pkgName }</span>
+          <button onClick={ copySnippet } style={{ height: "26px", padding: "0 9px", border: "1.5px solid #e4e4e7", borderRadius: "9px", background: "#ffffff", color: "#52525b", font: "500 11px/1 'JetBrains Mono',monospace", cursor: "pointer" }} >{ snippetLabel }</button>
+        </div>
+      </div>
+
+      <div style={{ background: "#18181b", minHeight: "392px", display: "flex" }}>
+        <div style={{ width: "60px", flex: "none", padding: "26px 0", borderRight: "1px solid #27272a", display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "0", font: "400 13px/1.85 'JetBrains Mono',monospace", color: "#3f3f46" }}>
+          <span style={{ paddingRight: "16px" }}>1</span><span style={{ paddingRight: "16px" }}>2</span><span style={{ paddingRight: "16px" }}>3</span><span style={{ paddingRight: "16px" }}>4</span><span style={{ paddingRight: "16px" }}>5</span><span style={{ paddingRight: "16px" }}>6</span><span style={{ paddingRight: "16px" }}>7</span><span style={{ paddingRight: "16px" }}>8</span><span style={{ paddingRight: "16px" }}>9</span><span style={{ paddingRight: "16px" }}>10</span><span style={{ paddingRight: "16px" }}>11</span>
+        </div>
+        <div style={{ flex: "1", padding: "26px 28px", overflowX: "auto" }}>
+          <sc-if value={ isReact } hint-placeholder-val="{{ true }}">
+            <pre style={{ margin: "0", font: "400 13.5px/1.85 'JetBrains Mono',monospace", color: "#e4e4e7" }}><div><span style={{ color: "#f97316" }}>import</span> { JanusScheduler } <span style={{ color: "#f97316" }}>from</span> <span style={{ color: "#a3e635" }}>'@janus-scheduler/react'</span></div><div>&#8203;</div><div><span style={{ color: "#f97316" }}>export function</span> <span style={{ color: "#7dd3fc" }}>Calendar</span>({ events }) {</div><div>  <span style={{ color: "#f97316" }}>return</span> (</div><div>    <span style={{ color: "#a1a1aa" }}>&lt;</span><span style={{ color: "#7dd3fc" }}>JanusScheduler</span></div><div>      view<span style={{ color: "#a1a1aa" }}>=</span><span style={{ color: "#a3e635" }}>"timeline"</span></div><div>      events<span style={{ color: "#a1a1aa" }}>=</span>{events}</div><div>      timeZone<span style={{ color: "#a1a1aa" }}>=</span><span style={{ color: "#a3e635" }}>"Asia/Colombo"</span></div><div>      onEventDrop<span style={{ color: "#a1a1aa" }}>=</span>{(e) <span style={{ color: "#a1a1aa" }}>=&gt;</span> persist(e)}</div><div>    <span style={{ color: "#a1a1aa" }}>/&gt;</span></div><div>  )</div><div>}</div></pre>
+          </>
+)}
+          <sc-if value={ isAngular }>
+            <pre style={{ margin: "0", font: "400 13.5px/1.85 'JetBrains Mono',monospace", color: "#e4e4e7" }}><div><span style={{ color: "#f97316" }}>import</span> { JanusSchedulerModule } <span style={{ color: "#f97316" }}>from</span> <span style={{ color: "#a3e635" }}>'@janus-scheduler/angular'</span></div><div>&#8203;</div><div><span style={{ color: "#52525b" }}>// calendar.component.html</span></div><div><span style={{ color: "#a1a1aa" }}>&lt;</span><span style={{ color: "#7dd3fc" }}>janus-scheduler</span></div><div>  view<span style={{ color: "#a1a1aa" }}>=</span><span style={{ color: "#a3e635" }}>"timeline"</span></div><div>  [events]<span style={{ color: "#a1a1aa" }}>=</span><span style={{ color: "#a3e635" }}>"events"</span></div><div>  timeZone<span style={{ color: "#a1a1aa" }}>=</span><span style={{ color: "#a3e635" }}>"Asia/Colombo"</span></div><div>  (eventDrop)<span style={{ color: "#a1a1aa" }}>=</span><span style={{ color: "#a3e635" }}>"persist($event)"</span><span style={{ color: "#a1a1aa" }}>&gt;</span></div><div><span style={{ color: "#a1a1aa" }}>&lt;/</span><span style={{ color: "#7dd3fc" }}>janus-scheduler</span><span style={{ color: "#a1a1aa" }}>&gt;</span></div></pre>
+          </>
+)}
+          <sc-if value={ isSolid }>
+            <pre style={{ margin: "0", font: "400 13.5px/1.85 'JetBrains Mono',monospace", color: "#e4e4e7" }}><div><span style={{ color: "#f97316" }}>import</span> { JanusScheduler } <span style={{ color: "#f97316" }}>from</span> <span style={{ color: "#a3e635" }}>'@janus-scheduler/solid'</span></div><div>&#8203;</div><div><span style={{ color: "#f97316" }}>export function</span> <span style={{ color: "#7dd3fc" }}>Calendar</span>(props) {</div><div>  <span style={{ color: "#f97316" }}>return</span> (</div><div>    <span style={{ color: "#a1a1aa" }}>&lt;</span><span style={{ color: "#7dd3fc" }}>JanusScheduler</span></div><div>      view<span style={{ color: "#a1a1aa" }}>=</span><span style={{ color: "#a3e635" }}>"timeline"</span></div><div>      events<span style={{ color: "#a1a1aa" }}>=</span>{props.events}</div><div>      timeZone<span style={{ color: "#a1a1aa" }}>=</span><span style={{ color: "#a3e635" }}>"Asia/Colombo"</span></div><div>      onEventDrop<span style={{ color: "#a1a1aa" }}>=</span>{persist}</div><div>    <span style={{ color: "#a1a1aa" }}>/&gt;</span></div><div>  )</div><div>}</div></pre>
+          </>
+)}
+          <sc-if value={ isVue }>
+            <pre style={{ margin: "0", font: "400 13.5px/1.85 'JetBrains Mono',monospace", color: "#e4e4e7" }}><div><span style={{ color: "#a1a1aa" }}>&lt;</span><span style={{ color: "#7dd3fc" }}>script setup</span><span style={{ color: "#a1a1aa" }}>&gt;</span></div><div><span style={{ color: "#f97316" }}>import</span> { JanusScheduler } <span style={{ color: "#f97316" }}>from</span> <span style={{ color: "#a3e635" }}>'@janus-scheduler/vue'</span></div><div><span style={{ color: "#f97316" }}>const</span> events <span style={{ color: "#a1a1aa" }}>=</span> useEvents()</div><div><span style={{ color: "#a1a1aa" }}>&lt;/</span><span style={{ color: "#7dd3fc" }}>script</span><span style={{ color: "#a1a1aa" }}>&gt;</span></div><div>&#8203;</div><div><span style={{ color: "#a1a1aa" }}>&lt;</span><span style={{ color: "#7dd3fc" }}>JanusScheduler</span></div><div>  view<span style={{ color: "#a1a1aa" }}>=</span><span style={{ color: "#a3e635" }}>"timeline"</span></div><div>  :events<span style={{ color: "#a1a1aa" }}>=</span><span style={{ color: "#a3e635" }}>"events"</span></div><div>  time-zone<span style={{ color: "#a1a1aa" }}>=</span><span style={{ color: "#a3e635" }}>"Asia/Colombo"</span></div><div>  @event-drop<span style={{ color: "#a1a1aa" }}>=</span><span style={{ color: "#a3e635" }}>"persist"</span> <span style={{ color: "#a1a1aa" }}>/&gt;</span></div></pre>
+          </>
+)}
+          <sc-if value={ isVanilla }>
+            <pre style={{ margin: "0", font: "400 13.5px/1.85 'JetBrains Mono',monospace", color: "#e4e4e7" }}><div><span style={{ color: "#f97316" }}>import</span> <span style={{ color: "#a3e635" }}>'@janus-scheduler/ui'</span></div><div>&#8203;</div><div><span style={{ color: "#f97316" }}>const</span> el <span style={{ color: "#a1a1aa" }}>=</span> document<span style={{ color: "#a1a1aa" }}>.</span>createElement(<span style={{ color: "#a3e635" }}>'janus-scheduler'</span>)</div><div>el<span style={{ color: "#a1a1aa" }}>.</span>view <span style={{ color: "#a1a1aa" }}>=</span> <span style={{ color: "#a3e635" }}>'timeline'</span></div><div>el<span style={{ color: "#a1a1aa" }}>.</span>events <span style={{ color: "#a1a1aa" }}>=</span> <span style={{ color: "#f97316" }}>await</span> loadEvents()</div><div>el<span style={{ color: "#a1a1aa" }}>.</span>timeZone <span style={{ color: "#a1a1aa" }}>=</span> <span style={{ color: "#a3e635" }}>'Asia/Colombo'</span></div><div>&#8203;</div><div>el<span style={{ color: "#a1a1aa" }}>.</span>addEventListener(<span style={{ color: "#a3e635" }}>'event-drop'</span><span style={{ color: "#a1a1aa" }}>,</span> (e) <span style={{ color: "#a1a1aa" }}>=&gt;</span> {</div><div>  persist(e<span style={{ color: "#a1a1aa" }}>.</span>detail)</div><div>})</div><div>document<span style={{ color: "#a1a1aa" }}>.</span>body<span style={{ color: "#a1a1aa" }}>.</span>append(el)</div></pre>
+          </>
+)}
+        </div>
+      </div>
+
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 18px", borderTop: "1.5px solid #e4e4e7", background: "#ffffff" }}>
+        <span style={{ font: "400 12.5px/1 'DM Sans',sans-serif", color: "#52525b" }}>Identical props and events across all five wrappers.</span>
+        <div style={{ display: "flex", gap: "8px" }}>
+          <span style={{ padding: "4px 10px", borderRadius: "999px", background: "#f4f4f5", color: "#52525b", font: "500 11.5px/1.35 'JetBrains Mono',monospace" }}>SSR safe</span>
+          <span style={{ padding: "4px 10px", borderRadius: "999px", background: "#f4f4f5", color: "#52525b", font: "500 11.5px/1.35 'JetBrains Mono',monospace" }}>Typed events</span>
+          <span style={{ padding: "4px 10px", borderRadius: "999px", background: "#f4f4f5", color: "#52525b", font: "500 11.5px/1.35 'JetBrains Mono',monospace" }}>Tree-shakeable</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ── THEMING ─────────────────────────── */}
+  <section style={{ padding: "112px 40px 0" }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: "48px", alignItems: "center" }}>
+      <div style={{ border: `1.5px solid ${ prevBorder .trim()}`, borderRadius: "14px", background: `${ prevBg .trim()}`, padding: "18px", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "14px" }}>
+          <span style={{ font: "600 13px/1 'DM Sans',sans-serif", color: `${ prevText .trim()}` }}>September 2026</span>
+          <div style={{ display: "inline-flex", padding: "3px", gap: "2px", background: `${ prevSurface .trim()}`, border: `1.5px solid ${ prevBorder .trim()}`, borderRadius: "9px" }}>
+            <span style={{ padding: "4px 9px", borderRadius: "6px", background: `${ prevActiveBg .trim()}`, color: `${ prevText .trim()}`, font: "600 11px/1 'DM Sans',sans-serif" }}>Week</span>
+            <span style={{ padding: "4px 9px", borderRadius: "6px", color: `${ prevMuted .trim()}`, font: "500 11px/1 'DM Sans',sans-serif" }}>Month</span>
+          </div>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "44px repeat(5,1fr)", gap: "0" }}>
+          <span></span>
+          <span style={{ paddingBottom: "8px", font: "500 10.5px/1 'JetBrains Mono',monospace", color: `${ prevMuted .trim()}`, textAlign: "center" }}>MON</span>
+          <span style={{ paddingBottom: "8px", font: "500 10.5px/1 'JetBrains Mono',monospace", color: `${ prevMuted .trim()}`, textAlign: "center" }}>TUE</span>
+          <span style={{ paddingBottom: "8px", font: "500 10.5px/1 'JetBrains Mono',monospace", color: `${ prevMuted .trim()}`, textAlign: "center" }}>WED</span>
+          <span style={{ paddingBottom: "8px", font: "500 10.5px/1 'JetBrains Mono',monospace", color: `${ prevMuted .trim()}`, textAlign: "center" }}>THU</span>
+          <span style={{ paddingBottom: "8px", font: "500 10.5px/1 'JetBrains Mono',monospace", color: `${ prevMuted .trim()}`, textAlign: "center" }}>FRI</span>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "44px repeat(5,1fr)", borderTop: `1px solid ${ prevBorder .trim()}` }}>
+          <div style={{ display: "flex", flexDirection: "column", font: "400 10px/1 'JetBrains Mono',monospace", color: `${ prevMuted .trim()}` }}>
+            <span style={{ height: "38px", padding: "4px 8px 0 0", textAlign: "right", borderBottom: `1px solid ${ prevHairline .trim()}` }}>09:00</span>
+            <span style={{ height: "38px", padding: "4px 8px 0 0", textAlign: "right", borderBottom: `1px solid ${ prevHairline .trim()}` }}>10:00</span>
+            <span style={{ height: "38px", padding: "4px 8px 0 0", textAlign: "right", borderBottom: `1px solid ${ prevHairline .trim()}` }}>11:00</span>
+            <span style={{ height: "38px", padding: "4px 8px 0 0", textAlign: "right" }}>12:00</span>
+          </div>
+          <div style={{ position: "relative", borderLeft: `1px solid ${ prevHairline .trim()}`, height: "152px" }}>
+            <span style={{ position: "absolute", top: "4px", left: "3px", right: "3px", height: "52px", borderRadius: "9px", background: `${ prevAccentTint .trim()}`, border: "1.5px solid #f97316" }}></span>
+          </div>
+          <div style={{ position: "relative", borderLeft: `1px solid ${ prevHairline .trim()}`, height: "152px" }}>
+            <span style={{ position: "absolute", top: "42px", left: "3px", right: "3px", height: "34px", borderRadius: "9px", background: `${ prevSurface .trim()}`, border: `1.5px solid ${ prevBorder .trim()}` }}></span>
+          </div>
+          <div style={{ position: "relative", borderLeft: `1px solid ${ prevHairline .trim()}`, height: "152px" }}>
+            <span style={{ position: "absolute", top: "80px", left: "3px", right: "3px", height: "52px", borderRadius: "9px", background: `${ prevAccentTint .trim()}`, border: "1.5px solid #f97316" }}></span>
+          </div>
+          <div style={{ position: "relative", borderLeft: `1px solid ${ prevHairline .trim()}`, height: "152px" }}>
+            <span style={{ position: "absolute", top: "4px", left: "3px", right: "3px", height: "34px", borderRadius: "9px", background: `${ prevSurface .trim()}`, border: `1.5px solid ${ prevBorder .trim()}` }}></span>
+          </div>
+          <div style={{ position: "relative", borderLeft: `1px solid ${ prevHairline .trim()}`, height: "152px" }}>
+            <span style={{ position: "absolute", top: "56px", left: "3px", right: "3px", height: "70px", borderRadius: "9px", background: `${ prevAccentTint .trim()}`, border: "1.5px solid #f97316" }}></span>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <span style={{ font: "500 11px/1 'JetBrains Mono',monospace", letterSpacing: "0.1em", textTransform: "uppercase", color: "#a1a1aa" }}>Theming</span>
+        <h2 style={{ margin: "0", font: "700 42px/1.1 'DM Sans',sans-serif", letterSpacing: "-0.028em", maxWidth: "18ch" }}>Twelve custom properties, no build step</h2>
+        <p style={{ margin: "0", font: "400 16px/1.65 'DM Sans',sans-serif", color: "#52525b", maxWidth: "46ch", textWrap: "pretty" }}>Colour, radius and density are plain CSS custom properties on the host element. Change them at runtime, scope them per calendar, or leave them alone and inherit your own tokens.</p>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <span style={{ font: "500 11px/1 'JetBrains Mono',monospace", letterSpacing: "0.08em", textTransform: "uppercase", color: "#a1a1aa" }}>Accent</span>
+          <div style={{ display: "flex", gap: "9px", alignItems: "center" }}>
+            <span style={{ width: "34px", height: "34px", borderRadius: "9px", background: "#f97316", boxShadow: "0 0 0 3px rgba(249,115,22,0.12)", cursor: "pointer" }}></span>
+            <span style={{ width: "34px", height: "34px", borderRadius: "9px", background: "oklch(0.62 0.12 240)", cursor: "pointer" }}></span>
+            <span style={{ width: "34px", height: "34px", borderRadius: "9px", background: "oklch(0.62 0.12 165)", cursor: "pointer" }}></span>
+            <span style={{ width: "34px", height: "34px", borderRadius: "9px", background: "oklch(0.62 0.12 300)", cursor: "pointer" }}></span>
+            <span style={{ width: "34px", height: "34px", borderRadius: "9px", background: "#18181b", cursor: "pointer" }}></span>
+            <span style={{ width: "1px", height: "26px", background: "#e4e4e7", margin: "0 4px" }}></span>
+            <div onClick={ toggleTheme } style={{ display: "inline-flex", padding: "3px", gap: "2px", background: "#f4f4f5", border: "1.5px solid #e4e4e7", borderRadius: "9px", cursor: "pointer" }}>
+              <span style={{ padding: "6px 12px", borderRadius: "6px", background: `${ sunBg .trim()}`, color: `${ sunFg .trim()}`, font: "600 11.5px/1 'DM Sans',sans-serif" }}>Light</span>
+              <span style={{ padding: "6px 12px", borderRadius: "6px", background: `${ moonBg .trim()}`, color: `${ moonFg .trim()}`, font: "600 11.5px/1 'DM Sans',sans-serif" }}>Dark</span>
+            </div>
+          </div>
+          <span style={{ font: "400 12px/1.5 'JetBrains Mono',monospace", color: "#a1a1aa", marginTop: "2px" }}>--janus-accent · --janus-radius · --janus-row-height</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ── PERFORMANCE ─────────────────────────── */}
+  <section style={{ padding: "112px 40px 0" }}>
+    <div style={{ background: "#09090b", borderRadius: "14px", padding: "56px 48px", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "32px" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        <span style={{ font: "700 60px/1 'DM Sans',sans-serif", letterSpacing: "-0.035em", color: "#fafafa" }}>14.2<span style={{ fontSize: "26px", color: "#f97316" }}> kB</span></span>
+        <span style={{ font: "500 14px/1.4 'DM Sans',sans-serif", color: "#fafafa" }}>Core plus timeline, min+gzip</span>
+        <span style={{ font: "400 12px/1.5 'JetBrains Mono',monospace", color: "#52525b" }}>no dependencies, no polyfills</span>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px", paddingLeft: "32px", borderLeft: "1px solid #27272a" }}>
+        <span style={{ font: "700 60px/1 'DM Sans',sans-serif", letterSpacing: "-0.035em", color: "#fafafa" }}>10k<span style={{ fontSize: "26px", color: "#f97316" }}> events</span></span>
+        <span style={{ font: "500 14px/1.4 'DM Sans',sans-serif", color: "#fafafa" }}>Scrolled at 60 fps, virtualised</span>
+        <span style={{ font: "400 12px/1.5 'JetBrains Mono',monospace", color: "#52525b" }}>M2 Air, Chrome 128, 2× DPR</span>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px", paddingLeft: "32px", borderLeft: "1px solid #27272a" }}>
+        <span style={{ font: "700 60px/1 'DM Sans',sans-serif", letterSpacing: "-0.035em", color: "#fafafa" }}>0.8<span style={{ fontSize: "26px", color: "#f97316" }}> ms</span></span>
+        <span style={{ font: "500 14px/1.4 'DM Sans',sans-serif", color: "#fafafa" }}>Median sentence parse</span>
+        <span style={{ font: "400 12px/1.5 'JetBrains Mono',monospace", color: "#52525b" }}>1,000-sentence benchmark suite</span>
+      </div>
+    </div>
+  </section>
+
+  {/* ── ARCHITECTURE ─────────────────────────── */}
+  <section style={{ padding: "112px 40px 0" }}>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "14px", textAlign: "center", marginBottom: "40px" }}>
+      <span style={{ font: "500 11px/1 'JetBrains Mono',monospace", letterSpacing: "0.1em", textTransform: "uppercase", color: "#a1a1aa" }}>Architecture</span>
+      <h2 style={{ margin: "0", font: "700 34px/1.15 'DM Sans',sans-serif", letterSpacing: "-0.025em" }}>Three packages, one direction of dependency</h2>
+    </div>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 64px 1fr 64px 1fr", alignItems: "stretch" }}>
+      <div style={{ border: "1.5px solid #e4e4e7", borderRadius: "14px", padding: "26px", display: "flex", flexDirection: "column", gap: "10px" }}>
+        <span style={{ font: "500 13px/1.4 'JetBrains Mono',monospace", color: "#c2560a" }}>@janus-scheduler/core</span>
+        <span style={{ font: "600 17px/1.25 'DM Sans',sans-serif", letterSpacing: "-0.01em" }}>State</span>
+        <p style={{ margin: "0", font: "400 13.5px/1.6 'DM Sans',sans-serif", color: "#52525b" }}>Events, resources, ranges, recurrence expansion, conflict detection and the parser. No DOM.</p>
+      </div>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "4px" }}>
+        <span style={{ flex: "1", height: "1.5px", background: "#e4e4e7" }}></span>
+        <span style={{ font: "400 12px/1 'JetBrains Mono',monospace", color: "#a1a1aa" }}>▶</span>
+      </div>
+      <div style={{ border: "1.5px solid #e4e4e7", borderRadius: "14px", padding: "26px", display: "flex", flexDirection: "column", gap: "10px" }}>
+        <span style={{ font: "500 13px/1.4 'JetBrains Mono',monospace", color: "#c2560a" }}>@janus-scheduler/ui</span>
+        <span style={{ font: "600 17px/1.25 'DM Sans',sans-serif", letterSpacing: "-0.01em" }}>Lit Web Components</span>
+        <p style={{ margin: "0", font: "400 13.5px/1.6 'DM Sans',sans-serif", color: "#52525b" }}>Timeline, month grid, prompt bar and drag layer, styled through custom properties.</p>
+      </div>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "4px" }}>
+        <span style={{ flex: "1", height: "1.5px", background: "#e4e4e7" }}></span>
+        <span style={{ font: "400 12px/1 'JetBrains Mono',monospace", color: "#a1a1aa" }}>▶</span>
+      </div>
+      <div style={{ border: "1.5px solid #e4e4e7", borderRadius: "14px", padding: "26px", display: "flex", flexDirection: "column", gap: "10px" }}>
+        <span style={{ font: "500 13px/1.4 'JetBrains Mono',monospace", color: "#c2560a" }}>/react · /angular · /solid · /vue</span>
+        <span style={{ font: "600 17px/1.25 'DM Sans',sans-serif", letterSpacing: "-0.01em" }}>Framework wrappers</span>
+        <p style={{ margin: "0", font: "400 13.5px/1.6 'DM Sans',sans-serif", color: "#52525b" }}>Typed props, native event handlers, correct SSR behaviour. Roughly 200 lines each.</p>
+      </div>
+    </div>
+    <p style={{ margin: "22px 0 0", textAlign: "center", font: "400 13.5px/1.6 'DM Sans',sans-serif", color: "#a1a1aa" }}>Nothing below depends on anything above it — you can use the core on its own, headless.</p>
+  </section>
+
+  {/* ── CTA ─────────────────────────── */}
+  <section style={{ padding: "112px 40px 0" }}>
+    <div style={{ border: "1.5px solid #e4e4e7", borderRadius: "14px", background: "#f4f4f5", padding: "64px 48px", display: "flex", flexDirection: "column", alignItems: "center", gap: "22px", textAlign: "center" }}>
+      <h2 style={{ margin: "0", font: "700 40px/1.1 'DM Sans',sans-serif", letterSpacing: "-0.028em", maxWidth: "24ch" }}>Add a scheduler this afternoon</h2>
+      <p style={{ margin: "0", maxWidth: "56ch", font: "400 16px/1.6 'DM Sans',sans-serif", color: "#52525b" }}>Install the wrapper for your framework, pass an array of events, and you have a working timeline. Everything else is optional.</p>
+      <div style={{ display: "flex", alignItems: "center", gap: "12px", marginTop: "6px", padding: "12px 14px", border: "1.5px solid #e4e4e7", borderRadius: "9px", background: "#ffffff" }}>
+        <span style={{ font: "400 13.5px/1 'JetBrains Mono',monospace", color: "#f97316" }}>$</span>
+        <span style={{ font: "400 13.5px/1 'JetBrains Mono',monospace", color: "#18181b" }}>npm i @janus-scheduler/react</span>
+        <button onClick={ copyCta } style={{ height: "26px", padding: "0 9px", border: "1.5px solid #e4e4e7", borderRadius: "9px", background: "#ffffff", color: "#52525b", font: "500 11px/1 'JetBrains Mono',monospace", cursor: "pointer" }} >{ ctaLabel }</button>
+      </div>
+      <button style={{ height: "44px", padding: "0 22px", border: "0", borderRadius: "9px", background: "#f97316", color: "#ffffff", font: "600 14.5px/1 'DM Sans',sans-serif", cursor: "pointer" }} >Read the documentation</button>
+    </div>
+  </section>

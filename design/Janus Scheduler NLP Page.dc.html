@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ffffff;font-family:"DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#18181b;text-decoration:none}
+a:hover{color:#c2560a}
+*{box-sizing:border-box}
+::placeholder{color:#a1a1aa}
+</style>
+</helmet>
+
+<div style="width:1440px;margin:0 auto;background:#ffffff;color:#18181b">
+
+  <div style="position:sticky;top:0;z-index:60;height:56px;padding:0 24px;display:flex;align-items:center;gap:24px;border-bottom:1px solid #e4e4e7;background:rgba(255,255,255,0.92);backdrop-filter:blur(14px)">
+    <div style="display:flex;align-items:center;gap:9px;width:248px">
+      <span style="width:18px;height:18px;border-radius:6px;background:#f97316;box-shadow:0 0 0 4px rgba(249,115,22,0.12)"></span>
+      <span style="font:700 15px/1 'DM Sans',sans-serif;letter-spacing:-0.02em">Janus<span style="color:#a1a1aa;font-weight:500">Scheduler</span></span>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px">
+      <span style="font:600 13.5px/1 'DM Sans',sans-serif;color:#c2560a">Docs</span>
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">Features</a>
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">Packages</a>
+      <a href="#" style="font:500 13.5px/1 'DM Sans',sans-serif;color:#52525b">FAQ</a>
+    </div>
+    <div style="flex:1"></div>
+    <div style="display:flex;align-items:center;gap:8px;height:34px;padding:0 11px;width:216px;border:1.5px solid #e4e4e7;border-radius:9px;background:#f4f4f5">
+      <span style="font:400 13px/1 'JetBrains Mono',monospace;color:#a1a1aa">⌕</span>
+      <input type="text" placeholder="Search the docs" style="flex:1;min-width:0;border:0;background:transparent;outline:none;font:400 13px/1 'DM Sans',sans-serif;color:#18181b">
+      <span style="padding:2px 5px;border-radius:5px;border:1px solid #e4e4e7;background:#ffffff;font:500 10.5px/1.3 'JetBrains Mono',monospace;color:#a1a1aa">⌘K</span>
+    </div>
+    <span style="padding:4px 10px;border-radius:999px;background:#f4f4f5;color:#52525b;font:500 11.5px/1.35 'JetBrains Mono',monospace">v2.4.0</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:272px 1fr 232px">
+
+    <aside style="border-right:1px solid #e4e4e7;padding:26px 20px 40px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="padding:0 10px 8px;font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Guide</span>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Getting started</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="padding:0 10px 8px;font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Framework guides</span>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">React</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Angular</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Solid</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Vue</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Vanilla</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="padding:0 10px 8px;font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">API reference</span>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Components</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'JetBrains Mono',monospace;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">SchedulerManager</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'JetBrains Mono',monospace;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Store</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Types</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Utilities</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Events</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="padding:0 10px 8px;font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">Topics</span>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Theming</a>
+        <span style="padding:8px 10px;border-radius:9px;background:rgba(249,115,22,0.12);font:600 13.5px/1.3 'DM Sans',sans-serif;color:#c2560a">Natural language</span>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Google Calendar sync</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Performance</a>
+        <a href="#" style="padding:7px 10px;border-radius:9px;font:400 13.5px/1.3 'DM Sans',sans-serif;color:#52525b" style-hover="background:#f4f4f5;color:#18181b">Accessibility</a>
+      </div>
+    </aside>
+
+    <main style="padding:34px 44px 44px;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">
+        <a href="#" style="color:#a1a1aa">Docs</a><span>/</span><a href="#" style="color:#a1a1aa">Topics</a><span>/</span><span style="color:#52525b">Natural language scheduling</span>
+      </div>
+      <h1 style="margin:16px 0 0;font:700 40px/1.1 'DM Sans',sans-serif;letter-spacing:-0.028em">Natural language scheduling</h1>
+      <p style="margin:18px 0 0;max-width:68ch;font:400 16.5px/1.65 'DM Sans',sans-serif;color:#52525b;text-wrap:pretty">A sentence goes in; a structured event comes out. The parser is a small grammar plus static token embeddings and a nearest-neighbour classifier — no large language model, no server, and no surprises about where the text goes.</p>
+
+      <!-- PRIVACY -->
+      <div style="margin-top:22px;background:#09090b;border-radius:14px;padding:20px 22px;display:flex;align-items:center;gap:20px">
+        <div style="display:flex;flex-direction:column;gap:5px;flex:1">
+          <span style="display:flex;align-items:center;gap:8px;font:700 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.12em;text-transform:uppercase;color:#f97316"><span style="width:6px;height:6px;border-radius:50%;background:#f97316"></span>Privacy</span>
+          <span style="font:600 19px/1.35 'DM Sans',sans-serif;color:#fafafa;letter-spacing:-0.015em">All inference runs locally in the browser. No network request is made.</span>
+          <span style="font:400 12.5px/1.5 'DM Sans',sans-serif;color:#a1a1aa">The language artefact is fetched once from your own origin, then cached. Nothing you type is transmitted, logged or retained — there is no endpoint to send it to.</span>
+        </div>
+        <div style="display:flex;gap:8px;flex:none">
+          <span style="padding:4px 10px;border-radius:999px;border:1.5px solid #27272a;color:#fafafa;font:500 11px/1.35 'JetBrains Mono',monospace">0 requests</span>
+          <span style="padding:4px 10px;border-radius:999px;border:1.5px solid #27272a;color:#fafafa;font:500 11px/1.35 'JetBrains Mono',monospace">no API key</span>
+          <span style="padding:4px 10px;border-radius:999px;border:1.5px solid #27272a;color:#fafafa;font:500 11px/1.35 'JetBrains Mono',monospace">works offline</span>
+        </div>
+      </div>
+
+      <!-- TRY IT -->
+      <h2 style="margin:44px 0 0;font:600 24px/1.25 'DM Sans',sans-serif;letter-spacing:-0.018em">Try it</h2>
+      <p style="margin:12px 0 0;max-width:66ch;font:400 15.5px/1.65 'DM Sans',sans-serif;color:#52525b">Pick a phrase, or type your own. The three stages below are the parser's actual output shape.</p>
+
+      <div style="margin-top:18px;border:1.5px solid #e4e4e7;border-radius:14px;background:#f4f4f5;padding:18px;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 12px 10px 16px;border:1.5px solid #e4e4e7;border-radius:9px;background:#ffffff">
+          <span style="font:400 15px/1 'JetBrains Mono',monospace;color:#f97316">✦</span>
+          <input type="text" value="{{ sentence }}" onChange="{{ setSentence }}" placeholder="Try 'Schedule a design sync with Alex tomorrow at 10am in Room A'" style="flex:1;min-width:0;height:32px;border:0;background:transparent;outline:none;font:400 14.5px/1 'DM Sans',sans-serif;color:#18181b">
+          <span style="font:400 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">{{ parseTime }}</span>
+          <button style="height:34px;padding:0 16px;border:0;border-radius:9px;background:#f97316;color:#ffffff;font:600 13.5px/1 'DM Sans',sans-serif;cursor:pointer" style-hover="background:#ea6a0a">Parse</button>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:12px">
+          <span onClick="{{ pick0 }}" style="{{ chip0 }}">Schedule a design sync with Alex tomorrow at 10am in Room A</span>
+          <span onClick="{{ pick1 }}" style="{{ chip1 }}">Move the sprint review to Friday afternoon</span>
+          <span onClick="{{ pick2 }}" style="{{ chip2 }}">Book Room B for two hours on Monday morning</span>
+        </div>
+
+        <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;padding:16px;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#a1a1aa">Stage 1 · intent</span>
+                <span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#a1a1aa">k = 5 neighbours</span>
+              </div>
+              <div style="display:flex;align-items:baseline;gap:10px">
+                <code style="font:600 17px/1.2 'JetBrains Mono',monospace;color:#18181b">{{ intent }}</code>
+                <span style="padding:2px 7px;border-radius:999px;background:rgba(249,115,22,0.12);color:#c2560a;font:600 10px/1.4 'JetBrains Mono',monospace">{{ confidenceLabel }}</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <div style="height:8px;border-radius:999px;background:#f4f4f5;overflow:hidden">
+                  <div style="{{ confidenceBar }}"></div>
+                </div>
+                <div style="display:flex;justify-content:space-between;font:400 10px/1 'JetBrains Mono',monospace;color:#a1a1aa"><span>0.0</span><span>floor 0.62</span><span>1.0</span></div>
+              </div>
+              <span style="font:400 12px/1.5 'DM Sans',sans-serif;color:#52525b">{{ intentNote }}</span>
+            </div>
+
+            <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;padding:16px;display:flex;flex-direction:column;gap:12px">
+              <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#a1a1aa">Stage 2 · entities</span>
+              <div style="display:flex;flex-wrap:wrap;gap:7px">
+                <sc-for list="{{ entities }}" as="ent" hint-placeholder-count="4">
+                  <span style="{{ ent.style }}"><span style="{{ ent.labelStyle }}">{{ ent.type }}</span>{{ ent.value }}</span>
+                </sc-for>
+              </div>
+              <div style="padding-top:10px;border-top:1px solid #f4f4f5;display:flex;flex-wrap:wrap;gap:12px">
+                <span style="display:flex;align-items:center;gap:6px;font:400 10px/1 'JetBrains Mono',monospace;color:#a1a1aa"><span style="width:9px;height:9px;border-radius:3px;background:oklch(0.62 0.12 165)"></span>date</span>
+                <span style="display:flex;align-items:center;gap:6px;font:400 10px/1 'JetBrains Mono',monospace;color:#a1a1aa"><span style="width:9px;height:9px;border-radius:3px;background:oklch(0.66 0.13 55)"></span>time</span>
+                <span style="display:flex;align-items:center;gap:6px;font:400 10px/1 'JetBrains Mono',monospace;color:#a1a1aa"><span style="width:9px;height:9px;border-radius:3px;background:oklch(0.62 0.12 30)"></span>duration</span>
+                <span style="display:flex;align-items:center;gap:6px;font:400 10px/1 'JetBrains Mono',monospace;color:#a1a1aa"><span style="width:9px;height:9px;border-radius:3px;background:oklch(0.62 0.12 240)"></span>participant</span>
+                <span style="display:flex;align-items:center;gap:6px;font:400 10px/1 'JetBrains Mono',monospace;color:#a1a1aa"><span style="width:9px;height:9px;border-radius:3px;background:oklch(0.62 0.12 300)"></span>location</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="border-radius:14px;overflow:hidden;border:1.5px solid #27272a;background:#18181b;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #27272a;background:#09090b">
+              <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:#a1a1aa">Stage 3 · resulting event</span>
+              <button onClick="{{ copyJson }}" style="height:26px;padding:0 9px;border:1.5px solid #27272a;border-radius:9px;background:transparent;color:#a1a1aa;font:500 11px/1 'JetBrains Mono',monospace;cursor:pointer" style-hover="border-color:#3f3f46;color:#fafafa">{{ jsonLabel }}</button>
+            </div>
+            <pre style="margin:0;padding:16px 18px;font:400 12.5px/1.85 'JetBrains Mono',monospace;color:#e4e4e7;flex:1"><div>{</div><sc-for list="{{ jsonLines }}" as="ln" hint-placeholder-count="8"><div>  <span style="color:#7dd3fc">"{{ ln.key }}"</span><span style="color:#a1a1aa">:</span> <span style="{{ ln.valStyle }}">{{ ln.value }}</span><span style="color:#a1a1aa">{{ ln.comma }}</span></div></sc-for><div>}</div></pre>
+            <div style="padding:10px 14px;border-top:1px solid #27272a;display:flex;justify-content:space-between">
+              <span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#52525b">unresolved fields fall back to defaults</span>
+              <span style="font:400 10.5px/1 'JetBrains Mono',monospace;color:#52525b">{{ tzNote }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PIPELINE -->
+      <h2 style="margin:48px 0 0;font:600 24px/1.25 'DM Sans',sans-serif;letter-spacing:-0.018em">How it works</h2>
+      <p style="margin:12px 0 0;max-width:66ch;font:400 15.5px/1.65 'DM Sans',sans-serif;color:#52525b">Five stages, all synchronous, all in the main bundle apart from the embedding table.</p>
+      <div style="margin-top:18px;border:1.5px solid #e4e4e7;border-radius:14px;background:#f4f4f5;padding:24px">
+        <div style="display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr 34px 1fr 34px 1fr;align-items:stretch">
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;padding:16px;display:flex;flex-direction:column;gap:7px">
+            <span style="font:500 9.5px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">01</span>
+            <span style="font:600 13.5px/1.25 'DM Sans',sans-serif">Text input</span>
+            <p style="margin:0;font:400 12px/1.5 'DM Sans',sans-serif;color:#52525b">Raw string from the prompt bar or your own call.</p>
+            <span style="font:400 10px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">parse(input, ctx)</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center"><span style="font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▶</span></div>
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;padding:16px;display:flex;flex-direction:column;gap:7px">
+            <span style="font:500 9.5px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">02</span>
+            <span style="font:600 13.5px/1.25 'DM Sans',sans-serif">Normalisation</span>
+            <p style="margin:0;font:400 12px/1.5 'DM Sans',sans-serif;color:#52525b">Case folding, contraction expansion, British and American spellings unified.</p>
+            <span style="font:400 10px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">≈ 40 rules</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center"><span style="font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▶</span></div>
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;padding:16px;display:flex;flex-direction:column;gap:7px">
+            <span style="font:500 9.5px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">03</span>
+            <span style="font:600 13.5px/1.25 'DM Sans',sans-serif">Static token embeddings</span>
+            <p style="margin:0;font:400 12px/1.5 'DM Sans',sans-serif;color:#52525b">Each token looked up in a quantised 64-dimension table; mean-pooled.</p>
+            <span style="font:400 10px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">38 kB · int8</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center"><span style="font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▶</span></div>
+          <div style="border:1.5px solid #f97316;border-radius:14px;background:rgba(249,115,22,0.12);padding:16px;display:flex;flex-direction:column;gap:7px">
+            <span style="font:500 9.5px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#c2560a">04</span>
+            <span style="font:600 13.5px/1.25 'DM Sans',sans-serif;color:#7c3a06">Nearest-neighbour classification</span>
+            <p style="margin:0;font:400 12px/1.5 'DM Sans',sans-serif;color:#7c3a06">Cosine distance against 240 labelled prototypes; k = 5, distance-weighted.</p>
+            <span style="font:400 10px/1.4 'JetBrains Mono',monospace;color:#c2560a">→ intent + confidence</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center"><span style="font:400 12px/1 'JetBrains Mono',monospace;color:#a1a1aa">▶</span></div>
+          <div style="border:1.5px solid #e4e4e7;border-radius:14px;background:#ffffff;padding:16px;display:flex;flex-direction:column;gap:7px">
+            <span style="font:500 9.5px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#a1a1aa">05</span>
+            <span style="font:600 13.5px/1.25 'DM Sans',sans-serif">Entity resolution</span>
+            <p style="margin:0;font:400 12px/1.5 'DM Sans',sans-serif;color:#52525b">Grammar spans resolved against your resource list, locale and display zone.</p>
+            <span style="font:400 10px/1.4 'JetBrains Mono',monospace;color:#a1a1aa">→ JanusEvent</span>
+          </div>
+        </div>
+        <div style="margin-top:18px;padding-top:14px;border-top:1px solid #e4e4e7;display:flex;justify-content:space-between">
+          <span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">stages 02 – 05 are pure functions · no shared mutable state</span>
+          <span style="font:400 11.5px/1.5 'JetBrains Mono',monospace;color:#52525b">median total 0.8 ms</span>
+        </div>
+      </div>
+
+      <!-- INTENTS TABLE -->
+      <h2 style="margin:48px 0 0;font:600 24px/1.25 'DM Sans',sans-serif;letter-spacing:-0.018em">Supported intents</h2>
+      <div style="margin-top:14px;border:1.5px solid #e4e4e7;border-radius:14px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:170px minmax(240px,1fr) 190px 96px">
+          <span style="padding:9px 18px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Intent</span>
+          <span style="padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Example phrase</span>
+          <span style="padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Emits</span>
+          <span style="padding:9px 18px 9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Floor</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">create_event</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">"Schedule a design sync with Alex tomorrow at 10am"</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">event-create</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">0.62</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">move_event</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">"Move the sprint review to Friday afternoon"</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">event-drop</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">0.68</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">book_resource</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">"Book Room B for two hours on Monday morning"</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">event-create</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">0.62</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">cancel_event</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">"Cancel Thursday's stand-up"</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">event-remove</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">0.74</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">block_time</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">"Block out Friday for deep work"</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">event-create</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">0.66</span>
+
+          <span style="padding:10px 18px;display:flex;align-items:center;gap:7px;flex-wrap:wrap"><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">query_availability</code><span style="padding:2px 6px;border-radius:999px;background:#18181b;color:#fafafa;font:700 9px/1.3 'JetBrains Mono',monospace;letter-spacing:0.06em;text-transform:uppercase">rc</span></span>
+          <span style="padding:10px 12px;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">"When is Room A free on Wednesday?"</span>
+          <span style="padding:10px 12px;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">availability-query</span>
+          <span style="padding:10px 18px 10px 12px;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">0.80</span>
+        </div>
+      </div>
+      <span style="display:block;margin-top:9px;font:400 11.5px/1.5 'DM Sans',sans-serif;color:#a1a1aa">Below the floor the parser returns <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px">{ intent: null }</span> rather than guessing — render your own form in that case.</span>
+
+      <!-- ENTITY TABLE -->
+      <h2 style="margin:48px 0 0;font:600 24px/1.25 'DM Sans',sans-serif;letter-spacing:-0.018em">Entity types</h2>
+      <div style="margin-top:14px;border:1.5px solid #e4e4e7;border-radius:14px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:150px minmax(240px,1fr) 200px 170px">
+          <span style="padding:9px 18px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Type</span>
+          <span style="padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Recognised forms</span>
+          <span style="padding:9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">Resolves to</span>
+          <span style="padding:9px 18px 9px 12px;background:#f4f4f5;border-bottom:1.5px solid #e4e4e7;font:500 10.5px/1.4 'JetBrains Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:#52525b">If absent</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;flex:none;border-radius:3px;background:oklch(0.62 0.12 165)"></span><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">date</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">tomorrow · next Tuesday · 3 Sept · 03/09 · in two weeks</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">ISO date</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">today</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;flex:none;border-radius:3px;background:oklch(0.66 0.13 55)"></span><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">time</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">10am · 14:30 · half past two · morning · after lunch</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">UTC instant</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">next free slot</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;flex:none;border-radius:3px;background:oklch(0.62 0.12 30)"></span><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">duration</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">for an hour · 90 minutes · all day · 10 – 11</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">minutes</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">60</span>
+
+          <span style="padding:10px 18px;border-bottom:1px solid #f4f4f5;display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;flex:none;border-radius:3px;background:oklch(0.62 0.12 240)"></span><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">participant</code></span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">with Alex · me and Nadeesha · the design team</span>
+          <span style="padding:10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">resource id</span>
+          <span style="padding:10px 18px 10px 12px;border-bottom:1px solid #f4f4f5;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">current user</span>
+
+          <span style="padding:10px 18px;display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;flex:none;border-radius:3px;background:oklch(0.62 0.12 300)"></span><code style="font:500 12.5px/1.4 'JetBrains Mono',monospace">location</code></span>
+          <span style="padding:10px 12px;font:400 13px/1.5 'DM Sans',sans-serif;color:#52525b">in Room A · at the studio · on Zoom</span>
+          <span style="padding:10px 12px;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">resource id or string</span>
+          <span style="padding:10px 18px 10px 12px;font:400 12px/1.5 'JetBrains Mono',monospace;color:#52525b">null</span>
+        </div>
+      </div>
+
+      <!-- METRICS -->
+      <h2 style="margin:48px 0 0;font:600 24px/1.25 'DM Sans',sans-serif;letter-spacing:-0.018em">Accuracy</h2>
+      <p style="margin:12px 0 0;max-width:66ch;font:400 15.5px/1.65 'DM Sans',sans-serif;color:#52525b">Measured on a held-out set of 1,000 hand-labelled British-English scheduling sentences. The suite is in the repository.</p>
+      <div style="margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+        <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px">
+          <span style="font:700 34px/1 'DM Sans',sans-serif;letter-spacing:-0.03em">96.4<span style="font-size:17px;color:#f97316">%</span></span>
+          <span style="font:600 13px/1.3 'DM Sans',sans-serif">Intent accuracy</span>
+          <span style="font:400 11px/1.5 'JetBrains Mono',monospace;color:#a1a1aa">top-1, above the floor</span>
+        </div>
+        <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px">
+          <span style="font:700 34px/1 'DM Sans',sans-serif;letter-spacing:-0.03em">0.93</span>
+          <span style="font:600 13px/1.3 'DM Sans',sans-serif">Entity F1</span>
+          <span style="font:400 11px/1.5 'JetBrains Mono',monospace;color:#a1a1aa">macro-averaged, five types</span>
+        </div>
+        <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px">
+          <span style="font:700 34px/1 'DM Sans',sans-serif;letter-spacing:-0.03em">0.8<span style="font-size:17px;color:#f97316"> ms</span></span>
+          <span style="font:600 13px/1.3 'DM Sans',sans-serif">Median parse</span>
+          <span style="font:400 11px/1.5 'JetBrains Mono',monospace;color:#a1a1aa">p95 2.1 ms · M2 Air</span>
+        </div>
+        <div style="border:1.5px solid #e4e4e7;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px">
+          <span style="font:700 34px/1 'DM Sans',sans-serif;letter-spacing:-0.03em">38<span style="font-size:17px;color:#f97316"> kB</span></span>
+          <span style="font:600 13px/1.3 'DM Sans',sans-serif">Model artefact</span>
+          <span style="font:400 11px/1.5 'JetBrains Mono',monospace;color:#a1a1aa">gzip · lazy-loaded once</span>
+        </div>
+      </div>
+
+      <div style="margin-top:28px;border:1.5px dashed #52525b;border-radius:14px;background:#18181b;padding:18px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="width:5px;height:5px;background:#fafafa"></span>
+          <span style="font:700 11px/1 'JetBrains Mono',monospace;letter-spacing:0.12em;text-transform:uppercase;color:#fafafa">Limitation</span>
+        </div>
+        <p style="margin:0;max-width:78ch;font:400 13.5px/1.6 'DM Sans',sans-serif;color:#e4e4e7">This is a small classifier, not a language model, and its scope is deliberately narrow:</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 20px">
+          <span style="font:400 13px/1.6 'DM Sans',sans-serif;color:#a1a1aa">· British English only. No other locale ships an artefact.</span>
+          <span style="font:400 13px/1.6 'DM Sans',sans-serif;color:#a1a1aa">· One intent per sentence. Compound requests are rejected, not split.</span>
+          <span style="font:400 13px/1.6 'DM Sans',sans-serif;color:#a1a1aa">· No recurrence parsing — "every Tuesday" is ignored, by design.</span>
+          <span style="font:400 13px/1.6 'DM Sans',sans-serif;color:#a1a1aa">· No conversational memory. Each call is independent.</span>
+          <span style="font:400 13px/1.6 'DM Sans',sans-serif;color:#a1a1aa">· Participants resolve only against the resource list you supply.</span>
+          <span style="font:400 13px/1.6 'DM Sans',sans-serif;color:#a1a1aa">· Ambiguity is surfaced, never guessed: confirm before you commit.</span>
+        </div>
+        <p style="margin:4px 0 0;max-width:78ch;font:400 13px/1.6 'DM Sans',sans-serif;color:#e4e4e7">If you need free-form conversation, send the same string to a model of your choice and hand us the structured result — the parser is one implementation of a documented interface, not a requirement.</p>
+      </div>
+
+      <div style="margin-top:44px;padding-top:22px;border-top:1.5px solid #e4e4e7;display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <a href="#" style="border:1.5px solid #e4e4e7;border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:5px" style-hover="border-color:#f97316">
+          <span style="font:400 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">← Previous</span>
+          <span style="font:600 15px/1.3 'DM Sans',sans-serif">Theming and design tokens</span>
+        </a>
+        <a href="#" style="border:1.5px solid #e4e4e7;border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:5px;align-items:flex-end;text-align:right" style-hover="border-color:#f97316">
+          <span style="font:400 11px/1 'JetBrains Mono',monospace;color:#a1a1aa">Next →</span>
+          <span style="font:600 15px/1.3 'DM Sans',sans-serif">Google Calendar sync</span>
+        </a>
+      </div>
+    </main>
+
+    <aside style="border-left:1px solid #e4e4e7;padding:34px 22px 40px;display:flex;flex-direction:column;gap:12px;align-self:start;position:sticky;top:56px">
+      <span style="font:500 10.5px/1 'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa">On this page</span>
+      <div style="display:flex;flex-direction:column;gap:9px">
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#52525b">Privacy</a>
+        <a href="#" style="font:600 12.5px/1.4 'DM Sans',sans-serif;color:#c2560a">Try it</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#52525b">How it works</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#52525b">Supported intents</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#52525b">Entity types</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#52525b">Accuracy</a>
+        <a href="#" style="font:400 12.5px/1.4 'DM Sans',sans-serif;color:#52525b">Limitation</a>
+      </div>
+      <div style="margin-top:8px;padding-top:14px;border-top:1px solid #e4e4e7;display:flex;flex-direction:column;gap:8px">
+        <a href="#" style="font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">Benchmark suite ↗</a>
+        <a href="#" style="font:400 12px/1.4 'JetBrains Mono',monospace;color:#52525b">Edit this page ↗</a>
+      </div>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;defaultExample&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[0,1,2],&quot;default&quot;:0,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+class Component extends DCLogic {
+  state = { i: this.props.defaultExample != null ? this.props.defaultExample : 0, typed: null, copied: false };
+  pick(i) { this.setState({ i: i, typed: null }); }
+  componentWillUnmount() { clearTimeout(this._t); }
+  data() {
+    return [
+      {
+        sentence: 'Schedule a design sync with Alex tomorrow at 10am in Room A',
+        intent: 'create_event', conf: 0.97, ms: '0.7 ms',
+        note: 'Clear lexical match against the create prototypes; no competing intent above 0.2.',
+        ents: [['date', '2026-08-30', 165], ['time', '10:00', 55], ['duration', '60 min', 30], ['participant', 'alex.f', 240], ['location', 'room-a', 300]],
+        json: [['title', '"Design sync"', 'str'], ['start', '"2026-08-30T04:30:00Z"', 'str'], ['end', '"2026-08-30T05:30:00Z"', 'str'], ['resourceIds', '["alex.f", "room-a"]', 'str'], ['allDay', 'false', 'kw'], ['source', '"nlp"', 'str'], ['confidence', '0.97', 'num']],
+        tz: 'display zone Asia/Colombo'
+      },
+      {
+        sentence: 'Move the sprint review to Friday afternoon',
+        intent: 'move_event', conf: 0.89, ms: '0.6 ms',
+        note: 'Referent "sprint review" matched one existing event; ambiguity would be surfaced instead.',
+        ents: [['date', '2026-09-04', 165], ['time', '14:00 (afternoon)', 55]],
+        json: [['eventId', '"evt_8123"', 'str'], ['start', '"2026-09-04T08:30:00Z"', 'str'], ['end', '"2026-09-04T09:30:00Z"', 'str'], ['keepDuration', 'true', 'kw'], ['source', '"nlp"', 'str'], ['confidence', '0.89', 'num']],
+        tz: 'duration preserved from source event'
+      },
+      {
+        sentence: 'Book Room B for two hours on Monday morning',
+        intent: 'book_resource', conf: 0.94, ms: '0.9 ms',
+        note: 'Resource-first phrasing; participant defaults to the current user.',
+        ents: [['date', '2026-08-31', 165], ['time', '09:00 (morning)', 55], ['duration', '120 min', 30], ['location', 'room-b', 300]],
+        json: [['title', '"Room B booking"', 'str'], ['start', '"2026-08-31T03:30:00Z"', 'str'], ['end', '"2026-08-31T05:30:00Z"', 'str'], ['resourceIds', '["room-b", "me"]', 'str'], ['allDay', 'false', 'kw'], ['source', '"nlp"', 'str'], ['confidence', '0.94', 'num']],
+        tz: 'morning window from locale profile'
+      }
+    ];
+  }
+  copyJson(text) {
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+    this.setState({ copied: true });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ copied: false }), 1600);
+  }
+  renderVals() {
+    const d = this.data()[this.state.i] || this.data()[0];
+    const chip = on => 'padding:6px 11px;border-radius:999px;cursor:pointer;font:500 11.5px/1.35 "JetBrains Mono",monospace;' +
+      (on ? 'background:#18181b;color:#fafafa;' : 'background:#ffffff;border:1.5px solid #e4e4e7;color:#52525b;');
+    const valColour = { str: '#a3e635', num: '#7dd3fc', kw: '#f97316' };
+    const jsonText = '{\n' + d.json.map(r => '  "' + r[0] + '": ' + r[1]).join(',\n') + '\n}';
+    return {
+      sentence: this.state.typed != null ? this.state.typed : d.sentence,
+      intent: d.intent,
+      intentNote: this.state.typed != null && this.state.typed !== d.sentence
+        ? 'Showing the last parsed phrase — press Parse to run your own sentence.'
+        : d.note,
+      parseTime: d.ms, tzNote: d.tz,
+      confidenceLabel: 'confidence ' + d.conf.toFixed(2),
+      confidenceBar: 'height:100%;width:' + Math.round(d.conf * 100) + '%;border-radius:999px;background:#f97316',
+      setSentence: e => this.setState({ typed: e.target.value }),
+      chip0: chip(this.state.typed == null && this.state.i === 0),
+      chip1: chip(this.state.typed == null && this.state.i === 1),
+      chip2: chip(this.state.typed == null && this.state.i === 2),
+      pick0: () => this.pick(0), pick1: () => this.pick(1), pick2: () => this.pick(2),
+      entities: d.ents.map(e => ({
+        type: e[0], value: e[1],
+        style: 'display:inline-flex;align-items:center;gap:7px;padding:5px 9px;border-radius:9px;background:#ffffff;border:1.5px solid oklch(0.62 0.12 ' + e[2] + ');font:500 12px/1.35 "JetBrains Mono",monospace;color:#18181b',
+        labelStyle: 'font:500 9.5px/1 "JetBrains Mono",monospace;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.5 0.1 ' + e[2] + ')'
+      })),
+      jsonLines: d.json.map((r, n) => ({
+        key: r[0], value: r[1], comma: n === d.json.length - 1 ? '' : ',',
+        valStyle: 'color:' + valColour[r[2]]
+      })),
+      copyJson: () => this.copyJson(jsonText),
+      jsonLabel: this.state.copied ? 'Copied' : 'Copy JSON'
+    };
+  }
+}
+</script>
+</body>
+</html>

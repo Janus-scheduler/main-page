@@ -154,21 +154,21 @@ export default function PackagesPage() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', alignItems: 'center' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <code style={{ font: '600 14px/1.3 "JetBrains Mono", monospace', letterSpacing: '-0.01em' }}>@janus-scheduler/google-calendar</code>
+                  <code style={{ font: '600 14px/1.3 "JetBrains Mono", monospace', letterSpacing: '-0.01em' }}>@janus-scheduler/integrations</code>
                   <span style={{ padding: '3px 8px', borderRadius: '999px', background: 'var(--janus-accent-tint)', color: 'var(--janus-accent-text)', font: '500 11px/1.35 "JetBrains Mono", monospace', whiteSpace: 'nowrap' }}>2.4.0</span>
                 </div>
-                <p style={{ margin: 0, maxWidth: '44ch', font: '400 13.5px/1.55 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>Two-way sync adapter: incremental pull by sync token, field-level merge on push. Optional, and it never holds a client secret in the browser.</p>
+                <p style={{ margin: 0, maxWidth: '44ch', font: '400 13.5px/1.55 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>Two-way sync adapter (Google Calendar API v3, webhooks, RFC 5545): incremental pull by syncToken, field-level merge on push, client &amp; server hub.</p>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '9px 11px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-surface)' }}>
                 <span style={{ font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent)' }}>$</span>
-                <span style={{ flex: 1, minWidth: 0, font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>npm i @janus-scheduler/google-calendar</span>
-                <button className="janus-copy-btn" onClick={() => copy('gcal', 'google-calendar')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer' }}>{lbl('gcal')}</button>
+                <span style={{ flex: 1, minWidth: 0, font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>npm i @janus-scheduler/integrations</span>
+                <button className="janus-copy-btn" onClick={() => copy('integrations', 'integrations')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer' }}>{lbl('integrations')}</button>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '16px' }}>
                 <span style={{ padding: '3px 8px', borderRadius: '999px', background: 'var(--janus-surface)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1.35 "JetBrains Mono", monospace' }}>3.1 kB gzip</span>
-                <span style={{ padding: '3px 8px', borderRadius: '999px', border: '1.5px solid var(--janus-border)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1.35 "JetBrains Mono", monospace' }}>needs token endpoint</span>
-                <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>npm ↗</a>
-                <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>docs →</a>
+                <span style={{ padding: '3px 8px', borderRadius: '999px', border: '1.5px solid var(--janus-border)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1.35 "JetBrains Mono", monospace' }}>Google Calendar v3</span>
+                <a href="https://www.npmjs.com/package/@janus-scheduler/integrations" target="_blank" rel="noreferrer" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)', textDecoration: 'none' }}>npm ↗</a>
+                <a href="/docs/topics/google-calendar-sync" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)', textDecoration: 'none' }}>docs →</a>
               </div>
             </div>
           </div>
@@ -240,8 +240,8 @@ export default function PackagesPage() {
             <span style={{ position: 'absolute', left: '300px', top: '340px', width: '146px', font: '400 10.5px/1.6 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>▶ parses into events<br/>◀ resolves resources</span>
 
             <div style={{ position: 'absolute', left: '900px', top: '296px', width: '220px', height: '62px', border: '1.5px solid var(--janus-border)', borderRadius: '14px', background: 'var(--janus-bg)', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '3px', padding: '0 14px' }}>
-              <span style={{ font: '600 12.5px/1.3 "JetBrains Mono", monospace' }}>/google-calendar</span>
-              <span style={{ font: '400 10px/1.3 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>optional adapter</span>
+              <span style={{ font: '600 12.5px/1.3 "JetBrains Mono", monospace' }}>/integrations</span>
+              <span style={{ font: '400 10px/1.3 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>Google Calendar sync</span>
             </div>
             <div style={{ position: 'absolute', left: '752px', top: '326px', width: '136px', height: '1.5px', background: 'var(--janus-text-muted)' }} />
             <svg style={{ position: 'absolute', left: '744px', top: '322.75px', width: '8px', height: '8px', fill: 'var(--janus-text-muted)' }} viewBox="0 0 10 10"><polygon points="10,0 10,10 0,5"/></svg>
@@ -324,13 +324,13 @@ export default function PackagesPage() {
             <span style={{ padding: '11px 12px', borderBottom: '1px solid var(--janus-surface)', font: '400 12px/1.4 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>any</span>
             <span style={{ padding: '11px 18px 11px 12px', borderBottom: '1px solid var(--janus-surface)', font: '400 12px/1.4 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>≥18 · en-GB only</span>
 
-            {/* /google-calendar */}
-            <span style={{ padding: '11px 18px', font: '500 12.5px/1.4 "JetBrains Mono", monospace' }}>/google-calendar</span>
+            {/* /integrations */}
+            <span style={{ padding: '11px 18px', font: '500 12.5px/1.4 "JetBrains Mono", monospace' }}>/integrations</span>
             <span style={{ padding: '11px 12px', font: '400 12px/1.4 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>any</span>
             <span style={{ padding: '11px 12px', font: '400 12px/1.4 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>any</span>
             <span style={{ padding: '11px 12px', font: '400 12px/1.4 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>any</span>
             <span style={{ padding: '11px 12px', font: '400 12px/1.4 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>any</span>
-            <span style={{ padding: '11px 18px 11px 12px', font: '400 12px/1.4 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>≥20 · token endpoint</span>
+            <span style={{ padding: '11px 18px 11px 12px', font: '400 12px/1.4 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>≥18 · browser &amp; Node</span>
           </div>
         </div>
       </section>

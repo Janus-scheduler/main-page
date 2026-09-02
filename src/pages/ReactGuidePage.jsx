@@ -8,21 +8,24 @@ export default function ReactGuidePage() {
   const toc = (
     <>
       <a href="#install" style={{ font: '600 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-accent-text)' }}>Install</a>
-      <a href="#basic-usage" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Basic Usage</a>
+      <a href="#quickstart" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>60-Second Quickstart</a>
+      <a href="#step-by-step" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Step-by-Step Tutorial</a>
+      <a href="#step-1-manager" style={{ font: '400 11.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)', paddingLeft: '12px' }}>1. State &amp; Manager</a>
+      <a href="#step-2-drag-drop" style={{ font: '400 11.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)', paddingLeft: '12px' }}>2. Drag &amp; Drop / Resize</a>
+      <a href="#step-3-topbar" style={{ font: '400 11.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)', paddingLeft: '12px' }}>3. Topbar &amp; Views</a>
+      <a href="#step-4-modal" style={{ font: '400 11.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)', paddingLeft: '12px' }}>4. Editor Modal &amp; Participants</a>
+      <a href="#step-5-ai-chat" style={{ font: '400 11.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)', paddingLeft: '12px' }}>5. AI Scheduling Assistant</a>
       <a href="#core-concepts" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Core Concepts</a>
       <a href="#components" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Components</a>
       <a href="#props" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Props</a>
       <a href="#callbacks" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Callbacks</a>
-      <a href="#nlp-chat" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Chat &amp; useJanusChat Hook</a>
-      <a href="#scheduler-manager" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>SchedulerManager</a>
-      <a href="#undo-api" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Undo &amp; Rollback API</a>
+      <a href="#scheduler-manager" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>SchedulerManager API</a>
+      <a href="#undo-api" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Undo &amp; Rollback</a>
       <a href="#conflict" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Conflict Management</a>
       <a href="#theming" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Theming</a>
       <a href="#timezone" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Timezone Handling</a>
-      <a href="#recurring" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Recurring Events</a>
       <a href="#types" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Types</a>
-      <a href="#state" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>State Management</a>
-      <a href="#full-example" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Full Working Example</a>
+      <a href="#full-example" style={{ font: '400 12.5px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-muted)' }}>Full Production Template</a>
     </>
   );
 
@@ -32,13 +35,13 @@ export default function ReactGuidePage() {
         <a href="/docs/getting-started" style={{ color: 'var(--janus-text-muted)' }}>Docs</a><span>/</span><span style={{ color: 'var(--janus-text-secondary)' }}>Framework guides</span><span>/</span><span style={{ color: 'var(--janus-text-secondary)' }}>React</span>
       </div>
 
-      <h1 style={{ margin: '16px 0 0', font: '700 40px/1.1 "DM Sans", sans-serif', letterSpacing: '-0.028em', color: 'var(--janus-text)' }}>React Component</h1>
+      <h1 style={{ margin: '16px 0 0', font: '700 40px/1.1 "DM Sans", sans-serif', letterSpacing: '-0.028em', color: 'var(--janus-text)' }}>React Component Guide</h1>
       <p style={{ margin: '18px 0 0', maxWidth: '66ch', font: '400 16.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)', textWrap: 'pretty' }}>
-        Janus Scheduler seamlessly integrates with <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--janus-accent-text)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>React</a> (versions 18 and 19). It provides type-safe components wrapped via <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>@lit/react</code>, giving you a native React developer experience with typed props, automatic CustomEvent unwrapping, and zero manual DOM manipulation.
+        Janus Scheduler seamlessly integrates with <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--janus-accent-text)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>React</a> (versions 18 and 19). It provides type-safe components wrapped via <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>@lit/react</code>, giving you a native React developer experience with typed props, automatic CustomEvent unwrapping, gesture handlers, and zero manual DOM manipulation.
       </p>
 
       <Callout type="info" style={{ marginTop: '16px' }}>
-        The React package re-exports everything you need from <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>@janus-scheduler/core</code>, <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>@janus-scheduler/ui</code>, and <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>@janus-scheduler/nlp</code>.
+        The React package re-exports everything you need from <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>@janus-scheduler/core</code>, <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>@janus-scheduler/ui</code>, and <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>@janus-scheduler/nlp</code>. You only need <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>npm install @janus-scheduler/react</code>.
       </Callout>
 
       {/* ── INSTALL ─────────────────────────── */}
@@ -55,48 +58,128 @@ export default function ReactGuidePage() {
         </div>
       </Callout>
 
-      {/* ── BASIC USAGE ─────────────────────────── */}
-      <h2 id="basic-usage" style={{ margin: '44px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>Basic Usage</h2>
-      <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>Create a scheduler manager, add initial resources and events, and render the <code style={{ font: '500 13.5px/1 "JetBrains Mono", monospace' }}>&lt;Timeline&gt;</code> component:</p>
+      {/* ── 60-SECOND QUICKSTART ─────────────────────────── */}
+      <h2 id="quickstart" style={{ margin: '44px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>60-Second Quickstart</h2>
+      <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
+        Create a scheduler manager, seed resources and events, and render the auto-syncing <code style={{ font: '500 13.5px/1 "JetBrains Mono", monospace' }}>&lt;Timeline&gt;</code> component:
+      </p>
       <div style={{ marginTop: '14px' }}>
-        <CodeBlock title="App.tsx" codeString={`import {\n  Timeline,\n  Scheduler,\n  SchedulerManager,\n} from "@janus-scheduler/react"\n\n// 1. Create the manager (outside your component or in a ref/singleton)\nconst manager = new SchedulerManager()\n\n// 2. Add resources (rows in the timeline)\nmanager.addResource({ id: "alice", name: "Alice Fernando", type: "person" })\nmanager.addResource({ id: "room-a", name: "Conference Room A", type: "room" })\n\n// 3. Add an event\nmanager.addEvent({\n  id: "evt-1",\n  title: "Sprint Architecture Sync",\n  startTime: "2026-09-02T09:00:00Z",\n  endTime: "2026-09-02T10:30:00Z",\n  resourceId: "alice",\n})\n\n// 4. Assign the event\nmanager.addAssignment({\n  id: "asgn-1",\n  eventId: "evt-1",\n  resourceId: "alice",\n})\n\nexport default function App() {\n  return (\n    <div style={{ height: "100vh" }}>\n      <Timeline allowCreate preventConflicts={false} />\n    </div>\n  )\n}`}>
-          <div><span style={{ color: '#f97316' }}>import</span> {'{'}</div>
-          <div>  Timeline,</div>
-          <div>  Scheduler,</div>
-          <div>  SchedulerManager,</div>
-          <div>{'}'} <span style={{ color: '#f97316' }}>from</span> <span style={{ color: '#a3e635' }}>"@janus-scheduler/react"</span></div>
+        <CodeBlock title="App.tsx" codeString={`import { Timeline, SchedulerManager } from "@janus-scheduler/react"\n\n// 1. Create the manager once (outside render or in a singleton)\nconst manager = new SchedulerManager()\n\n// 2. Add resource rows\nmanager.addResource({ id: "alice", name: "Alice Fernando", type: "person" })\nmanager.addResource({ id: "room-a", name: "Conference Room Alpha", type: "room" })\n\n// 3. Add an event today\nconst now = new Date()\nmanager.addEvent({\n  id: "evt-1",\n  title: "Sprint Architecture Sync",\n  startTime: now.toISOString(),\n  endTime: new Date(now.getTime() + 2 * 3600 * 1000).toISOString(),\n  resourceId: "alice",\n  color: "orange",\n})\n\nexport default function App() {\n  return (\n    <div style={{ height: "100vh", background: "#09090b" }}>\n      <Timeline allowCreate={true} showFab={true} />\n    </div>\n  )\n}`}>
+          <div><span style={{ color: '#f97316' }}>import</span> {'{ Timeline, SchedulerManager }'} <span style={{ color: '#f97316' }}>from</span> <span style={{ color: '#a3e635' }}>"@janus-scheduler/react"</span></div>
           <div>&#8203;</div>
-          <div><span style={{ color: '#52525b' }}>// 1. Create the manager</span></div>
+          <div><span style={{ color: '#52525b' }}>// 1. Create the manager once (outside render)</span></div>
           <div><span style={{ color: '#f97316' }}>const</span> manager <span style={{ color: '#a1a1aa' }}>=</span> <span style={{ color: '#f97316' }}>new</span> <span style={{ color: '#7dd3fc' }}>SchedulerManager</span>()</div>
           <div>&#8203;</div>
-          <div><span style={{ color: '#52525b' }}>// 2. Add resources</span></div>
+          <div><span style={{ color: '#52525b' }}>// 2. Add resource rows</span></div>
           <div>manager.addResource({'{ id: '}<span style={{ color: '#a3e635' }}>"alice"</span>, name: <span style={{ color: '#a3e635' }}>"Alice Fernando"</span>, type: <span style={{ color: '#a3e635' }}>"person"</span>{' }'})</div>
-          <div>manager.addResource({'{ id: '}<span style={{ color: '#a3e635' }}>"room-a"</span>, name: <span style={{ color: '#a3e635' }}>"Conference Room A"</span>, type: <span style={{ color: '#a3e635' }}>"room"</span>{' }'})</div>
+          <div>manager.addResource({'{ id: '}<span style={{ color: '#a3e635' }}>"room-a"</span>, name: <span style={{ color: '#a3e635' }}>"Conference Room Alpha"</span>, type: <span style={{ color: '#a3e635' }}>"room"</span>{' }'})</div>
           <div>&#8203;</div>
-          <div><span style={{ color: '#52525b' }}>// 3. Add an event</span></div>
+          <div><span style={{ color: '#52525b' }}>// 3. Add an event today</span></div>
+          <div><span style={{ color: '#f97316' }}>const</span> now <span style={{ color: '#a1a1aa' }}>=</span> <span style={{ color: '#f97316' }}>new</span> <span style={{ color: '#7dd3fc' }}>Date</span>()</div>
           <div>manager.addEvent({'{'}</div>
           <div>  id: <span style={{ color: '#a3e635' }}>"evt-1"</span>,</div>
           <div>  title: <span style={{ color: '#a3e635' }}>"Sprint Architecture Sync"</span>,</div>
-          <div>  startTime: <span style={{ color: '#a3e635' }}>"2026-09-02T09:00:00Z"</span>,</div>
-          <div>  endTime: <span style={{ color: '#a3e635' }}>"2026-09-02T10:30:00Z"</span>,</div>
+          <div>  startTime: now.toISOString(),</div>
+          <div>  endTime: <span style={{ color: '#f97316' }}>new</span> <span style={{ color: '#7dd3fc' }}>Date</span>(now.getTime() + 2 * 3600 * 1000).toISOString(),</div>
           <div>  resourceId: <span style={{ color: '#a3e635' }}>"alice"</span>,</div>
+          <div>  color: <span style={{ color: '#a3e635' }}>"orange"</span>,</div>
           <div>{'}'})</div>
-          <div>&#8203;</div>
-          <div><span style={{ color: '#52525b' }}>// 4. Assign the event</span></div>
-          <div>manager.addAssignment({'{ id: '}<span style={{ color: '#a3e635' }}>"asgn-1"</span>, eventId: <span style={{ color: '#a3e635' }}>"evt-1"</span>, resourceId: <span style={{ color: '#a3e635' }}>"alice"</span>{' }'})</div>
           <div>&#8203;</div>
           <div><span style={{ color: '#f97316' }}>export default function</span> <span style={{ color: '#7dd3fc' }}>App</span>() {'{'}</div>
           <div>  <span style={{ color: '#f97316' }}>return</span> (</div>
-          <div>    <span style={{ color: '#a1a1aa' }}>&lt;</span><span style={{ color: '#7dd3fc' }}>div</span> style<span style={{ color: '#a1a1aa' }}>=</span>{'{'}{'{ height: '}<span style={{ color: '#a3e635' }}>"100vh"</span>{' }'}{'}'}<span style={{ color: '#a1a1aa' }}>&gt;</span></div>
-          <div>      <span style={{ color: '#a1a1aa' }}>&lt;</span><span style={{ color: '#7dd3fc' }}>Timeline</span> allowCreate preventConflicts<span style={{ color: '#a1a1aa' }}>=</span>{'{'}false{'}'} <span style={{ color: '#a1a1aa' }}>/&gt;</span></div>
+          <div>    <span style={{ color: '#a1a1aa' }}>&lt;</span><span style={{ color: '#7dd3fc' }}>div</span> style<span style={{ color: '#a1a1aa' }}>=</span>{'{'}{'{ height: '}<span style={{ color: '#a3e635' }}>"100vh"</span>, background: <span style={{ color: '#a3e635' }}>"#09090b"</span>{' }'}{'}'}<span style={{ color: '#a1a1aa' }}>&gt;</span></div>
+          <div>      <span style={{ color: '#a1a1aa' }}>&lt;</span><span style={{ color: '#7dd3fc' }}>Timeline</span> allowCreate<span style={{ color: '#a1a1aa' }}>=</span>{'{'}true{'}'} showFab<span style={{ color: '#a1a1aa' }}>=</span>{'{'}true{'}'} <span style={{ color: '#a1a1aa' }}>/&gt;</span></div>
           <div>    <span style={{ color: '#a1a1aa' }}>&lt;/</span><span style={{ color: '#7dd3fc' }}>div</span><span style={{ color: '#a1a1aa' }}>&gt;</span></div>
           <div>  )</div>
           <div>{'}'}</div>
         </CodeBlock>
       </div>
 
+      {/* ── STEP-BY-STEP INTEGRATION TUTORIAL ─────────────────────────── */}
+      <h2 id="step-by-step" style={{ margin: '48px 0 0', font: '700 28px/1.2 "DM Sans", sans-serif', letterSpacing: '-0.022em', color: 'var(--janus-text)' }}>
+        Step-by-Step Integration Tutorial
+      </h2>
+      <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 16px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
+        Follow these steps to assemble a full-featured scheduling dashboard with Topbar view switching, drag-and-drop gestures, modal creation/editing with participants, and conversational AI.
+      </p>
+
+      {/* STEP 1 */}
+      <h3 id="step-1-manager" style={{ margin: '36px 0 0', font: '600 20px/1.3 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>
+        Step 1: Setting up State &amp; Resources
+      </h3>
+      <p style={{ margin: '10px 0 0', maxWidth: '66ch', font: '400 15px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
+        Create an initial array of <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>TimelineResource</code> items in standard React state. Each resource has an <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>id</code>, <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>name</code>, <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>subtitle</code>, and an array of <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>TimelineEvent</code> objects:
+      </p>
+      <div style={{ marginTop: '12px' }}>
+        <CodeBlock codeString={`import { useState } from "react"\nimport { Timeline, type TimelineResource, type TimelineEvent } from "@janus-scheduler/react"\n\nconst now = new Date()\nconst today9AM = new Date(now.setHours(9, 0, 0, 0)).getTime()\n\nexport default function SchedulerDashboard() {\n  const [resources, setResources] = useState<TimelineResource[]>([\n    {\n      id: "res-1",\n      name: "Alex Fernando",\n      subtitle: "Principal Engineer",\n      avatarType: "initials",\n      events: [\n        {\n          id: "evt-1",\n          title: "Architecture Planning",\n          resourceId: "res-1",\n          startTime: "09:00",\n          endTime: "11:00",\n          startMs: today9AM,\n          endMs: today9AM + 2 * 3600000,\n          color: "orange"\n        }\n      ]\n    }\n  ])\n\n  return <Timeline resources={resources} />\n}`}>
+          <div><span style={{ color: '#f97316' }}>import</span> {'{ useState }'} <span style={{ color: '#f97316' }}>from</span> <span style={{ color: '#a3e635' }}>"react"</span></div>
+          <div><span style={{ color: '#f97316' }}>import</span> {'{ Timeline, type TimelineResource }'} <span style={{ color: '#f97316' }}>from</span> <span style={{ color: '#a3e635' }}>"@janus-scheduler/react"</span></div>
+        </CodeBlock>
+      </div>
+
+      {/* STEP 2 */}
+      <h3 id="step-2-drag-drop" style={{ margin: '36px 0 0', font: '600 20px/1.3 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>
+        Step 2: Handling Drag-and-Drop &amp; Edge Resizing
+      </h3>
+      <p style={{ margin: '10px 0 0', maxWidth: '66ch', font: '400 15px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
+        When the user drops an event onto a new track or drags its edge handles, the component emits <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>onEventMove</code> or <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>onEventResize</code>. Update the event's <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>startMs</code> and <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>endMs</code> timestamps:
+      </p>
+      <div style={{ marginTop: '12px' }}>
+        <CodeBlock codeString={`// 1. Move Event Handler\nconst handleEventMove = (detail: EventMoveDetail) => {\n  const newStartMs = new Date(detail.newStartTime).getTime()\n  const newEndMs = new Date(detail.newEndTime).getTime()\n\n  setResources(prev =>\n    prev.map(resource => {\n      const filtered = resource.events.filter(e => e.id !== detail.event.id)\n      if (resource.id === detail.newResourceId) {\n        return {\n          ...resource,\n          events: [\n            ...filtered,\n            {\n              ...detail.event,\n              resourceId: detail.newResourceId,\n              startTime: new Date(newStartMs).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }),\n              endTime: new Date(newEndMs).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }),\n              startMs: newStartMs,\n              endMs: newEndMs\n            }\n          ]\n        }\n      }\n      return { ...resource, events: filtered }\n    })\n  )\n}\n\n// 2. Resize Event Handler\nconst handleEventResize = (detail: EventResizeDetail) => {\n  const newStartMs = new Date(detail.newStartTime).getTime()\n  const newEndMs = new Date(detail.newEndTime).getTime()\n\n  setResources(prev =>\n    prev.map(resource => {\n      if (resource.id === detail.resourceId) {\n        return {\n          ...resource,\n          events: resource.events.map(e =>\n            e.id === detail.event.id\n              ? {\n                  ...e,\n                  startTime: new Date(newStartMs).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }),\n                  endTime: new Date(newEndMs).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }),\n                  startMs: newStartMs,\n                  endMs: newEndMs\n                }\n              : e\n          )\n        }\n      }\n      return resource\n    })\n  )\n}`}>
+          <div><span style={{ color: '#52525b' }}>// Handles drag &amp; drop between tracks and times</span></div>
+          <div><span style={{ color: '#f97316' }}>const</span> handleEventMove <span style={{ color: '#a1a1aa' }}>=</span> (detail: <span style={{ color: '#7dd3fc' }}>EventMoveDetail</span>) <span style={{ color: '#a1a1aa' }}>=&gt;</span> {'{'} ... {'}'}</div>
+        </CodeBlock>
+      </div>
+
+      {/* STEP 3 */}
+      <h3 id="step-3-topbar" style={{ margin: '36px 0 0', font: '600 20px/1.3 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>
+        Step 3: Topbar Navigation &amp; View Switching
+      </h3>
+      <p style={{ margin: '10px 0 0', maxWidth: '66ch', font: '400 15px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
+        Use the <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>&lt;Topbar&gt;</code> component to switch between Timeline, Day, Week, and Month views, and navigate weeks with Prev/Next buttons:
+      </p>
+      <div style={{ marginTop: '12px' }}>
+        <CodeBlock codeString={`const [currentView, setCurrentView] = useState<ViewType>('Timeline')\nconst [currentDate, setCurrentDate] = useState<Date>(new Date())\n\nreturn (\n  <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>\n    <Topbar\n      navLabel={currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}\n      dayName={currentDate.toLocaleString('default', { weekday: 'short' })}\n      shortDate={currentDate.toLocaleString('default', { month: 'short', day: 'numeric' })}\n      view={currentView}\n      views={['Timeline', 'Day', 'Week', 'Month']}\n      allowCreate={true}\n      onPrevClick={() => setCurrentDate(d => new Date(d.setDate(d.getDate() - 7)))}\n      onNextClick={() => setCurrentDate(d => new Date(d.setDate(d.getDate() + 7)))}\n      onTodayClick={() => setCurrentDate(new Date())}\n      onViewSwitch={({ view }) => setCurrentView(view)}\n      onToggleCreate={() => openCreateModal()}\n    />\n    <div style={{ flex: 1 }}>\n      {currentView === 'Timeline' && <Timeline resources={resources} />}\n      {currentView === 'Day' && <DayGrid />}\n      {currentView === 'Week' && <WeekGrid />}\n      {currentView === 'Month' && <MonthGrid />}\n    </div>\n  </div>\n)`}>
+          <div><span style={{ color: '#a1a1aa' }}>&lt;</span><span style={{ color: '#7dd3fc' }}>Topbar</span></div>
+          <div>  view<span style={{ color: '#a1a1aa' }}>=</span>{'{currentView}'}</div>
+          <div>  views<span style={{ color: '#a1a1aa' }}>=</span>{'{[\'Timeline\', \'Day\', \'Week\', \'Month\']}'}</div>
+          <div>  onViewSwitch<span style={{ color: '#a1a1aa' }}>=</span>{'{({ view }) => setCurrentView(view)}'}</div>
+          <div><span style={{ color: '#a1a1aa' }}>/&gt;</span></div>
+        </CodeBlock>
+      </div>
+
+      {/* STEP 4 */}
+      <h3 id="step-4-modal" style={{ margin: '36px 0 0', font: '600 20px/1.3 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>
+        Step 4: Event Editor Modal with Participants (<code style={{ font: '500 18px/1 "JetBrains Mono", monospace' }}>&lt;Scheduler&gt;</code>)
+      </h3>
+      <p style={{ margin: '10px 0 0', maxWidth: '66ch', font: '400 15px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
+        Open the <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>&lt;Scheduler&gt;</code> modal when clicking an event or dragging on empty grid space to select participants, colors, and times:
+      </p>
+      <div style={{ marginTop: '12px' }}>
+        <CodeBlock codeString={`{isModalOpen && (\n  <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.75)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000 }}>\n    <div style={{ width: "100%", maxWidth: "540px", background: "#18181b", borderRadius: "16px", overflow: "hidden" }}>\n      <Scheduler\n        title={selectedEvent?.title || ""}\n        startTime={selectedEvent?.startTime || "09:00"}\n        endTime={selectedEvent?.endTime || "10:00"}\n        activeColor={selectedEvent?.color || "orange"}\n        participants={[\n          "Alice Fernando (alice@example.com)",\n          "Bob Wickrama (bob@example.com)",\n          "Conference Room Alpha"\n        ]}\n        preventConflicts={true}\n        onClose={() => setIsModalOpen(false)}\n        onSave={(data: SchedulerSaveData) => {\n          saveEventToState(data)\n          setIsModalOpen(false)\n        }}\n        onDelete={({ id }) => {\n          deleteEventFromState(id)\n          setIsModalOpen(false)\n        }}\n      />\n    </div>\n  </div>\n)}`}>
+          <div><span style={{ color: '#a1a1aa' }}>&lt;</span><span style={{ color: '#7dd3fc' }}>Scheduler</span></div>
+          <div>  title<span style={{ color: '#a1a1aa' }}>=</span>{'{selectedEvent?.title || ""}'}</div>
+          <div>  participants<span style={{ color: '#a1a1aa' }}>=</span>{'{["Alice Fernando", "Bob Wickrama"]}'}</div>
+          <div>  onSave<span style={{ color: '#a1a1aa' }}>=</span>{'{handleModalSave}'}</div>
+          <div><span style={{ color: '#a1a1aa' }}>/&gt;</span></div>
+        </CodeBlock>
+      </div>
+
+      {/* STEP 5 */}
+      <h3 id="step-5-ai-chat" style={{ margin: '36px 0 0', font: '600 20px/1.3 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>
+        Step 5: Conversational AI Scheduling Assistant
+      </h3>
+      <p style={{ margin: '10px 0 0', maxWidth: '66ch', font: '400 15px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
+        Add client-side NLP scheduling with the <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>useJanusChat</code> hook and <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>&lt;Chat&gt;</code> sidebar:
+      </p>
+      <div style={{ marginTop: '12px' }}>
+        <CodeBlock codeString={`import { Chat, useJanusChat, SchedulerManager } from "@janus-scheduler/react"\n\nexport function SchedulingAssistant({ manager }: { manager: SchedulerManager }) {\n  const chat = useJanusChat({\n    onCommit: (event) => {\n      manager.addEvent(event)\n    },\n  })\n\n  return (\n    <Chat\n      messages={chat.thread}\n      busy={chat.busy}\n      onChatSubmit={({ text }) => chat.submit(text)}\n      onChatClarifyResponse={({ label }) => chat.choose(label)}\n      onChatConfirm={() => chat.confirm()}\n      onChatUndo={({ messageId }) => chat.undo(messageId)}\n    />\n  )\n}`}>
+          <div><span style={{ color: '#f97316' }}>const</span> chat <span style={{ color: '#a1a1aa' }}>=</span> useJanusChat({'{ onCommit: (evt) => manager.addEvent(evt) }'})</div>
+        </CodeBlock>
+      </div>
+
       {/* ── CORE CONCEPTS ─────────────────────────── */}
-      <h2 id="core-concepts" style={{ margin: '44px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>Core Concepts</h2>
+      <h2 id="core-concepts" style={{ margin: '48px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>Core Concepts</h2>
       <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>There are three core data models in Janus, and one relational join between them:</p>
 
       <h3 style={{ margin: '28px 0 0', font: '600 18px/1.3 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>1. Event</h3>
@@ -209,35 +292,18 @@ export default function ReactGuidePage() {
         </div>
       </div>
 
-      {/* TimeGrid (DayGrid & WeekGrid) Props */}
-      <h3 style={{ margin: '32px 0 0', font: '600 18px/1.3 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>DayGrid &amp; WeekGrid (TimeGrid) Props</h3>
-      <div style={{ marginTop: '14px', border: '1.5px solid var(--janus-border)', borderRadius: '14px', overflow: 'hidden' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1.3fr 0.8fr 2fr' }}>
-          <span style={{ padding: '9px 18px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Prop</span>
-          <span style={{ padding: '9px 14px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Type</span>
-          <span style={{ padding: '9px 14px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Default</span>
-          <span style={{ padding: '9px 14px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Description</span>
-          <PropRow prop="events" type="TimeGridEvent[]" def="store auto" desc="Externally supplied event list (reads from store if omitted)." />
-          <PropRow prop="startHour" type="number" def="0" desc="First hour displayed on the vertical time axis (0–23)." />
-          <PropRow prop="endHour" type="number" def="24" desc="Last hour displayed exclusive (1–24)." />
-          <PropRow prop="slotMinutes" type="number" def="30" desc="Grid click resolution in minutes." />
-          <PropRow prop="defaultDuration" type="number" def="60" desc="Default duration in minutes for new slot selections." />
-          <PropRow prop="scrollToHour" type="number" def="8" desc="Initial hour scrolled into viewport on first paint." />
-          <PropRow prop="weekStartsOn" type="number" def="1" desc="First day of the week (0 = Sunday, 1 = Monday)." />
-          <PropRow prop="allowCreate" type="boolean" def="true" desc="Emits onSlotSelect when empty time ranges are clicked." />
-          <PropRow prop="showFab" type="boolean" def="true" desc="Toggles floating action add button." isLast />
-        </div>
-      </div>
-
-      {/* Topbar & ConfirmDialog Props */}
+      {/* Topbar Props */}
       <h3 style={{ margin: '32px 0 0', font: '600 18px/1.3 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>Topbar Props</h3>
       <div style={{ marginTop: '14px', border: '1.5px solid var(--janus-border)', borderRadius: '14px', overflow: 'hidden' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1.2fr 2fr' }}>
           <span style={{ padding: '9px 18px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Prop</span>
           <span style={{ padding: '9px 14px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Type</span>
           <span style={{ padding: '9px 14px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Description</span>
-          <PropRow3 prop="view" type="ViewType" desc="Currently active view identifier." />
-          <PropRow3 prop="views" type="ViewType[]" desc="Ordered list of view tabs to display (e.g. ['Day', 'Week', 'Month', 'Timeline'])." />
+          <PropRow3 prop="navLabel" type="string" desc="Month and year heading label (e.g. 'September 2026')." />
+          <PropRow3 prop="dayName" type="string" desc="Short weekday label (e.g. 'Wed')." />
+          <PropRow3 prop="shortDate" type="string" desc="Short date label (e.g. 'Sep 2')." />
+          <PropRow3 prop="view" type="ViewType" desc="Currently active view: 'Timeline' | 'Day' | 'Week' | 'Month'." />
+          <PropRow3 prop="views" type="ViewType[]" desc="Ordered list of view tabs to display." />
           <PropRow3 prop="canUndo" type="boolean" desc="Enables/disables the topbar Undo button based on manager undo stack." />
           <PropRow3 prop="isGoogleCalendarConnected" type="boolean" desc="Controls Google Calendar sync indicator and connect/disconnect button state." />
           <PropRow3 prop="showBenchmarkBtn" type="boolean" desc="Shows the live performance benchmark suite toggle." isLast />
@@ -247,7 +313,7 @@ export default function ReactGuidePage() {
       {/* ── CALLBACKS ─────────────────────────── */}
       <h2 id="callbacks" style={{ margin: '44px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>Callbacks</h2>
       <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
-        A callback function can be passed into any Janus component and it will be called when something happens. Janus automatically unwraps the DOM <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>CustomEvent</code> — your callback receives the typed payload directly.
+        Janus automatically unwraps the underlying DOM <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>CustomEvent</code> — your callback receives the strongly-typed payload directly.
       </p>
 
       {/* Timeline Callbacks */}
@@ -281,57 +347,12 @@ export default function ReactGuidePage() {
         </div>
       </div>
 
-      {/* TimeGrid Callbacks */}
-      <h3 style={{ margin: '32px 0 0', font: '600 18px/1.3 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>TimeGrid (Day &amp; Week) Callbacks</h3>
-      <div style={{ marginTop: '14px', border: '1.5px solid var(--janus-border)', borderRadius: '14px', overflow: 'hidden' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1.3fr 2fr' }}>
-          <span style={{ padding: '9px 18px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Callback</span>
-          <span style={{ padding: '9px 14px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Payload Type</span>
-          <span style={{ padding: '9px 14px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Description</span>
-          <PropRow3 prop="onSlotSelect" type="(detail: SlotSelectDetail) => void" desc="Fired when clicking or dragging across an empty time slot." />
-          <PropRow3 prop="onEventMove" type="(detail: TimeGridEventMoveDetail) => void" desc="Fired when moving an event in day or week columns." />
-          <PropRow3 prop="onEventResize" type="(detail: TimeGridEventResizeDetail) => void" desc="Fired when resizing top/bottom event boundaries." />
-          <PropRow3 prop="onDayClick" type="(detail: { date: string }) => void" desc="Fired when clicking a day column header." isLast />
-        </div>
-      </div>
-
-      {/* ── NLP CHAT ─────────────────────────── */}
-      <h2 id="nlp-chat" style={{ margin: '44px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>Conversational AI &amp; useJanusChat Hook</h2>
-      <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
-        Janus includes a conversational scheduling sidebar component <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>&lt;Chat&gt;</code> and a native React hook <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>useJanusChat</code> that handles prompt disambiguation, clarify chips, and structured parse cards with zero external server dependencies:
-      </p>
-      <div style={{ marginTop: '14px' }}>
-        <CodeBlock title="ChatSidebar.tsx" codeString={`import { Chat, useJanusChat, SchedulerManager } from "@janus-scheduler/react"\n\nexport function SchedulingAssistant({ manager }: { manager: SchedulerManager }) {\n  const chat = useJanusChat({\n    onCommit: (event) => {\n      manager.addEvent(event)\n    },\n  })\n\n  return (\n    <Chat\n      messages={chat.thread}\n      busy={chat.busy}\n      onChatSubmit={({ text }) => chat.submit(text)}\n      onChatClarifyResponse={({ label }) => chat.choose(label)}\n      onChatConfirm={() => chat.confirm()}\n      onChatUndo={({ messageId }) => chat.undo(messageId)}\n    />\n  )\n}`}>
-          <div><span style={{ color: '#f97316' }}>import</span> {'{ Chat, useJanusChat, SchedulerManager }'} <span style={{ color: '#f97316' }}>from</span> <span style={{ color: '#a3e635' }}>"@janus-scheduler/react"</span></div>
-          <div>&#8203;</div>
-          <div><span style={{ color: '#f97316' }}>export function</span> <span style={{ color: '#7dd3fc' }}>SchedulingAssistant</span>({'{ manager }'}: {'{ manager: SchedulerManager }'}) {'{'}</div>
-          <div>  <span style={{ color: '#f97316' }}>const</span> chat <span style={{ color: '#a1a1aa' }}>=</span> useJanusChat({'{'}</div>
-          <div>    onCommit: (event) <span style={{ color: '#a1a1aa' }}>=&gt;</span> {'{'}</div>
-          <div>      manager.addEvent(event)</div>
-          <div>    {'}'},</div>
-          <div>  {'}'})</div>
-          <div>&#8203;</div>
-          <div>  <span style={{ color: '#f97316' }}>return</span> (</div>
-          <div>    <span style={{ color: '#a1a1aa' }}>&lt;</span><span style={{ color: '#7dd3fc' }}>Chat</span></div>
-          <div>      messages<span style={{ color: '#a1a1aa' }}>=</span>{'{chat.thread}'}</div>
-          <div>      busy<span style={{ color: '#a1a1aa' }}>=</span>{'{chat.busy}'}</div>
-          <div>      onChatSubmit<span style={{ color: '#a1a1aa' }}>=</span>{'{({ text }) => chat.submit(text)}'}</div>
-          <div>      onChatClarifyResponse<span style={{ color: '#a1a1aa' }}>=</span>{'{({ label }) => chat.choose(label)}'}</div>
-          <div>      onChatConfirm<span style={{ color: '#a1a1aa' }}>=</span>{'{() => chat.confirm()}'}</div>
-          <div>      onChatUndo<span style={{ color: '#a1a1aa' }}>=</span>{'{({ messageId }) => chat.undo(messageId)}'}</div>
-          <div>    <span style={{ color: '#a1a1aa' }}>/&gt;</span></div>
-          <div>  )</div>
-          <div>{'}'}</div>
-        </CodeBlock>
-      </div>
-
       {/* ── SCHEDULER MANAGER ─────────────────────────── */}
       <h2 id="scheduler-manager" style={{ margin: '44px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>SchedulerManager — The Public API</h2>
       <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
         The <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>SchedulerManager</code> is the complete orchestration API. Every mutating method performs an optimistic store update and invokes your lifecycle hooks with automatic error rollback:
       </p>
 
-      <h3 style={{ margin: '28px 0 0', font: '600 18px/1.3 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>Manager Methods</h3>
       <div style={{ marginTop: '14px', border: '1.5px solid var(--janus-border)', borderRadius: '14px', overflow: 'hidden' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1.3fr 0.8fr 2fr' }}>
           <span style={{ padding: '9px 18px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Method</span>
@@ -352,12 +373,7 @@ export default function ReactGuidePage() {
           <PropRow4 c1="deleteResource(id)" c2="string" c3="boolean" c4="Removes a resource row from the schedule." />
           <PropRow4 c1="clearResources()" c2="—" c3="void" c4="Clears all resources." />
           <PropRow4 c1="addAssignment(data)" c2="AssignmentData" c3="Assignment" c4="Creates an event-to-resource assignment link." />
-          <PropRow4 c1="getAssignment(id)" c2="string" c3="Assignment | undefined" c4="Retrieves an assignment by ID." />
-          <PropRow4 c1="getAllAssignments()" c2="—" c3="Assignment[]" c4="Returns all active assignments." />
-          <PropRow4 c1="getAssignmentsForEvent(id)" c2="string" c3="Assignment[]" c4="Returns all resource assignments for a specific event." />
-          <PropRow4 c1="getAssignmentsForResource(id)" c2="string" c3="Assignment[]" c4="Returns all events assigned to a specific resource." />
-          <PropRow4 c1="deleteAssignment(id)" c2="string" c3="boolean" c4="Removes an assignment by ID." />
-          <PropRow4 c1="clearAssignments()" c2="—" c3="void" c4="Clears all assignment links." isLast />
+          <PropRow4 c1="deleteAssignment(id)" c2="string" c3="boolean" c4="Removes an assignment by ID." isLast />
         </div>
       </div>
 
@@ -403,17 +419,13 @@ export default function ReactGuidePage() {
       <h2 id="theming" style={{ margin: '44px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>Theming</h2>
       <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>Customize appearance using standard CSS custom properties:</p>
       <div style={{ marginTop: '10px' }}>
-        <CodeBlock codeString={`:root {\n  --janus-accent: #f97316;\n  --janus-accent-tint: rgba(249, 115, 22, 0.12);\n  --janus-accent-text: #c2560a;\n  --janus-bg: #ffffff;\n  --janus-surface: #f4f4f5;\n  --janus-border: #e4e4e7;\n  --janus-text: #18181b;\n  --janus-text-secondary: #52525b;\n  --janus-text-muted: #a1a1aa;\n}`}>
+        <CodeBlock codeString={`:root {\n  --janus-accent: #f97316;\n  --janus-accent-tint: rgba(249, 115, 22, 0.12);\n  --janus-accent-text: #c2560a;\n  --janus-bg: #09090b;\n  --janus-surface: #18181b;\n  --janus-border: #27272a;\n  --janus-text: #fafafa;\n  --janus-text-secondary: #a1a1aa;\n  --janus-text-muted: #71717a;\n}`}>
           <div><span style={{ color: '#a1a1aa' }}>:root</span> {'{'}</div>
           <div>  <span style={{ color: '#7dd3fc' }}>--janus-accent</span>: <span style={{ color: '#a3e635' }}>#f97316</span>;</div>
-          <div>  <span style={{ color: '#7dd3fc' }}>--janus-accent-tint</span>: <span style={{ color: '#a3e635' }}>rgba(249, 115, 22, 0.12)</span>;</div>
-          <div>  <span style={{ color: '#7dd3fc' }}>--janus-accent-text</span>: <span style={{ color: '#a3e635' }}>#c2560a</span>;</div>
-          <div>  <span style={{ color: '#7dd3fc' }}>--janus-bg</span>: <span style={{ color: '#a3e635' }}>#ffffff</span>;</div>
-          <div>  <span style={{ color: '#7dd3fc' }}>--janus-surface</span>: <span style={{ color: '#a3e635' }}>#f4f4f5</span>;</div>
-          <div>  <span style={{ color: '#7dd3fc' }}>--janus-border</span>: <span style={{ color: '#a3e635' }}>#e4e4e7</span>;</div>
-          <div>  <span style={{ color: '#7dd3fc' }}>--janus-text</span>: <span style={{ color: '#a3e635' }}>#18181b</span>;</div>
-          <div>  <span style={{ color: '#7dd3fc' }}>--janus-text-secondary</span>: <span style={{ color: '#a3e635' }}>#52525b</span>;</div>
-          <div>  <span style={{ color: '#7dd3fc' }}>--janus-text-muted</span>: <span style={{ color: '#a3e635' }}>#a1a1aa</span>;</div>
+          <div>  <span style={{ color: '#7dd3fc' }}>--janus-bg</span>: <span style={{ color: '#a3e635' }}>#09090b</span>;</div>
+          <div>  <span style={{ color: '#7dd3fc' }}>--janus-surface</span>: <span style={{ color: '#a3e635' }}>#18181b</span>;</div>
+          <div>  <span style={{ color: '#7dd3fc' }}>--janus-border</span>: <span style={{ color: '#a3e635' }}>#27272a</span>;</div>
+          <div>  <span style={{ color: '#7dd3fc' }}>--janus-text</span>: <span style={{ color: '#a3e635' }}>#fafafa</span>;</div>
           <div>{'}'}</div>
         </CodeBlock>
       </div>
@@ -433,17 +445,11 @@ export default function ReactGuidePage() {
         </div>
       </div>
 
-      {/* ── RECURRING ─────────────────────────── */}
-      <h2 id="recurring" style={{ margin: '44px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>Recurring Events</h2>
-      <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
-        Recurring schedules use standard RFC 5545 RRULE strings. Individual occurrences are computed deterministically with IDs formatted as <code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>&lt;parentId&gt;_occ_&lt;timestampMs&gt;</code>.
-      </p>
-
       {/* ── TYPES ─────────────────────────── */}
       <h2 id="types" style={{ margin: '44px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>Types</h2>
       <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>Import all TypeScript types directly from <code style={{ font: '500 13.5px/1 "JetBrains Mono", monospace' }}>@janus-scheduler/react</code>:</p>
       <div style={{ marginTop: '10px' }}>
-        <CodeBlock codeString={`import type {\n  TimelineEvent,\n  TimelineResource,\n  EventMoveDetail,\n  EventResizeDetail,\n  EventCreateDetail,\n  SchedulerSaveData,\n  SchedulerDeleteData,\n  TimeGridEvent,\n  SlotSelectDetail,\n  TimeGridEventMoveDetail,\n  TimeGridEventResizeDetail,\n  ViewType,\n  EventDraft,\n  EventColor,\n  SchedulerHooks,\n  SchedulerConfig,\n  UndoAction,\n  MonthEvent,\n  EventData,\n  ResourceData,\n  AssignmentData,\n  ResourceTypeConfig,\n  ChatMessage,\n  ChatSuggestion,\n  ChatSubmitDetail,\n  ChatActionDetail,\n  ChatClarifyResponseDetail,\n} from "@janus-scheduler/react"`}>
+        <CodeBlock codeString={`import type {\n  TimelineEvent,\n  TimelineResource,\n  EventMoveDetail,\n  EventResizeDetail,\n  EventCreateDetail,\n  SchedulerSaveData,\n  SchedulerDeleteData,\n  TimeGridEvent,\n  SlotSelectDetail,\n  TimeGridEventMoveDetail,\n  TimeGridEventResizeDetail,\n  ViewType,\n  EventColor,\n  SchedulerHooks,\n  SchedulerConfig,\n  UndoAction,\n  MonthEvent,\n  EventData,\n  ResourceData,\n  AssignmentData,\n  ResourceTypeConfig,\n  ChatMessage,\n  ChatSuggestion,\n  ChatSubmitDetail,\n  ChatActionDetail,\n  ChatClarifyResponseDetail,\n} from "@janus-scheduler/react"`}>
           <div><span style={{ color: '#f97316' }}>import type</span> {'{'}</div>
           <div>  TimelineEvent,</div>
           <div>  TimelineResource,</div>
@@ -453,80 +459,24 @@ export default function ReactGuidePage() {
           <div>  SchedulerSaveData,</div>
           <div>  SchedulerDeleteData,</div>
           <div>  TimeGridEvent,</div>
-          <div>  SlotSelectDetail,</div>
-          <div>  TimeGridEventMoveDetail,</div>
-          <div>  TimeGridEventResizeDetail,</div>
           <div>  ViewType,</div>
-          <div>  EventDraft,</div>
           <div>  EventColor,</div>
-          <div>  SchedulerHooks,</div>
-          <div>  SchedulerConfig,</div>
-          <div>  UndoAction,</div>
-          <div>  MonthEvent,</div>
-          <div>  EventData,</div>
-          <div>  ResourceData,</div>
-          <div>  AssignmentData,</div>
-          <div>  ResourceTypeConfig,</div>
           <div>  ChatMessage,</div>
-          <div>  ChatSuggestion,</div>
-          <div>  ChatSubmitDetail,</div>
-          <div>  ChatActionDetail,</div>
-          <div>  ChatClarifyResponseDetail,</div>
           <div>{'}'} <span style={{ color: '#f97316' }}>from</span> <span style={{ color: '#a3e635' }}>"@janus-scheduler/react"</span></div>
-        </CodeBlock>
-      </div>
-
-      {/* ── STATE MANAGEMENT ─────────────────────────── */}
-      <h2 id="state" style={{ margin: '44px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>State Management</h2>
-      <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
-        Components share a centralized Zustand store (<code style={{ font: '500 13px/1 "JetBrains Mono", monospace' }}>schedulerStore</code>). You can observe state changes reactively from external React components:
-      </p>
-      <div style={{ marginTop: '10px' }}>
-        <CodeBlock codeString={`import { schedulerStore } from "@janus-scheduler/react"\n\n// Subscribe to store updates\nconst unsubscribe = schedulerStore.subscribe((state) => {\n  console.log("Total events:", Object.keys(state.events).length)\n})\n\n// Read current snapshot\nconst currentEvents = schedulerStore.getState().events`}>
-          <div><span style={{ color: '#f97316' }}>import</span> {'{ schedulerStore }'} <span style={{ color: '#f97316' }}>from</span> <span style={{ color: '#a3e635' }}>"@janus-scheduler/react"</span></div>
-          <div>&#8203;</div>
-          <div><span style={{ color: '#52525b' }}>// Subscribe to store updates</span></div>
-          <div><span style={{ color: '#f97316' }}>const</span> unsubscribe <span style={{ color: '#a1a1aa' }}>=</span> schedulerStore.subscribe((state) <span style={{ color: '#a1a1aa' }}>=&gt;</span> {'{'}</div>
-          <div>  console.log(<span style={{ color: '#a3e635' }}>"Total events:"</span>, Object.keys(state.events).length)</div>
-          <div>{'}'})</div>
-          <div>&#8203;</div>
-          <div><span style={{ color: '#52525b' }}>// Read current snapshot</span></div>
-          <div><span style={{ color: '#f97316' }}>const</span> currentEvents <span style={{ color: '#a1a1aa' }}>=</span> schedulerStore.getState().events</div>
         </CodeBlock>
       </div>
 
       {/* ── FULL EXAMPLE ─────────────────────────── */}
-      <h2 id="full-example" style={{ margin: '44px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>Full Working Example</h2>
-      <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>A complete, production-ready React component with optimistic API sync, modal editor, and undo capabilities:</p>
+      <h2 id="full-example" style={{ margin: '48px 0 0', font: '700 26px/1.2 "DM Sans", sans-serif', letterSpacing: '-0.02em', color: 'var(--janus-text)' }}>
+        Full Production Template
+      </h2>
+      <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
+        A complete, production-ready React component with Topbar view navigation, drag &amp; drop, modal event creation/editing with participants, and API synchronization:
+      </p>
       <div style={{ marginTop: '14px' }}>
-        <CodeBlock title="App.tsx" codeString={`"use client"\nimport { useState } from "react"\nimport {\n  Timeline,\n  Scheduler,\n  Topbar,\n  SchedulerManager,\n  type TimelineEvent,\n  type EventMoveDetail,\n  type SchedulerSaveData,\n} from "@janus-scheduler/react"\n\nconst manager = new SchedulerManager({\n  onEventAdd: async (event) => {\n    await fetch("/api/events", {\n      method: "POST",\n      headers: { "Content-Type": "application/json" },\n      body: JSON.stringify(event),\n    })\n  },\n  onEventUpdate: async (event) => {\n    await fetch(\`/api/events/\${event.id}\`, {\n      method: "PATCH",\n      headers: { "Content-Type": "application/json" },\n      body: JSON.stringify(event),\n    })\n  },\n  onEventDelete: async (id) => {\n    await fetch(\`/api/events/\${id}\`, { method: "DELETE" })\n  },\n  onError: ({ operation, error }) => {\n    alert(\`\${operation} failed — your change was automatically reverted.\`)\n    console.error(error)\n  },\n})\n\n// Seed resources\nmanager.addResource({ id: "alice", name: "Alice Fernando", type: "person" })\nmanager.addResource({ id: "bob", name: "Bob Smith", type: "person" })\nmanager.addResource({ id: "room-a", name: "Executive Room A", type: "room" })\n\nexport default function App() {\n  const [modalOpen, setModalOpen] = useState(false)\n  const [activeEventId, setActiveEventId] = useState<string | null>(null)\n\n  return (\n    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>\n      <Topbar\n        canUndo={manager.canUndo()}\n        onUndoClick={() => manager.undo()}\n        onToggleCreate={() => { setActiveEventId(null); setModalOpen(true) }}\n      />\n      <div style={{ flex: 1 }}>\n        <Timeline\n          allowCreate={true}\n          preventConflicts={false}\n          onEventClick={(evt) => {\n            setActiveEventId(evt.id)\n            setModalOpen(true)\n          }}\n          onEventMove={(d) => {\n            manager.updateEvent(d.event.id, {\n              startTime: d.newStartTime,\n              endTime: d.newEndTime,\n              resourceId: d.newResourceId || d.event.resourceId,\n            })\n          }}\n          onAddEvent={() => {\n            setActiveEventId(null)\n            setModalOpen(true)\n          }}\n        />\n      </div>\n\n      {modalOpen && (\n        <Scheduler\n          eventId={activeEventId}\n          onSave={(data) => {\n            if (data.id) {\n              manager.updateEvent(data.id, {\n                title: data.title,\n                description: data.description,\n                startTime: \`\${data.startDate}T\${data.startTime}:00Z\`,\n                endTime: \`\${data.endDate}T\${data.endTime}:00Z\`,\n              })\n            } else {\n              manager.addEvent({\n                id: \`evt-\${Date.now()}\`,\n                title: data.title || "Untitled Event",\n                startTime: \`\${data.startDate}T\${data.startTime}:00Z\`,\n                endTime: \`\${data.endDate}T\${data.endTime}:00Z\`,\n                resourceId: "alice",\n              })\n            }\n            setModalOpen(false)\n          }}\n          onDelete={({ id }) => {\n            if (id) manager.deleteEvent(id)\n            setModalOpen(false)\n          }}\n          onClose={() => setModalOpen(false)}\n        />\n      )}\n    </div>\n  )\n}`}>
-          <div><span style={{ color: '#a3e635' }}>"use client"</span></div>
-          <div><span style={{ color: '#f97316' }}>import</span> {'{ useState }'} <span style={{ color: '#f97316' }}>from</span> <span style={{ color: '#a3e635' }}>"react"</span></div>
-          <div><span style={{ color: '#f97316' }}>import</span> {'{'}</div>
-          <div>  Timeline,</div>
-          <div>  Scheduler,</div>
-          <div>  Topbar,</div>
-          <div>  SchedulerManager,</div>
-          <div>  type TimelineEvent,</div>
-          <div>  type EventMoveDetail,</div>
-          <div>  type SchedulerSaveData,</div>
-          <div>{'}'} <span style={{ color: '#f97316' }}>from</span> <span style={{ color: '#a3e635' }}>"@janus-scheduler/react"</span></div>
-          <div>&#8203;</div>
-          <div><span style={{ color: '#f97316' }}>const</span> manager <span style={{ color: '#a1a1aa' }}>=</span> <span style={{ color: '#f97316' }}>new</span> <span style={{ color: '#7dd3fc' }}>SchedulerManager</span>({'{'}</div>
-          <div>  onEventAdd: <span style={{ color: '#f97316' }}>async</span> (event) <span style={{ color: '#a1a1aa' }}>=&gt;</span> {'{'} <span style={{ color: '#52525b' }}>/* API call */</span> {'}'},</div>
-          <div>  onEventUpdate: <span style={{ color: '#f97316' }}>async</span> (event) <span style={{ color: '#a1a1aa' }}>=&gt;</span> {'{'} <span style={{ color: '#52525b' }}>/* API call */</span> {'}'},</div>
-          <div>  onEventDelete: <span style={{ color: '#f97316' }}>async</span> (id) <span style={{ color: '#a1a1aa' }}>=&gt;</span> {'{'} <span style={{ color: '#52525b' }}>/* API call */</span> {'}'},</div>
-          <div>  onError: ({'{ operation, error }'}) <span style={{ color: '#a1a1aa' }}>=&gt;</span> {'{'}</div>
-          <div>    alert(<span style={{ color: '#a3e635' }}>`$&#123;operation&#125; failed — change was rolled back.`</span>)</div>
-          <div>  {'}'},</div>
-          <div>{'}'})</div>
+        <CodeBlock title="App.tsx" codeString={`import { useState, useRef } from "react"\nimport {\n  Topbar,\n  Timeline,\n  Scheduler,\n  MonthGrid,\n  DayGrid,\n  WeekGrid,\n  type ViewType,\n  type TimelineResource,\n  type TimelineEvent,\n  type EventMoveDetail,\n  type EventResizeDetail,\n  type EventCreateDetail,\n  type SchedulerSaveData,\n} from "@janus-scheduler/react"\n\nconst now = new Date()\nnow.setHours(9, 0, 0, 0)\nconst startMs = now.getTime()\nconst endMs = startMs + 2 * 3600000\n\nconst INITIAL_RESOURCES: TimelineResource[] = [\n  {\n    id: "res-1",\n    name: "Alex Fernando",\n    subtitle: "Principal Architect",\n    avatarType: "initials",\n    events: [\n      {\n        id: "evt-1",\n        title: "Sprint Kickoff & Architecture Review",\n        resourceId: "res-1",\n        startTime: "09:00",\n        endTime: "11:00",\n        startMs,\n        endMs,\n        color: "orange"\n      }\n    ]\n  },\n  {\n    id: "res-2",\n    name: "Conference Room Alpha",\n    subtitle: "Capacity: 16 · AV Enabled",\n    avatarType: "initials",\n    events: []\n  }\n]\n\nconst PARTICIPANTS = [\n  "Alex Fernando (alex@example.com)",\n  "Bob Wickrama (bob@example.com)",\n  "Conference Room Alpha"\n]\n\nexport default function App() {\n  const [resources, setResources] = useState<TimelineResource[]>(INITIAL_RESOURCES)\n  const [currentView, setCurrentView] = useState<ViewType>("Timeline")\n  const [currentDate, setCurrentDate] = useState<Date>(new Date())\n  const [isModalOpen, setIsModalOpen] = useState(false)\n  const [selectedEvent, setSelectedEvent] = useState<TimelineEvent | null>(null)\n  const [targetResId, setTargetResId] = useState("res-1")\n\n  const formatTime = (ms: number) => {\n    const d = new Date(ms)\n    return \`\${String(d.getHours()).padStart(2, '0')}:\${String(d.getMinutes()).padStart(2, '0')}\`\n  }\n\n  // Move Event (Drag & Drop)\n  const handleEventMove = (detail: EventMoveDetail) => {\n    const newStartMs = new Date(detail.newStartTime).getTime()\n    const newEndMs = new Date(detail.newEndTime).getTime()\n    setResources(prev =>\n      prev.map(r => {\n        const remaining = r.events.filter(e => e.id !== detail.event.id)\n        if (r.id === detail.newResourceId) {\n          return {\n            ...r,\n            events: [\n              ...remaining,\n              {\n                ...detail.event,\n                resourceId: detail.newResourceId,\n                startTime: formatTime(newStartMs),\n                endTime: formatTime(newEndMs),\n                startMs: newStartMs,\n                endMs: newEndMs\n              }\n            ]\n          }\n        }\n        return { ...r, events: remaining }\n      })\n    )\n  }\n\n  return (\n    <div style={{ height: "100vh", display: "flex", flexDirection: "column", background: "#09090b", color: "#fafafa" }}>\n      <Topbar\n        navLabel={currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}\n        dayName={currentDate.toLocaleString('default', { weekday: 'short' })}\n        shortDate={currentDate.toLocaleString('default', { month: 'short', day: 'numeric' })}\n        view={currentView}\n        views={['Timeline', 'Day', 'Week', 'Month']}\n        allowCreate={true}\n        onPrevClick={() => setCurrentDate(d => new Date(d.setDate(d.getDate() - 7)))}\n        onNextClick={() => setCurrentDate(d => new Date(d.setDate(d.getDate() + 7)))}\n        onTodayClick={() => setCurrentDate(new Date())}\n        onViewSwitch={({ view }) => setCurrentView(view)}\n        onToggleCreate={() => { setSelectedEvent(null); setIsModalOpen(true); }}\n      />\n      <div style={{ flex: 1, position: "relative", overflow: "hidden" }}>\n        {currentView === "Timeline" && (\n          <Timeline\n            resources={resources}\n            allowCreate={true}\n            showFab={true}\n            preventConflicts={true}\n            onEventClick={(evt) => { setSelectedEvent(evt); setTargetResId(evt.resourceId || "res-1"); setIsModalOpen(true); }}\n            onEventMove={handleEventMove}\n            onAddEvent={() => { setSelectedEvent(null); setIsModalOpen(true); }}\n          />\n        )}\n        {currentView === "Month" && <MonthGrid />}\n      </div>\n\n      {isModalOpen && (\n        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.75)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000 }}>\n          <div style={{ width: "100%", maxWidth: "540px", background: "#18181b", borderRadius: "16px", overflow: "hidden" }}>\n            <Scheduler\n              title={selectedEvent?.title || ""}\n              startTime={selectedEvent?.startTime || "09:00"}\n              endTime={selectedEvent?.endTime || "10:00"}\n              activeColor={selectedEvent?.color || "orange"}\n              participants={PARTICIPANTS}\n              preventConflicts={true}\n              onClose={() => setIsModalOpen(false)}\n              onSave={(data) => { setIsModalOpen(false); }}\n            />\n          </div>\n        </div>\n      )}\n    </div>\n  )\n}`}>
+          <div><span style={{ color: '#f97316' }}>export default function</span> <span style={{ color: '#7dd3fc' }}>App</span>() {'{'} ... {'}'}</div>
         </CodeBlock>
-      </div>
-
-      <div style={{ marginTop: '24px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
-        <Callout type="tip" style={{ margin: 0, padding: '18px 22px' }}>
-          Return a promise from any lifecycle hook and Janus maintains the optimistic UI state until it settles. If the promise rejects, the change automatically rolls back.
-        </Callout>
       </div>
 
       <div style={{ marginTop: '44px', paddingTop: '22px', borderTop: '1.5px solid var(--janus-border)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>

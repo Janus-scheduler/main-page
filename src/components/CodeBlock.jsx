@@ -43,8 +43,8 @@ export default function CodeBlock({ title, codeString, children, isInstallComman
           {copied ? 'Copied' : 'Copy'}
         </button>
       </div>
-      <pre style={{ margin: 0, padding: '16px 18px', font: '400 13px/1.8 "JetBrains Mono", monospace', color: '#e4e4e7', overflowX: 'auto' }}>
-        {children}
+      <pre style={{ margin: 0, padding: '16px 18px', font: '400 13px/1.8 "JetBrains Mono", monospace', color: '#e4e4e7', overflowX: 'auto', whiteSpace: 'pre-wrap' }}>
+        {children || codeString}
       </pre>
     </div>
   );

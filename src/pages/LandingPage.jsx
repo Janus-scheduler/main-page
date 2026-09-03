@@ -142,7 +142,7 @@ function LandingPage() {
                 </div>
                 <div style={{ height: '52px', display: 'flex', alignItems: 'center', gap: '10px', padding: '0 16px', borderBottom: '1px solid var(--janus-border)' }}>
                   <span style={{ width: '24px', height: '24px', borderRadius: '999px', background: 'var(--janus-surface)', border: '1px solid var(--janus-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', font: '600 10px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>NP</span>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}><span style={{ font: '500 13px/1.2 "DM Sans", sans-serif' }}>Nadeesha Perera</span><span style={{ font: '400 10.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>Engineering</span></div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}><span style={{ font: '500 13px/1.2 "DM Sans", sans-serif' }}>Sara Perera</span><span style={{ font: '400 10.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>Engineering</span></div>
                 </div>
                 <div style={{ height: '52px', display: 'flex', alignItems: 'center', gap: '10px', padding: '0 16px', borderBottom: '1px solid var(--janus-border)' }}>
                   <span style={{ width: '24px', height: '24px', borderRadius: '999px', background: 'var(--janus-surface)', border: '1px solid var(--janus-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', font: '600 10px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>CS</span>
@@ -189,7 +189,7 @@ function LandingPage() {
                     <span style={{ font: '400 10px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>08:00 – 09:50</span>
                   </div>
                   <div style={{ position: 'absolute', top: '8px', left: '41%', width: '14%', height: '36px', borderRadius: '9px', background: 'rgba(59,130,246,0.15)', border: '1.5px solid rgba(59,130,246,0.6)', padding: '6px 9px', display: 'flex', flexDirection: 'column', gap: '2px', zIndex: 2 }}>
-                    <span style={{ font: '600 11.5px/1.2 "DM Sans", sans-serif', color: '#60a5fa' }}>1:1 Nadeesha</span>
+                    <span style={{ font: '600 11.5px/1.2 "DM Sans", sans-serif', color: '#60a5fa' }}>1:1 Sara</span>
                   </div>
                   <div style={{ position: 'absolute', top: '8px', left: '70%', width: '22%', height: '36px', borderRadius: '9px', background: 'var(--janus-surface)', border: '1.5px dashed var(--janus-border)', padding: '6px 9px', display: 'flex', alignItems: 'center', zIndex: 2 }}>
                     <span style={{ font: '500 11px/1.2 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>Focus block (tentative)</span>

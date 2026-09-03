@@ -77,6 +77,45 @@ export default function AgenticDevelopmentPage() {
         </CodeBlock>
       </div>
 
+      {/* Direct Download Zip */}
+      <div style={{ marginTop: '22px', padding: '18px 22px', borderRadius: '14px', border: '1.5px solid var(--janus-border)', background: 'var(--janus-surface)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '14px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          <div style={{ width: '42px', height: '42px', borderRadius: '11px', background: 'var(--janus-accent-tint)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--janus-accent-text)', fontSize: '20px' }}>
+            📦
+          </div>
+          <div>
+            <div style={{ font: '600 15px/1.3 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>Download Skills Archive (.zip)</div>
+            <div style={{ font: '400 13px/1.4 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)', marginTop: '3px' }}>Pre-packaged skill files and configurations ready to extract into your repository</div>
+          </div>
+        </div>
+        <a 
+          href="/skills.zip" 
+          download="skills.zip"
+          style={{ 
+            display: 'inline-flex', 
+            alignItems: 'center', 
+            gap: '8px', 
+            padding: '10px 18px', 
+            borderRadius: '10px', 
+            background: 'var(--janus-accent)', 
+            color: '#ffffff', 
+            font: '600 13.5px/1 "DM Sans", sans-serif', 
+            textDecoration: 'none',
+            boxShadow: '0 2px 8px rgba(249, 115, 22, 0.25)',
+            transition: 'opacity 0.15s ease'
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.9'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download skills.zip
+        </a>
+      </div>
+
       {/* ── TWO TIERS ─────────────────────────── */}
       <h2 id="two-tiers" style={{ margin: '48px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>
         Two-Tier Architecture for Agents

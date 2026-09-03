@@ -33,18 +33,23 @@ export default function GettingStartedPage() {
 
   return (
     <DocsLayout currentPath="/docs/getting-started" toc={toc}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>
         <a href="#" style={{ color: 'var(--janus-text-muted)' }}>Docs</a><span>/</span><a href="#" style={{ color: 'var(--janus-text-muted)' }}>Guide</a><span>/</span><span style={{ color: 'var(--janus-text-secondary)' }}>Getting started</span>
       </div>
       
-      <h1 style={{ margin: '16px 0 0', font: '700 40px/1.1 "DM Sans", sans-serif', letterSpacing: '-0.028em', color: 'var(--janus-text)' }}>Getting started</h1>
-      <p style={{ margin: '18px 0 0', maxWidth: '66ch', font: '400 16.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)', textWrap: 'pretty' }}>
+      <h1 style={{ margin: '16px 0 0', font: '700 clamp(28px, 6.5vw, 40px)/1.1 "DM Sans", sans-serif', letterSpacing: '-0.028em', color: 'var(--janus-text)' }}>
+        Getting started
+      </h1>
+      <p style={{ margin: '18px 0 0', maxWidth: '66ch', font: '400 clamp(14.5px, 2vw, 16.5px)/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)', textWrap: 'pretty' }}>
         Janus ships as a set of Lit Web Components with thin wrappers for React, Angular, Solid and Vue. This page installs the right package for your stack, explains the three objects the scheduler is built from, and gets a working timeline on screen in about twenty lines.
       </p>
 
-      <h2 id="which-package" style={{ margin: '44px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>Which package do I need?</h2>
-      <div style={{ marginTop: '16px', border: '1.5px solid var(--janus-border)', borderRadius: '14px', overflow: 'hidden' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.25fr 1.9fr 0.7fr' }}>
+      {/* ── WHICH PACKAGE DO I NEED ─────────────────────────── */}
+      <h2 id="which-package" style={{ margin: '44px 0 0', font: '600 clamp(20px, 4.5vw, 24px)/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>
+        Which package do I need?
+      </h2>
+      <div style={{ marginTop: '16px', border: '1.5px solid var(--janus-border)', borderRadius: '14px', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1.25fr 1.9fr 0.7fr', minWidth: '520px' }}>
           <span style={{ padding: '9px 18px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Package</span>
           <span style={{ padding: '9px 14px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Install it when</span>
           <span style={{ padding: '9px 18px 9px 14px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>Size</span>
@@ -56,42 +61,50 @@ export default function GettingStartedPage() {
         </div>
       </div>
 
-      <h2 id="install" style={{ margin: '44px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>Install</h2>
+      {/* ── INSTALL ─────────────────────────── */}
+      <h2 id="install" style={{ margin: '44px 0 0', font: '600 clamp(20px, 4.5vw, 24px)/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>
+        Install
+      </h2>
       <div style={{ marginTop: '16px', border: '1.5px solid var(--janus-border)', borderRadius: '14px', overflow: 'hidden' }}>
-        <div style={{ display: 'flex', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)' }}>
+        <div style={{ display: 'flex', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
           {['React', 'Angular', 'Solid', 'Vue'].map(fw => (
             <span key={fw} onClick={() => setFramework(fw)} style={{
               padding: '13px 17px', font: '500 13px/1 "DM Sans", sans-serif', cursor: 'pointer',
               color: framework === fw ? 'var(--janus-text)' : 'var(--janus-text-secondary)',
               background: framework === fw ? 'var(--janus-bg)' : 'transparent',
-              boxShadow: framework === fw ? 'inset 0 -2px 0 var(--janus-accent)' : 'none'
+              boxShadow: framework === fw ? 'inset 0 -2px 0 var(--janus-accent)' : 'none',
+              whiteSpace: 'nowrap'
             }}>{fw}</span>
           ))}
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 14px', borderBottom: '1px solid var(--janus-border)', background: 'var(--janus-bg)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 14px', borderBottom: '1px solid var(--janus-border)', background: 'var(--janus-bg)', flexWrap: 'wrap', gap: '8px' }}>
           <SegmentedControl options={['npm', 'pnpm', 'yarn']} defaultOption={pkgManager} onChange={setPkgManager} />
           <span style={{ font: '400 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>{pkgs[framework]}</span>
         </div>
         <CodeBlock isInstallCommand codeString={cmd}>{cmd}</CodeBlock>
       </div>
 
-      <h2 id="core-concepts" style={{ margin: '52px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>Core concepts</h2>
+      {/* ── CORE CONCEPTS ─────────────────────────── */}
+      <h2 id="core-concepts" style={{ margin: '52px 0 0', font: '600 clamp(20px, 4.5vw, 24px)/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>
+        Core concepts
+      </h2>
       <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
         Three objects, and one join between them. Everything else in the API is a view over these.
       </p>
       
-      <div style={{ marginTop: '18px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
+      <div className="docs-cards-3" style={{ marginTop: '18px' }}>
         <div id="event"><ConceptCard title="Event" type="{ id, start, end, title }" desc="Something that happens between two UTC instants. Carries a title, an optional recurrence rule and your own payload." /></div>
         <div id="resource"><ConceptCard title="Resource" type="{ id, name, parentId? }" desc="A row in the timeline: a person, a room, a machine. Resources may nest one level for grouping." /></div>
         <div id="assignment"><ConceptCard title="Assignment" type="{ eventId, resourceId }" desc="The join that puts an event on a resource. One event can be assigned to many resources; conflicts are detected per assignment." /></div>
       </div>
 
-      <div style={{ marginTop: '12px', border: '1.5px solid var(--janus-border)', borderRadius: '14px', background: 'var(--janus-surface)', padding: '22px 24px', display: 'grid', gridTemplateColumns: '1fr 116px 1fr 116px 1fr', alignItems: 'center' }}>
+      {/* Relationship Flow Diagram */}
+      <div className="docs-diagram-grid" style={{ marginTop: '14px', border: '1.5px solid var(--janus-border)', borderRadius: '14px', background: 'var(--janus-surface)', padding: '22px 20px' }}>
         <div style={{ border: '1.5px solid var(--janus-accent)', borderRadius: '9px', background: 'var(--janus-accent-tint)', padding: '12px 14px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
           <span style={{ font: '600 13px/1.2 "DM Sans", sans-serif', color: 'var(--janus-accent-content)' }}>Event</span>
           <span style={{ font: '400 10.5px/1.4 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>Design sync · 10:00–11:00</span>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px' }}>
+        <div className="docs-diagram-arrow" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px' }}>
           <span style={{ font: '400 10px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>1 ─ n</span>
           <div style={{ width: '100%', display: 'flex', alignItems: 'center', gap: '4px', padding: '0 8px' }}><span style={{ flex: 1, height: '1.5px', background: 'var(--janus-text-muted)' }}></span><span style={{ font: '400 11px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>▶</span></div>
         </div>
@@ -99,7 +112,7 @@ export default function GettingStartedPage() {
           <span style={{ font: '600 13px/1.2 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>Assignment</span>
           <span style={{ font: '400 10.5px/1.4 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>eventId + resourceId</span>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px' }}>
+        <div className="docs-diagram-arrow" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px' }}>
           <span style={{ font: '400 10px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>n ─ 1</span>
           <div style={{ width: '100%', display: 'flex', alignItems: 'center', gap: '4px', padding: '0 8px' }}><span style={{ flex: 1, height: '1.5px', background: 'var(--janus-text-muted)' }}></span><span style={{ font: '400 11px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>▶</span></div>
         </div>
@@ -109,7 +122,10 @@ export default function GettingStartedPage() {
         </div>
       </div>
 
-      <h2 id="first-scheduler" style={{ margin: '52px 0 0', font: '600 24px/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>Your first scheduler</h2>
+      {/* ── YOUR FIRST SCHEDULER ─────────────────────────── */}
+      <h2 id="first-scheduler" style={{ margin: '52px 0 0', font: '600 clamp(20px, 4.5vw, 24px)/1.25 "DM Sans", sans-serif', letterSpacing: '-0.018em', color: 'var(--janus-text)' }}>
+        Your first scheduler
+      </h2>
       <p style={{ margin: '14px 0 0', maxWidth: '66ch', font: '400 15.5px/1.65 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>
         Pass resources, events and assignments; handle the drop event to persist a move. Nothing else is required — the component owns layout, virtualisation and conflict detection.
       </p>
@@ -142,40 +158,43 @@ export default function GettingStartedPage() {
         </CodeBlock>
       </div>
 
+      {/* Expected Result Mini Preview */}
       <div style={{ marginTop: '20px', border: '1.5px solid var(--janus-border)', borderRadius: '14px', overflow: 'hidden' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '9px 14px', background: 'var(--janus-surface)', borderBottom: '1px solid var(--janus-border)' }}>
           <span style={{ font: '500 10.5px/1 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-muted)' }}>Expected result</span>
           <span style={{ font: '400 11px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>localhost:5173</span>
         </div>
         <div style={{ background: 'var(--janus-bg)', padding: '14px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '132px 1fr', border: '1.5px solid var(--janus-border)', borderRadius: '9px', overflow: 'hidden' }}>
-            <div style={{ borderRight: '1.5px solid var(--janus-border)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '110px 1fr', border: '1.5px solid var(--janus-border)', borderRadius: '9px', overflow: 'hidden' }}>
+            <div style={{ borderRight: '1.5px solid var(--janus-border)', background: 'var(--janus-bg)' }}>
               <div style={{ height: '26px', background: 'var(--janus-surface)', borderBottom: '1px solid var(--janus-border)' }}></div>
-              <div style={{ height: '42px', display: 'flex', alignItems: 'center', padding: '0 12px', borderBottom: '1px solid var(--janus-surface)', font: '500 12px/1.2 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>Alex Fernando</div>
-              <div style={{ height: '42px', display: 'flex', alignItems: 'center', padding: '0 12px', font: '500 12px/1.2 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>Room A</div>
+              <div style={{ height: '42px', display: 'flex', alignItems: 'center', padding: '0 10px', borderBottom: '1px solid var(--janus-surface)', font: '500 11.5px/1.2 "DM Sans", sans-serif', color: 'var(--janus-text)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>Alex Fernando</div>
+              <div style={{ height: '42px', display: 'flex', alignItems: 'center', padding: '0 10px', font: '500 11.5px/1.2 "DM Sans", sans-serif', color: 'var(--janus-text)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>Room A</div>
             </div>
-            <div style={{ position: 'relative' }}>
-              <div style={{ height: '26px', display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', background: 'var(--janus-surface)', borderBottom: '1px solid var(--janus-border)' }}>
-                <span style={{ paddingLeft: '7px', display: 'flex', alignItems: 'center', borderLeft: '1px solid var(--janus-border)', font: '500 10px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>09:00</span>
-                <span style={{ paddingLeft: '7px', display: 'flex', alignItems: 'center', borderLeft: '1px solid var(--janus-border)', font: '500 10px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>10:00</span>
-                <span style={{ paddingLeft: '7px', display: 'flex', alignItems: 'center', borderLeft: '1px solid var(--janus-border)', font: '500 10px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>11:00</span>
-                <span style={{ paddingLeft: '7px', display: 'flex', alignItems: 'center', borderLeft: '1px solid var(--janus-border)', font: '500 10px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>12:00</span>
-                <span style={{ paddingLeft: '7px', display: 'flex', alignItems: 'center', borderLeft: '1px solid var(--janus-border)', font: '500 10px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>13:00</span>
-                <span style={{ paddingLeft: '7px', display: 'flex', alignItems: 'center', borderLeft: '1px solid var(--janus-border)', font: '500 10px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>14:00</span>
-              </div>
-              <div style={{ position: 'relative', height: '84px' }}>
-                <div style={{ position: 'absolute', inset: 0, display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', pointerEvents: 'none' }}>
-                  <span style={{ borderLeft: '1px solid var(--janus-surface)' }}></span><span style={{ borderLeft: '1px solid var(--janus-surface)' }}></span><span style={{ borderLeft: '1px solid var(--janus-surface)' }}></span><span style={{ borderLeft: '1px solid var(--janus-surface)' }}></span><span style={{ borderLeft: '1px solid var(--janus-surface)' }}></span><span style={{ borderLeft: '1px solid var(--janus-surface)' }}></span>
+            <div style={{ position: 'relative', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+              <div style={{ minWidth: '320px' }}>
+                <div style={{ height: '26px', display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', background: 'var(--janus-surface)', borderBottom: '1px solid var(--janus-border)' }}>
+                  <span style={{ paddingLeft: '6px', display: 'flex', alignItems: 'center', borderLeft: '1px solid var(--janus-border)', font: '500 9.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>09:00</span>
+                  <span style={{ paddingLeft: '6px', display: 'flex', alignItems: 'center', borderLeft: '1px solid var(--janus-border)', font: '500 9.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>10:00</span>
+                  <span style={{ paddingLeft: '6px', display: 'flex', alignItems: 'center', borderLeft: '1px solid var(--janus-border)', font: '500 9.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>11:00</span>
+                  <span style={{ paddingLeft: '6px', display: 'flex', alignItems: 'center', borderLeft: '1px solid var(--janus-border)', font: '500 9.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>12:00</span>
+                  <span style={{ paddingLeft: '6px', display: 'flex', alignItems: 'center', borderLeft: '1px solid var(--janus-border)', font: '500 9.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>13:00</span>
+                  <span style={{ paddingLeft: '6px', display: 'flex', alignItems: 'center', borderLeft: '1px solid var(--janus-border)', font: '500 9.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>14:00</span>
                 </div>
-                <div style={{ position: 'absolute', top: '42px', left: 0, right: 0, height: '1px', background: 'var(--janus-surface)' }}></div>
-                <div style={{ position: 'absolute', top: '6px', left: '17%', width: '30%', height: '30px', borderRadius: '9px', background: 'var(--janus-accent-tint)', border: '1.5px solid var(--janus-accent)', padding: '5px 9px', display: 'flex', alignItems: 'center' }}>
-                  <span style={{ font: '600 11px/1.2 "DM Sans", sans-serif', color: 'var(--janus-accent-content)' }}>Design sync</span>
-                </div>
-                <div style={{ position: 'absolute', top: '48px', left: '17%', width: '30%', height: '30px', borderRadius: '9px', background: 'var(--janus-accent-tint)', border: '1.5px solid var(--janus-accent)', padding: '5px 9px', display: 'flex', alignItems: 'center' }}>
-                  <span style={{ font: '600 11px/1.2 "DM Sans", sans-serif', color: 'var(--janus-accent-content)' }}>Design sync</span>
-                </div>
-                <div style={{ position: 'absolute', top: '48px', left: '56%', width: '22%', height: '30px', borderRadius: '9px', background: 'var(--janus-surface)', border: '1.5px solid var(--janus-border)', padding: '5px 9px', display: 'flex', alignItems: 'center' }}>
-                  <span style={{ font: '500 11px/1.2 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)' }}>Held</span>
+                <div style={{ position: 'relative', height: '84px' }}>
+                  <div style={{ position: 'absolute', inset: 0, display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', pointerEvents: 'none' }}>
+                    <span style={{ borderLeft: '1px solid var(--janus-surface)' }}></span><span style={{ borderLeft: '1px solid var(--janus-surface)' }}></span><span style={{ borderLeft: '1px solid var(--janus-surface)' }}></span><span style={{ borderLeft: '1px solid var(--janus-surface)' }}></span><span style={{ borderLeft: '1px solid var(--janus-surface)' }}></span><span style={{ borderLeft: '1px solid var(--janus-surface)' }}></span>
+                  </div>
+                  <div style={{ position: 'absolute', top: '42px', left: 0, right: 0, height: '1px', background: 'var(--janus-surface)' }}></div>
+                  <div style={{ position: 'absolute', top: '6px', left: '17%', width: '30%', height: '30px', borderRadius: '9px', background: 'var(--janus-accent-tint)', border: '1.5px solid var(--janus-accent)', padding: '5px 8px', display: 'flex', alignItems: 'center' }}>
+                    <span style={{ font: '600 10.5px/1.2 "DM Sans", sans-serif', color: 'var(--janus-accent-content)', whiteSpace: 'nowrap' }}>Design sync</span>
+                  </div>
+                  <div style={{ position: 'absolute', top: '48px', left: '17%', width: '30%', height: '30px', borderRadius: '9px', background: 'var(--janus-accent-tint)', border: '1.5px solid var(--janus-accent)', padding: '5px 8px', display: 'flex', alignItems: 'center' }}>
+                    <span style={{ font: '600 10.5px/1.2 "DM Sans", sans-serif', color: 'var(--janus-accent-content)', whiteSpace: 'nowrap' }}>Design sync</span>
+                  </div>
+                  <div style={{ position: 'absolute', top: '48px', left: '56%', width: '22%', height: '30px', borderRadius: '9px', background: 'var(--janus-surface)', border: '1.5px solid var(--janus-border)', padding: '5px 8px', display: 'flex', alignItems: 'center' }}>
+                    <span style={{ font: '500 10.5px/1.2 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)', whiteSpace: 'nowrap' }}>Held</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -198,7 +217,8 @@ export default function GettingStartedPage() {
         </Callout>
       </div>
 
-      <div style={{ marginTop: '44px', paddingTop: '22px', borderTop: '1.5px solid var(--janus-border)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
+      {/* Bottom Previous / Next Cards */}
+      <div className="docs-bottom-nav" style={{ marginTop: '44px', paddingTop: '22px', borderTop: '1.5px solid var(--janus-border)' }}>
         <Link to="/" style={{ border: '1.5px solid var(--janus-border)', borderRadius: '14px', padding: '16px 18px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
           <span style={{ font: '400 11px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>← Previous</span>
           <span style={{ font: '600 15px/1.3 "DM Sans", sans-serif', color: 'var(--janus-text)' }}>Introduction</span>

@@ -1,16 +1,147 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function DocsLayout({ children, toc, currentPath }) {
+  const [mobileDocsNavOpen, setMobileDocsNavOpen] = useState(false);
+  const [mobileTocOpen, setMobileTocOpen] = useState(false);
+
+  useEffect(() => {
+    setMobileDocsNavOpen(false);
+    setMobileTocOpen(false);
+  }, [currentPath]);
+
   return (
-    <div style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', background: 'var(--janus-bg)', color: 'var(--janus-text)' }}>
+    <div style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', background: 'var(--janus-bg)', color: 'var(--janus-text)', overflowX: 'hidden' }}>
       <Header />
-      
-      <div style={{ display: 'grid', gridTemplateColumns: '272px 1fr 232px' }}>
+
+      {/* Mobile Docs Sub-Navigation Bar (Sticky below main header) */}
+      <div className="docs-mobile-subbar">
+        <button
+          onClick={() => {
+            setMobileDocsNavOpen(prev => !prev);
+            setMobileTocOpen(false);
+          }}
+          aria-label="Toggle docs navigation"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '7px 12px',
+            border: '1.5px solid var(--janus-border)',
+            borderRadius: '8px',
+            background: mobileDocsNavOpen ? 'var(--janus-accent-tint)' : 'var(--janus-surface)',
+            color: mobileDocsNavOpen ? 'var(--janus-accent-text)' : 'var(--janus-text)',
+            font: '600 12.5px/1 "DM Sans", sans-serif',
+            cursor: 'pointer'
+          }}
+        >
+          <span>☰ Docs Menu</span>
+          <span style={{ fontSize: '9px', opacity: 0.7 }}>{mobileDocsNavOpen ? '▲' : '▼'}</span>
+        </button>
+
+        {toc && (
+          <button
+            onClick={() => {
+              setMobileTocOpen(prev => !prev);
+              setMobileDocsNavOpen(false);
+            }}
+            aria-label="Toggle table of contents"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '7px 12px',
+              border: '1.5px solid var(--janus-border)',
+              borderRadius: '8px',
+              background: mobileTocOpen ? 'var(--janus-accent-tint)' : 'var(--janus-surface)',
+              color: mobileTocOpen ? 'var(--janus-accent-text)' : 'var(--janus-text)',
+              font: '500 12.5px/1 "DM Sans", sans-serif',
+              cursor: 'pointer'
+            }}
+          >
+            <span>On this page</span>
+            <span style={{ fontSize: '9px', opacity: 0.7 }}>{mobileTocOpen ? '▲' : '▼'}</span>
+          </button>
+        )}
+      </div>
+
+      {/* Mobile Docs Navigation Accordion Panel */}
+      {mobileDocsNavOpen && (
+        <div style={{
+          borderBottom: '1px solid var(--janus-border)',
+          background: 'var(--janus-surface)',
+          padding: '18px 20px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '18px',
+          maxHeight: '60vh',
+          overflowY: 'auto'
+        }}>
+          <NavSection title="Guide">
+            <NavItem active={currentPath === '/docs/getting-started'} href="/docs/getting-started">Getting started</NavItem>
+          </NavSection>
+          
+          <NavSection title="Framework guides">
+            <NavItem active={currentPath === '/docs/frameworks/react'} href="/docs/frameworks/react">React</NavItem>
+            <NavItem active={currentPath === '/docs/frameworks/angular'} href="/docs/frameworks/angular">Angular</NavItem>
+            <NavItem active={currentPath === '/docs/frameworks/solid'} href="/docs/frameworks/solid">Solid</NavItem>
+            <NavItem active={currentPath === '/docs/frameworks/vue'} href="/docs/frameworks/vue">Vue</NavItem>
+          </NavSection>
+          
+          <NavSection title="API reference">
+            {currentPath.includes('/docs/api/janus-') ? (
+              <>
+                <span style={{ padding: '8px 10px', borderRadius: '9px', background: 'var(--janus-accent-tint)', font: '600 13.5px/1.3 "DM Sans", sans-serif', color: '#c2560a' }}>Components</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', padding: '4px 0 4px 10px', marginLeft: '10px', borderLeft: '1px solid var(--janus-border)' }}>
+                  <SubNavItem active={currentPath === '/docs/api/janus-timeline'} href="/docs/api/janus-timeline">janus-timeline</SubNavItem>
+                  <SubNavItem active={currentPath === '/docs/api/janus-month'} href="/docs/api/janus-month">janus-month</SubNavItem>
+                  <SubNavItem active={currentPath === '/docs/api/janus-prompt'} href="/docs/api/janus-prompt">janus-prompt</SubNavItem>
+                  <SubNavItem active={currentPath === '/docs/api/janus-event'} href="/docs/api/janus-event">janus-event</SubNavItem>
+                </div>
+              </>
+            ) : (
+              <NavItem href="/docs/api/janus-timeline">Components</NavItem>
+            )}
+            <NavItem active={currentPath === '/docs/api/scheduler-manager'} href="/docs/api/scheduler-manager" mono>SchedulerManager</NavItem>
+            <NavItem active={currentPath === '/docs/api/store'} href="/docs/api/store" mono>Store</NavItem>
+            <NavItem active={currentPath === '/docs/api/types'} href="/docs/api/types">Types</NavItem>
+            <NavItem active={currentPath === '/docs/api/utilities'} href="/docs/api/utilities">Utilities</NavItem>
+            <NavItem active={currentPath === '/docs/api/events'} href="/docs/api/events">Events</NavItem>
+          </NavSection>
+          
+          <NavSection title="Topics">
+            <NavItem active={currentPath === '/docs/topics/theming'} href="/docs/topics/theming">Theming</NavItem>
+            <NavItem active={currentPath === '/docs/topics/nlp'} href="/docs/topics/nlp">Natural language</NavItem>
+            <NavItem active={currentPath === '/docs/topics/google-calendar-sync'} href="/docs/topics/google-calendar-sync">Google Calendar sync</NavItem>
+          </NavSection>
+
+          <NavSection title="Agentic development">
+            <NavItem active={currentPath === '/docs/agentic-development'} href="/docs/agentic-development">Skills &amp; AI setup</NavItem>
+          </NavSection>
+        </div>
+      )}
+
+      {/* Mobile TOC Accordion Panel */}
+      {mobileTocOpen && toc && (
+        <div style={{
+          borderBottom: '1px solid var(--janus-border)',
+          background: 'var(--janus-surface)',
+          padding: '16px 20px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '8px'
+        }}>
+          <span style={{ font: '500 10.5px/1 "JetBrains Mono", monospace', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--janus-text-muted)', marginBottom: '4px' }}>On this page</span>
+          <TableOfContents toc={toc} onLinkClick={() => setMobileTocOpen(false)} />
+        </div>
+      )}
+
+      {/* Main Grid */}
+      <div className="docs-layout-grid">
         
-        {/* Left Sidebar */}
-        <aside style={{ borderRight: '1px solid var(--janus-border)', padding: '26px 20px 40px', display: 'flex', flexDirection: 'column', gap: '22px' }}>
+        {/* Left Sidebar (Desktop) */}
+        <aside className="docs-sidebar-left">
           <NavSection title="Guide">
             <NavItem active={currentPath === '/docs/getting-started'} href="/docs/getting-started">Getting started</NavItem>
           </NavSection>
@@ -55,12 +186,12 @@ export default function DocsLayout({ children, toc, currentPath }) {
         </aside>
 
         {/* Main Content */}
-        <main style={{ padding: '34px 44px 44px', minWidth: 0 }}>
+        <main className="docs-main-content">
           {children}
         </main>
 
-        {/* Right Sidebar (TOC) */}
-        <aside style={{ borderLeft: '1px solid var(--janus-border)', padding: '34px 22px 40px', display: 'flex', flexDirection: 'column', gap: '12px', alignSelf: 'start', position: 'sticky', top: '56px', maxHeight: 'calc(100vh - 70px)', overflowY: 'auto' }}>
+        {/* Right Sidebar (TOC on Desktop) */}
+        <aside className="docs-sidebar-right">
           <span style={{ font: '500 10.5px/1 "JetBrains Mono", monospace', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--janus-text-muted)' }}>On this page</span>
           <TableOfContents toc={toc} />
         </aside>
@@ -138,7 +269,7 @@ function SubNavItem({ href, active, children }) {
         color: hovered ? 'var(--janus-text)' : 'var(--janus-text-secondary)',
         background: hovered ? 'var(--janus-surface)' : 'transparent',
         transition: 'all 0.1s ease',
-        textDecoration: 'none'
+        display: 'block'
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -148,35 +279,34 @@ function SubNavItem({ href, active, children }) {
   );
 }
 
-export function TableOfContents({ toc }) {
+function TableOfContents({ toc, onLinkClick }) {
+  const [activeId, setActiveId] = React.useState('');
+
   const items = React.useMemo(() => {
     if (!toc) return [];
-    if (Array.isArray(toc)) return toc;
     
-    // If toc is a React element / Fragment, parse its <a> children
-    const extracted = [];
-    const children = React.Children.toArray(toc.props?.children || toc);
-    
-    children.forEach((child) => {
-      if (React.isValidElement(child)) {
-        const href = child.props?.href || '';
-        const id = href.startsWith('#') ? href.slice(1) : href;
-        const label = child.props?.children;
-        const hasIndent = child.props?.style?.paddingLeft || child.props?.style?.marginLeft;
-        if (label && typeof label === 'string') {
-          extracted.push({
-            id,
-            label,
-            indent: Boolean(hasIndent)
-          });
-        }
+    let rawChildren = [];
+    if (React.isValidElement(toc)) {
+      if (toc.type === React.Fragment) {
+        rawChildren = React.Children.toArray(toc.props.children);
+      } else {
+        rawChildren = [toc];
       }
-    });
-    
-    return extracted;
+    } else if (Array.isArray(toc)) {
+      rawChildren = toc;
+    }
+
+    return rawChildren
+      .filter(child => React.isValidElement(child) && child.props.href)
+      .map(child => {
+        const href = child.props.href || '';
+        const id = href.replace('#', '');
+        const label = child.props.children;
+        const indent = (child.props.style && child.props.style.paddingLeft) ? true : false;
+        return { id, label, indent };
+      });
   }, [toc]);
 
-  const [activeId, setActiveId] = React.useState(items[0]?.id || '');
   const hasMountedHashRef = React.useRef(false);
 
   // Scroll to hash only ONCE on initial mount
@@ -189,7 +319,7 @@ export function TableOfContents({ toc }) {
       setTimeout(() => {
         const target = document.getElementById(hash);
         if (target) {
-          const offsetTop = target.getBoundingClientRect().top + window.scrollY - 80;
+          const offsetTop = target.getBoundingClientRect().top + window.scrollY - 110;
           window.scrollTo({ top: offsetTop, behavior: 'smooth' });
         }
       }, 100);
@@ -203,7 +333,7 @@ export function TableOfContents({ toc }) {
     if (!items.length) return;
     
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 120;
+      const scrollPosition = window.scrollY + 130;
       let currentActive = items[0]?.id || '';
       
       for (const item of items) {
@@ -230,10 +360,11 @@ export function TableOfContents({ toc }) {
     setActiveId(id);
     const target = document.getElementById(id);
     if (target) {
-      const offsetTop = target.getBoundingClientRect().top + window.scrollY - 80;
+      const offsetTop = target.getBoundingClientRect().top + window.scrollY - 110;
       window.scrollTo({ top: offsetTop, behavior: 'smooth' });
       window.history.pushState(null, '', `#${id}`);
     }
+    if (onLinkClick) onLinkClick();
   };
 
   if (!items.length) return null;

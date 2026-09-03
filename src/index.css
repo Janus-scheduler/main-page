@@ -255,3 +255,112 @@ a:hover {
   }
 }
 
+/* Docs Layout Responsive Classes */
+.docs-layout-grid {
+  display: grid;
+  grid-template-columns: 272px 1fr 232px;
+}
+
+.docs-sidebar-left {
+  border-right: 1px solid var(--janus-border);
+  padding: 26px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.docs-main-content {
+  padding: 34px 44px 44px;
+  min-width: 0;
+}
+
+.docs-sidebar-right {
+  border-left: 1px solid var(--janus-border);
+  padding: 34px 22px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-self: start;
+  position: sticky;
+  top: 56px;
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
+}
+
+.docs-mobile-subbar {
+  display: none;
+}
+
+.docs-cards-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.docs-diagram-grid {
+  display: grid;
+  grid-template-columns: 1fr 116px 1fr 116px 1fr;
+  align-items: center;
+}
+
+.docs-bottom-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 1120px) {
+  .docs-layout-grid {
+    grid-template-columns: 260px 1fr !important;
+  }
+  .docs-sidebar-right {
+    display: none !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .docs-layout-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .docs-sidebar-left {
+    display: none !important;
+  }
+  .docs-mobile-subbar {
+    display: flex !important;
+    position: sticky;
+    top: 56px;
+    z-index: 55;
+    background: var(--janus-nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--janus-border);
+    padding: 8px 16px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .docs-main-content {
+    padding: 24px 18px 48px !important;
+  }
+  .docs-diagram-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+  }
+  .docs-diagram-arrow {
+    transform: rotate(90deg) !important;
+    margin: 4px 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .docs-cards-3 {
+    grid-template-columns: 1fr !important;
+  }
+  .docs-bottom-nav {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+

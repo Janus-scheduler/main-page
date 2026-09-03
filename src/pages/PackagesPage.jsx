@@ -15,20 +15,20 @@ export default function PackagesPage() {
   const lbl = (k) => (copied === k ? 'Copied' : 'Copy');
 
   return (
-    <div style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', background: 'var(--janus-bg)', color: 'var(--janus-text)' }}>
+    <div style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', background: 'var(--janus-bg)', color: 'var(--janus-text)', overflowX: 'hidden' }}>
       <Header />
 
-      <header style={{ padding: '64px 40px 40px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <header className="packages-header-responsive" style={{ padding: '64px 40px 40px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
         <span style={{ font: '500 11px/1 "JetBrains Mono", monospace', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--janus-text-muted)' }}>Packages · seven, published together</span>
-        <h1 style={{ margin: 0, maxWidth: '26ch', font: '700 52px/1.06 "DM Sans", sans-serif', letterSpacing: '-0.03em' }}>Install only the part you need</h1>
+        <h1 className="packages-title-responsive" style={{ margin: 0, maxWidth: '26ch', font: '700 52px/1.06 "DM Sans", sans-serif', letterSpacing: '-0.03em' }}>Install only the part you need</h1>
         <p style={{ margin: 0, maxWidth: '72ch', font: '400 17px/1.6 "DM Sans", sans-serif', color: 'var(--janus-text-secondary)', textWrap: 'pretty' }}>
           Every package is versioned in lockstep and published from one repository. Most projects install a single framework wrapper; the rest exist so you can go lower-level or leave features out entirely.
         </p>
       </header>
 
       {/* CARDS */}
-      <section style={{ padding: '0 40px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '14px' }}>
+      <section className="packages-section-responsive" style={{ padding: '0 40px' }}>
+        <div className="packages-grid">
 
           <div className="janus-package-card" style={{ border: '1.5px solid var(--janus-border)', borderRadius: '14px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '12px', background: 'var(--janus-bg)' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px' }}>
@@ -39,13 +39,13 @@ export default function PackagesPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '9px 11px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-surface)' }}>
               <span style={{ font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent)' }}>$</span>
               <span style={{ flex: 1, minWidth: 0, font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>npm i @janus-scheduler/core</span>
-              <button className="janus-copy-btn" onClick={() => copy('core', 'core')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer' }}>{lbl('core')}</button>
+              <button className="janus-copy-btn" onClick={() => copy('core', 'core')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer', flexShrink: 0 }}>{lbl('core')}</button>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '10px', borderTop: '1px solid var(--janus-surface)' }}>
               <span style={{ padding: '3px 8px', borderRadius: '999px', background: 'var(--janus-surface)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1.35 "JetBrains Mono", monospace' }}>6.4 kB gzip</span>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>npm ↗</a>
-                <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>docs →</a>
+                <a href="/docs/getting-started" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>docs →</a>
               </div>
             </div>
           </div>
@@ -59,13 +59,13 @@ export default function PackagesPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '9px 11px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-surface)' }}>
               <span style={{ font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent)' }}>$</span>
               <span style={{ flex: 1, minWidth: 0, font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>npm i @janus-scheduler/ui</span>
-              <button className="janus-copy-btn" onClick={() => copy('ui', 'ui')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer' }}>{lbl('ui')}</button>
+              <button className="janus-copy-btn" onClick={() => copy('ui', 'ui')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer', flexShrink: 0 }}>{lbl('ui')}</button>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '10px', borderTop: '1px solid var(--janus-surface)' }}>
               <span style={{ padding: '3px 8px', borderRadius: '999px', background: 'var(--janus-surface)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1.35 "JetBrains Mono", monospace' }}>11.8 kB gzip</span>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>npm ↗</a>
-                <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>docs →</a>
+                <a href="/docs/getting-started" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>docs →</a>
               </div>
             </div>
           </div>
@@ -79,13 +79,13 @@ export default function PackagesPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '9px 11px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-surface)' }}>
               <span style={{ font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent)' }}>$</span>
               <span style={{ flex: 1, minWidth: 0, font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>npm i @janus-scheduler/react</span>
-              <button className="janus-copy-btn" onClick={() => copy('react', 'react')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer' }}>{lbl('react')}</button>
+              <button className="janus-copy-btn" onClick={() => copy('react', 'react')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer', flexShrink: 0 }}>{lbl('react')}</button>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '10px', borderTop: '1px solid var(--janus-surface)' }}>
               <span style={{ padding: '3px 8px', borderRadius: '999px', background: 'var(--janus-accent-tint)', color: 'var(--janus-accent-text)', font: '500 10.5px/1.35 "JetBrains Mono", monospace' }}>14.2 kB gzip</span>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>npm ↗</a>
-                <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>docs →</a>
+                <a href="/docs/frameworks/react" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>docs →</a>
               </div>
             </div>
           </div>
@@ -99,13 +99,13 @@ export default function PackagesPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '9px 11px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-surface)' }}>
               <span style={{ font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent)' }}>$</span>
               <span style={{ flex: 1, minWidth: 0, font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>npm i @janus-scheduler/angular</span>
-              <button className="janus-copy-btn" onClick={() => copy('angular', 'angular')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer' }}>{lbl('angular')}</button>
+              <button className="janus-copy-btn" onClick={() => copy('angular', 'angular')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer', flexShrink: 0 }}>{lbl('angular')}</button>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '10px', borderTop: '1px solid var(--janus-surface)' }}>
               <span style={{ padding: '3px 8px', borderRadius: '999px', background: 'var(--janus-surface)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1.35 "JetBrains Mono", monospace' }}>14.6 kB gzip</span>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>npm ↗</a>
-                <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>docs →</a>
+                <a href="/docs/frameworks/angular" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>docs →</a>
               </div>
             </div>
           </div>
@@ -119,13 +119,13 @@ export default function PackagesPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '9px 11px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-surface)' }}>
               <span style={{ font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent)' }}>$</span>
               <span style={{ flex: 1, minWidth: 0, font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>npm i @janus-scheduler/solid</span>
-              <button className="janus-copy-btn" onClick={() => copy('solid', 'solid')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer' }}>{lbl('solid')}</button>
+              <button className="janus-copy-btn" onClick={() => copy('solid', 'solid')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer', flexShrink: 0 }}>{lbl('solid')}</button>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '10px', borderTop: '1px solid var(--janus-surface)' }}>
               <span style={{ padding: '3px 8px', borderRadius: '999px', background: 'var(--janus-surface)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1.35 "JetBrains Mono", monospace' }}>13.9 kB gzip</span>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>npm ↗</a>
-                <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>docs →</a>
+                <a href="/docs/frameworks/solid" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>docs →</a>
               </div>
             </div>
           </div>
@@ -139,19 +139,19 @@ export default function PackagesPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '9px 11px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-surface)' }}>
               <span style={{ font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent)' }}>$</span>
               <span style={{ flex: 1, minWidth: 0, font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>npm i @janus-scheduler/nlp</span>
-              <button className="janus-copy-btn" onClick={() => copy('nlp', 'nlp')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer' }}>{lbl('nlp')}</button>
+              <button className="janus-copy-btn" onClick={() => copy('nlp', 'nlp')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer', flexShrink: 0 }}>{lbl('nlp')}</button>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '10px', borderTop: '1px solid var(--janus-surface)' }}>
               <span style={{ padding: '3px 8px', borderRadius: '999px', background: 'var(--janus-surface)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1.35 "JetBrains Mono", monospace' }}>4.9 kB + 38 kB lazy</span>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)' }}>npm ↗</a>
-                <a href="#" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>docs →</a>
+                <a href="/docs/topics/nlp" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent-text)' }}>docs →</a>
               </div>
             </div>
           </div>
 
-          <div className="janus-package-card" style={{ border: '1.5px solid var(--janus-border)', borderRadius: '14px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '12px', gridColumn: 'span 3', background: 'var(--janus-bg)' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', alignItems: 'center' }}>
+          <div className="janus-package-card packages-integrations-card" style={{ border: '1.5px solid var(--janus-border)', borderRadius: '14px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '12px', background: 'var(--janus-bg)' }}>
+            <div className="packages-integrations-inner">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <code style={{ font: '600 14px/1.3 "JetBrains Mono", monospace', letterSpacing: '-0.01em' }}>@janus-scheduler/integrations</code>
@@ -162,9 +162,9 @@ export default function PackagesPage() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '9px 11px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-surface)' }}>
                 <span style={{ font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-accent)' }}>$</span>
                 <span style={{ flex: 1, minWidth: 0, font: '400 12px/1 "JetBrains Mono", monospace', color: 'var(--janus-text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>npm i @janus-scheduler/integrations</span>
-                <button className="janus-copy-btn" onClick={() => copy('integrations', 'integrations')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer' }}>{lbl('integrations')}</button>
+                <button className="janus-copy-btn" onClick={() => copy('integrations', 'integrations')} style={{ height: '26px', padding: '0 8px', border: '1.5px solid var(--janus-border)', borderRadius: '9px', background: 'var(--janus-bg)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1 "JetBrains Mono", monospace', cursor: 'pointer', flexShrink: 0 }}>{lbl('integrations')}</button>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '16px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '12px', flexWrap: 'wrap' }}>
                 <span style={{ padding: '3px 8px', borderRadius: '999px', background: 'var(--janus-surface)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1.35 "JetBrains Mono", monospace' }}>3.1 kB gzip</span>
                 <span style={{ padding: '3px 8px', borderRadius: '999px', border: '1.5px solid var(--janus-border)', color: 'var(--janus-text-secondary)', font: '500 10.5px/1.35 "JetBrains Mono", monospace' }}>Google Calendar v3</span>
                 <a href="https://www.npmjs.com/package/@janus-scheduler/integrations" target="_blank" rel="noreferrer" style={{ font: '600 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-secondary)', textDecoration: 'none' }}>npm ↗</a>
@@ -177,12 +177,12 @@ export default function PackagesPage() {
       </section>
 
       {/* DEPENDENCY GRAPH */}
-      <section style={{ padding: '64px 40px 0' }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '18px' }}>
-          <h2 style={{ margin: 0, font: '700 30px/1.15 "DM Sans", sans-serif', letterSpacing: '-0.025em' }}>Dependency graph</h2>
-          <span style={{ font: '400 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>every edge is two-way · imports one way, events and state the other</span>
+      <section className="packages-dep-section-responsive" style={{ padding: '64px 40px 0' }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '18px', flexWrap: 'wrap', gap: '10px' }}>
+          <h2 style={{ margin: 0, font: '700 clamp(24px, 5.5vw, 30px)/1.15 "DM Sans", sans-serif', letterSpacing: '-0.025em' }}>Dependency graph</h2>
+          <span style={{ font: '400 11.5px/1.4 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>every edge is two-way · imports one way, events and state the other</span>
         </div>
-        <div style={{ border: '1.5px solid var(--janus-border)', borderRadius: '14px', background: 'var(--janus-surface)', padding: '32px 40px', overflowX: 'auto' }}>
+        <div style={{ border: '1.5px solid var(--janus-border)', borderRadius: '14px', background: 'var(--janus-surface)', padding: '24px 20px', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
           <div style={{ position: 'relative', width: '1200px', height: '404px', margin: '0 auto' }}>
 
             <div style={{ position: 'absolute', left: '300px', top: '0', width: '180px', height: '62px', border: '1.5px solid var(--janus-border)', borderRadius: '14px', background: 'var(--janus-bg)', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '3px', padding: '0 14px' }}>
@@ -256,13 +256,13 @@ export default function PackagesPage() {
       </section>
 
       {/* COMPATIBILITY MATRIX */}
-      <section style={{ padding: '64px 40px 0' }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '18px' }}>
-          <h2 style={{ margin: 0, font: '700 30px/1.15 "DM Sans", sans-serif', letterSpacing: '-0.025em' }}>Compatibility matrix</h2>
-          <span style={{ font: '400 11.5px/1 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>peer ranges as published · TypeScript ≥5.0 throughout</span>
+      <section className="packages-dep-section-responsive" style={{ padding: '64px 40px 0' }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '18px', flexWrap: 'wrap', gap: '10px' }}>
+          <h2 style={{ margin: 0, font: '700 clamp(24px, 5.5vw, 30px)/1.15 "DM Sans", sans-serif', letterSpacing: '-0.025em' }}>Compatibility matrix</h2>
+          <span style={{ font: '400 11.5px/1.4 "JetBrains Mono", monospace', color: 'var(--janus-text-muted)' }}>peer ranges as published · TypeScript ≥5.0 throughout</span>
         </div>
-        <div style={{ border: '1.5px solid var(--janus-border)', borderRadius: '14px', overflow: 'hidden' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.5fr repeat(4, 1fr) 1.1fr' }}>
+        <div style={{ border: '1.5px solid var(--janus-border)', borderRadius: '14px', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.5fr repeat(4, 1fr) 1.2fr', minWidth: '640px' }}>
             {['Package', 'React', 'Angular', 'Solid', 'Vue', 'Node / SSR'].map((th, i) => (
               <span key={th} style={{ padding: i === 0 ? '9px 18px' : i === 5 ? '9px 18px 9px 12px' : '9px 12px', background: 'var(--janus-surface)', borderBottom: '1.5px solid var(--janus-border)', font: '500 10.5px/1.4 "JetBrains Mono", monospace', letterSpacing: '0.07em', textTransform: 'uppercase', color: 'var(--janus-text-secondary)' }}>{th}</span>
             ))}

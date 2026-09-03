@@ -126,6 +126,13 @@ const SEARCH_ITEMS = [
     path: '/docs/topics/google-calendar-sync',
     keywords: ['google calendar', 'sync', 'oauth', 'webhooks', 'delta', 'synctoken', 'integration']
   },
+  {
+    title: 'Agentic Development & AI Skills',
+    subtitle: 'SKILL.md, agent prompt recipes, Claude Code, Cursor & Windsurf setup',
+    category: 'Agentic Development',
+    path: '/docs/agentic-development',
+    keywords: ['agent', 'skill', 'claude', 'cursor', 'windsurf', 'copilot', 'ai', 'prompt', 'skill.md', 'agents.md', 'llm', 'antigravity']
+  },
   // General Pages
   {
     title: 'Features Overview',

@@ -17,6 +17,7 @@ import NlpPage from './pages/NlpPage';
 import ThemingPage from './pages/ThemingPage';
 import FaqPage from './pages/FaqPage';
 import GoogleCalendarSyncPage from './pages/GoogleCalendarSyncPage';
+import AgenticDevelopmentPage from './pages/AgenticDevelopmentPage';
 
 // Framework Guides
 import ReactGuidePage from './pages/ReactGuidePage';
@@ -58,6 +59,10 @@ function App() {
       <Route path="/docs/topics/nlp" element={<NlpPage />} />
       <Route path="/docs/topics/theming" element={<ThemingPage />} />
       <Route path="/docs/topics/google-calendar-sync" element={<GoogleCalendarSyncPage />} />
+
+      {/* Agentic Development */}
+      <Route path="/docs/agentic-development" element={<AgenticDevelopmentPage />} />
+
       <Route path="/faq" element={<FaqPage />} />
     </Routes>
     </>

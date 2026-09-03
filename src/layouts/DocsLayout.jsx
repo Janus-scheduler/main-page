@@ -48,6 +48,10 @@ export default function DocsLayout({ children, toc, currentPath }) {
             <NavItem active={currentPath === '/docs/topics/nlp'} href="/docs/topics/nlp">Natural language</NavItem>
             <NavItem active={currentPath === '/docs/topics/google-calendar-sync'} href="/docs/topics/google-calendar-sync">Google Calendar sync</NavItem>
           </NavSection>
+
+          <NavSection title="Agentic development">
+            <NavItem active={currentPath === '/docs/agentic-development'} href="/docs/agentic-development">Skills &amp; AI setup</NavItem>
+          </NavSection>
         </aside>
 
         {/* Main Content */}
